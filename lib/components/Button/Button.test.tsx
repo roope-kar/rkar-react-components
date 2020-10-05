@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from 'lib';
+import { Button } from 'lib/components';
 import { render, cleanup } from '@testing-library/react';
 
 describe('Button', () => {
 
     afterEach(cleanup);
-
+    
     it('renders', () => {
 
         const container: HTMLElement = render(
@@ -14,7 +14,7 @@ describe('Button', () => {
 
         const buttonElement = container.querySelector('.rkar-Button') as HTMLElement;
 
-        expect(buttonElement.textContent).toEqual('Primary');
+        expect(buttonElement.textContent).toStrictEqual('Primary');
 
     });
 

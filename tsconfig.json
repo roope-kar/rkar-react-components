@@ -3,6 +3,7 @@
       "outDir": "./dist/",
       "noImplicitAny": true,
       "moduleResolution": "Node",
+      "esModuleInterop": true,
       "module": "es6",
       "target": "es5",
       "jsx": "react",
@@ -12,9 +13,9 @@
       "strict": true,
       "paths": {
         "lib": [
-          "lib/index.ts"
+          "lib/components/index.ts"
         ]
       },
       "types": ["jest", "node"]
     }
-  }
+}

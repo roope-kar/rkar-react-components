@@ -1,14 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { Button } from 'lib';
-
-export const PrimaryButton: React.FunctionComponent = () => null;
-
-export const SecondaryButton : React.FunctionComponent = () => null;
+import { Link } from 'lib/components';
 
 export default {
-    title: 'Button',
-    component: Button,
+    title:  'Link',
+    component: Link,
     parameters: {
       backgrounds: {
         values: [
@@ -19,3 +15,11 @@ export default {
       }
     }
 } as Meta;
+
+export const DefaultLink: React.FunctionComponent = () => (
+  <Link>Default</Link>
+);
+
+export const AnotherLink: React.FunctionComponent = () => (
+  <Link>Another</Link>
+);
