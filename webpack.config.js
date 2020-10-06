@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './lib/index.ts',
+  entry: './src/index.ts',
   module: {
     rules: [
       {
@@ -43,19 +43,19 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-        include: path.resolve(__dirname, './lib')
+        include: path.resolve(__dirname, 'src')
       }
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      lib: path.resolve(__dirname, 'lib')
+      src: path.resolve(__dirname, 'src')
     }
   },
   output: {
-    filename: 'lib.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'lib'),
     library: 'rkar',
     libraryTarget: 'umd'
   },

@@ -46,7 +46,8 @@ Master branch is deployed live to a live location.
 
 ## Built With
 
-* [React](https://reactjs.org/) - Used to build the user interface.
+* [Typescript](https://www.typescriptlang.org/) - Used as the main language
+* [React](https://reactjs.org/) - Used to build the user interface
 * [SCSS](https://sass-lang.com/) - Used as the pre css language
 * [PostCSS](https://postcss.org/) - Used to optimize css
 * [Webpack](https://webpack.js.org/) - Used to bundle, shake, split and optimize js, css and other assets

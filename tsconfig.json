@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
+      "outDir": "./lib/",
       "noImplicitAny": true,
       "moduleResolution": "Node",
       "esModuleInterop": true,
@@ -12,8 +12,8 @@
       "baseUrl": ".",
       "strict": true,
       "paths": {
-        "lib": [
-          "lib/components/index.ts"
+        "src": [
+          "src/index.ts"
         ]
       },
       "types": ["jest", "node"]

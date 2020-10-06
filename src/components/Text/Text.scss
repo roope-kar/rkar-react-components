@@ -1,0 +1,22 @@
+.rkar-Text {
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('../../fonts/Roboto/Roboto-Regular.ttf') format("truetype");
+    }
+
+    font-family: "Roboto";
+
+    &-size--small {
+        font-size: 12px;
+    }
+
+    &-size--medium {
+        font-size: 14px;
+    }
+
+    &-size--large {
+        font-size: 16px;
+    }
+    
+}

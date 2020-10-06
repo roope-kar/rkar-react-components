@@ -1,7 +1,7 @@
 module.exports = {
     // The root of your source code, typically /src
     // `<rootDir>` is a token Jest substitutes
-    roots: ["<rootDir>/lib"],
+    roots: ["<rootDir>/src"],
   
     // Jest transformations -- this adds support for TypeScript
     // using ts-jest
@@ -27,6 +27,6 @@ module.exports = {
     // Map with webpack aliases
     moduleNameMapper: {
       "\\.scss$": "<rootDir>/__mocks__/styleMock.js",
-      "^lib(.*)$": "<rootDir>/lib$1"
+      "^src(.*)$": "<rootDir>/src$1"
     }
   };
