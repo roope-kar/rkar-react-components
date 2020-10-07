@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link } from 'src/components';
+import { SubText } from 'src/components';
 import { render, cleanup, getByText } from '@testing-library/react';
 
-describe('Link', () => {
+describe('SubText', () => {
 
     afterEach(cleanup);
     
     it('renders', () => {
 
         const container: HTMLElement = render(
-            <Link>My Link</Link>
+            <SubText>My SubText</SubText>
         ).container;
 
-        expect(getByText(container, 'My Link').textContent).toStrictEqual('My Link');
+        expect(getByText(container, 'My SubText').textContent).toStrictEqual('My SubText');
 
     });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'src/components';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('Button', () => {
 
@@ -9,12 +9,10 @@ describe('Button', () => {
     it('renders', () => {
 
         const container: HTMLElement = render(
-            <Button>Primary</Button>
+            <Button size={'medium'}>Primary</Button>
         ).container;
 
-        const buttonElement = container.querySelector('.rkar-Button') as HTMLElement;
-
-        expect(buttonElement.textContent).toStrictEqual('Primary');
+        expect(getByText(container, 'Primary').textContent).toStrictEqual('Primary');
 
     });
 

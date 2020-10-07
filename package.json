@@ -5,11 +5,14 @@
   },
   "version": "1.0.0",
   "description": "Collection of composable react components",
-  "main": "lib/index.js",
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "main": "lib/bundle.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "start-storybook -c .storybook watch-css -s ./src",
+    "dev": "start-storybook -c .storybook -s ./src",
     "build": "webpack -- mode production",
     "build-storybook": "build-storybook -s public"
   },
@@ -29,7 +32,9 @@
   },
   "homepage": "https://github.com/roope-kar/rkar-react-components#readme",
   "dependencies": {
-    "react": "^16.13.1"
+    "@types/styled-components": "^5.1.3",
+    "react": "^16.13.1",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

@@ -1,9 +1,9 @@
-import React from 'react';
-import { makeClassName } from 'src/utils';
-import type { LinkProps } from 'src/components/Link/Link';
+import styled from 'styled-components';
+import type { LinkProps } from 'src/components/Link/Link.d';
 
-const Link: React.FunctionComponent<LinkProps> = ({ className, children }) => (
-    <a className={makeClassName(['rkar-Link', className])}>{children}</a>
-);
+const Link = styled.a<LinkProps>`
+    font-family: "Roboto";
+    color: blue;
+`;
 
 export default Link;

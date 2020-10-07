@@ -1,4 +1,5 @@
-import { makeClassName, StringOrUndefined } from 'src/utils';
+import { makeClassName } from 'src/utils';
+import { StringOrUndefined } from 'src/types';
 
 describe('Utility Functions', () => {
 

@@ -1,10 +1,9 @@
-import React from 'react';
-import { makeClassName } from 'src/utils';
-import type { TextProps } from 'src/components/Text/Text';
-import 'src/components/Text/Text.scss';
+import styled from 'styled-components';
+import type { TextProps } from 'src/components/Text/Text.d';
 
-const Text: React.FunctionComponent<TextProps> = ({ className, children, size = 'small' }) => (
-    <span className={makeClassName(['rkar-Text', `rkar-Text-size--${size}`, className])}>{children}</span>
-);
+const Text = styled.span<TextProps>`
+    font-family: "Roboto";
+    color: red;
+`;
 
 export default Text;

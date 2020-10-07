@@ -1,4 +1,4 @@
-type ShirtSize = 'small' | 'medium' | 'large';
+import { ShirtSize } from "src/types";
 
 export type TextProps = {
     className?: string;

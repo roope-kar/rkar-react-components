@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'src/components';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('Text', () => {
 
@@ -12,9 +12,7 @@ describe('Text', () => {
             <Text>My Text</Text>
         ).container;
 
-        const buttonElement = container.querySelector('.rkar-Text') as HTMLElement;
-
-        expect(buttonElement.textContent).toStrictEqual('My Text');
+        expect(getByText(container, 'My Text').textContent).toStrictEqual('My Text');
 
     });
 
