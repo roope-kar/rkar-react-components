@@ -1,6 +1,3 @@
-import { ReactElement } from "react";
-
-export type LinkProps = {
+export type LinkProps = React.PropsWithChildren<{
     className?: string;
-    children: React.ReactNode | React.ReactNodeArray;
-}
+}>;

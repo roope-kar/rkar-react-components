@@ -1,7 +1,6 @@
 import { ShirtSize } from "src/types";
 
-export type ButtonProps = {
+export type ButtonProps = React.PropsWithChildren<{
     className?: string;
-    children: React.ReactNode;
-    size?: ShirtSize;
-}
+    size?: ShirtSize; 
+}>;

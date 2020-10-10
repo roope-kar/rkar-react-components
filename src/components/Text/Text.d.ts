@@ -1,7 +1,6 @@
 import { ShirtSize } from "src/types";
 
-export type TextProps = {
+export type TextProps = React.PropsWithChildren<{
     className?: string;
-    children: React.ReactNode;
     size?: ShirtSize;
-};
+}>;

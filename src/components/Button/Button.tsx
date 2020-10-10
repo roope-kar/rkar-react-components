@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten, darken } from 'polished';
 import { ShirtSize } from 'src/types';
 import { ButtonProps } from 'src/components/Button/Button.d';
 
@@ -43,16 +44,16 @@ const Button = styled.button<ButtonProps>`
     }
 
     &:hover {
-        // background: Lighten 2%
+        background: ${lighten(0.02, 'darkslategrey')}
     }
 
     &:active {
-        // background: Darken 5% 
+        background: ${darken(0.05, 'darkslategrey')}
     }
 
     &:focus {
         outline: 0;
-        // border: 2px solid Lighten 20%;
+        border: 2px solid ${lighten(0.2, 'darkslategray')}
     }
 `;
 
