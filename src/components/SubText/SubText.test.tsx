@@ -1,19 +1,13 @@
 import React from 'react';
 import { SubText } from 'src/components';
-import { render, cleanup, getByText } from '@testing-library/react';
+import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('SubText', () => {
+  afterEach(cleanup);
 
-    afterEach(cleanup);
-    
-    it('renders', () => {
+  it('renders', () => {
+    const container: HTMLElement = render(<SubText>My SubText</SubText>).container;
 
-        const container: HTMLElement = render(
-            <SubText>My SubText</SubText>
-        ).container;
-
-        expect(getByText(container, 'My SubText').textContent).toStrictEqual('My SubText');
-
-    });
-
+    expect(getByText(container, 'My SubText').textContent).toStrictEqual('My SubText');
+  });
 });

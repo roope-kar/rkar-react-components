@@ -1,19 +1,13 @@
 import React from 'react';
 import { Button } from 'src/components';
-import { render, cleanup, getByText } from '@testing-library/react';
+import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('Button', () => {
+  afterEach(cleanup);
 
-    afterEach(cleanup);
-    
-    it('renders', () => {
+  it('renders', () => {
+    const container: HTMLElement = render(<Button size={'medium'}>Primary</Button>).container;
 
-        const container: HTMLElement = render(
-            <Button size={'medium'}>Primary</Button>
-        ).container;
-
-        expect(getByText(container, 'Primary').textContent).toStrictEqual('Primary');
-
-    });
-
+    expect(getByText(container, 'Primary').textContent).toStrictEqual('Primary');
+  });
 });

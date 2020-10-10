@@ -1,20 +1,13 @@
-
 import React from 'react';
 import { Heading } from 'src/components';
-import { render, cleanup, getByText } from '@testing-library/react';
+import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('Heading', () => {
+  afterEach(cleanup);
 
-    afterEach(cleanup);
-    
-    it('renders', () => {
+  it('renders', () => {
+    const container: HTMLElement = render(<Heading size={'medium'}>Heading</Heading>).container;
 
-        const container: HTMLElement = render(
-            <Heading size={'medium'}>Heading</Heading>
-        ).container;
-
-        expect(getByText(container, 'Heading').textContent).toStrictEqual('Heading');
-
-    });
-
+    expect(getByText(container, 'Heading').textContent).toStrictEqual('Heading');
+  });
 });

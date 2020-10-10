@@ -1,32 +1,26 @@
-import { makeClassName } from 'src/utils';
+import { makeClassName } from 'src/utils';
 import { StringOrUndefined } from 'src/types';
 
 describe('Utility Functions', () => {
+  test('returns empty string if classNames is empty', () => {
+    // Setup
+    const classNames: Array<StringOrUndefined> = [];
 
-    test('returns empty string if classNames is empty', () => {
+    // Test
+    const className: string = makeClassName(classNames);
 
-        // Setup
-        const classNames: Array<StringOrUndefined> = [];
+    // Assert
+    expect(className).toStrictEqual('');
+  });
 
-        // Test
-        const className: string = makeClassName(classNames);
+  test('creates className string from array of classNames joined by a space character', () => {
+    // Setup
+    const classNames: Array<StringOrUndefined> = ['a', 'b', 'c'];
 
-        // Assert
-        expect(className).toStrictEqual('');
+    // Test
+    const className: string = makeClassName(classNames);
 
-    });
-    
-    test('creates className string from array of classNames joined by a space character', () => {
-
-        // Setup
-        const classNames: Array<StringOrUndefined> = ['a', 'b', 'c'];
-
-        // Test
-        const className: string = makeClassName(classNames);
-
-        // Assert
-        expect(className).toStrictEqual('a b c');
-
-    });
-    
+    // Assert
+    expect(className).toStrictEqual('a b c');
+  });
 });

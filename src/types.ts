@@ -1,15 +1,15 @@
-import 'styled-components'
+import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    borderRadius: string
+    borderRadius: string;
     colors: {
-      main: string
-      secondary: string
-    }
+      main: string;
+      secondary: string;
+    };
   }
 }
 
-export type StringOrUndefined = string | undefined;
-export type ShirtSize = 'small' | 'medium' | 'large';
-export type Kind = 'success' | 'warning' | 'danger' | 'info' | 'default';
+export type StringOrUndefined = string | undefined;
+export type ShirtSize = 'small' | 'medium' | 'large';
+export type Kind = 'success' | 'warning' | 'danger' | 'info' | 'default';

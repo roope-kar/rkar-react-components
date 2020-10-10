@@ -1,1 +1,1 @@
-export { default as SubText } from 'src/components/SubText/SubText';
+export { default as SubText } from 'src/components/SubText/SubText';

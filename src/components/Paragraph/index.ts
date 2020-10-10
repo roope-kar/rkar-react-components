@@ -1,1 +1,1 @@
-export { default as Paragraph } from 'src/components/Paragraph/Paragraph';
+export { default as Paragraph } from 'src/components/Paragraph/Paragraph';
