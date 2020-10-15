@@ -27,6 +27,7 @@ module.exports = {
     // Map with webpack aliases
     moduleNameMapper: {
       "\\.scss$": "<rootDir>/__mocks__/styleMock.js",
-      "^src(.*)$": "<rootDir>/src$1"
+      "^src(.*)$": "<rootDir>/src$1",
+      "^components(.*)$": "<rootDir>/src/components$1"
     }
   };

@@ -1,6 +1,7 @@
-import { ShirtSize } from "src/types";
+import { ShirtSize, Intent } from "src/types";
 
 export type ButtonProps = React.PropsWithChildren<{
     className?: string;
-    size?: ShirtSize; 
+    size: ShirtSize; 
+    intent: Intent;
 }>;

@@ -5,15 +5,6 @@ import { Text } from 'src/components';
 export default {
   title: 'Text',
   component: Text,
-  parameters: {
-    backgrounds: {
-      values: [
-        { name: 'red', value: '#f00' },
-        { name: 'green', value: '#0f0' },
-        { name: 'blue', value: '#00f' },
-      ],
-    },
-  },
 } as Meta;
 
 export const SmallText: React.FunctionComponent = () => <Text size={'small'}>Small text</Text>;

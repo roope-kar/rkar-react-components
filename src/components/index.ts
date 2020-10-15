@@ -4,3 +4,4 @@ export { Link } from 'src/components/Link';
 export { SubText } from 'src/components/SubText';
 export { Heading } from 'src/components/Heading';
 export { Paragraph } from 'src/components/Paragraph';
+export { Menu, MenuGroup, MenuItem } from 'src/components/Menu';

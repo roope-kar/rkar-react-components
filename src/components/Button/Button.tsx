@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { ShirtSize } from 'src/types';
-import { ButtonProps } from 'src/components/Button/Button.d';
+import type { ButtonProps } from 'src/components/Button/Button.d';
 
 const size = (size?: ShirtSize): string => {
   if (size === 'small') {
@@ -32,7 +32,7 @@ const Button = styled.button<ButtonProps>`
   border-radius: 3px;
   cursor: pointer;
   text-align: center;
-  background: darkslategrey;
+  background: ${(props) => props.theme.color[props.intent]};
   color: white;
   font-weight: normal;
 
@@ -44,17 +44,21 @@ const Button = styled.button<ButtonProps>`
   }
 
   &:hover {
-    background: ${lighten(0.02, 'darkslategrey')};
+    background: ${(props) => lighten(0.02, props.theme.color[props.intent])};
   }
 
   &:active {
-    background: ${darken(0.05, 'darkslategrey')};
+    background: ${(props) => darken(0.05, props.theme.color[props.intent])};
   }
 
   &:focus {
     outline: 0;
-    border: 2px solid ${lighten(0.2, 'darkslategray')};
+    border: 2px solid ${(props) => lighten(0.2, props.theme.color[props.intent])};
   }
 `;
+
+Button.defaultProps = {
+  intent: 'none',
+};
 
 export default Button;
