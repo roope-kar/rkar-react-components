@@ -5,7 +5,10 @@ import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 describe('Button', () => {
   const theme: DefaultTheme = {
-    fontFamily: 'Roboto',
+    font: {
+      primary: 'Roboto',
+      secondary: 'Open Sans'
+    },
     color: {
       success: '#38C76E',
       warning: '#CBAF34',
@@ -17,7 +20,7 @@ describe('Button', () => {
 
   afterEach(cleanup);
 
-  it('renders', () => {
+  test('renders', () => {
     const container: HTMLElement = render(
       <ThemeProvider theme={theme}>
         <Button size={'medium'} intent={'none'}>
@@ -28,4 +31,17 @@ describe('Button', () => {
 
     expect(getByText(container, 'Default').textContent).toStrictEqual('Default');
   });
+
+  test('should work without ThemeProvider', () => {
+
+  });
+
+  test('should read font from ThemeProvider', () => {
+
+  });
+
+  test('should read colors from ThemeProvider', () => {
+
+  });
+
 });

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { ShirtSize } from 'src/types';
 import type { ButtonProps } from 'src/components/Button/Button.d';
+import theme from 'src/theme';
 
 const size = (size?: ShirtSize): string => {
   if (size === 'small') {
@@ -59,6 +60,7 @@ const Button = styled.button<ButtonProps>`
 
 Button.defaultProps = {
   intent: 'none',
+  theme,
 };
 
 export default Button;

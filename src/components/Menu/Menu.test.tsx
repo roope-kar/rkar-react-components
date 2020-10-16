@@ -36,4 +36,14 @@ describe('Menu', () => {
     expect(getByText(container, '1.1').textContent).toStrictEqual('1.1');
     expect(getByText(container, '1.2').textContent).toStrictEqual('1.2');
   });
+
+
+  test('should work without ThemeProvider', () => {
+
+  });
+
+  test('should read font from theme', () => {
+
+  });
+
 });

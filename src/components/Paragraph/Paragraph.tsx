@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { ShirtSize } from 'src/types';
 import type { ParagraphProps } from 'src/components/Paragraph/Paragraph.d';
+import theme from 'src/theme';
 
-const size = (size?: ShirtSize) => {
+const getSizeStyles = (size?: ShirtSize) => {
   if (size === 'large') {
     return `
             font-size: 16px;
@@ -22,10 +23,14 @@ const size = (size?: ShirtSize) => {
 };
 
 const Paragraph = styled.p<ParagraphProps>`
-  font-family: 'Open Sans';
+  font-family: ${(props) => props.theme.font.secondary};
 
   // Size
-  ${(props) => size(props.size)}
+  ${(props) => getSizeStyles(props.size)}
 `;
+
+Paragraph.defaultProps = {
+  theme,
+};
 
 export default Paragraph;

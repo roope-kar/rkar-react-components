@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import type { HeadingProps } from 'src/components/Heading/Heading.d';
 import { ShirtSize } from 'src/types';
+import theme from 'src/theme';
 
-const size = (size?: ShirtSize) => {
+const getSizeStyles = (size?: ShirtSize) => {
   if (size === 'large') {
     return `
         font-size: 45px;
@@ -22,11 +23,15 @@ const size = (size?: ShirtSize) => {
 };
 
 const Heading = styled.h1<HeadingProps>`
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
 
   // Size
-  ${(props) => size(props.size)}
+  ${(props) => getSizeStyles(props.size)}
 `;
+
+Heading.defaultProps = {
+  theme,
+};
 
 export default Heading;
