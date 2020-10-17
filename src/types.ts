@@ -16,6 +16,10 @@ declare module 'styled-components' {
   }
 }
 
+export interface GroupComponent<T> extends React.FunctionComponent<T> {
+  [name: string]: any;
+}
+
 export type StringOrUndefined = string | undefined;
 export type ShirtSize = 'small' | 'medium' | 'large';
 export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'none';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, MenuGroup, MenuItem } from 'src/components';
+import { Menu } from 'src/components';
 import { render, cleanup, getByText } from '@testing-library/react';
 
 describe('Menu', () => {
@@ -8,9 +8,9 @@ describe('Menu', () => {
   test('renders', () => {
     const container: HTMLElement = render(
       <Menu>
-        <MenuItem>1</MenuItem>
-        <MenuItem>2</MenuItem>
-        <MenuItem>3</MenuItem>
+        <Menu.Item>1</Menu.Item>
+        <Menu.Item>2</Menu.Item>
+        <Menu.Item>3</Menu.Item>
       </Menu>,
     ).container;
 
@@ -22,12 +22,12 @@ describe('Menu', () => {
   test('group items under a title', () => {
     const container: HTMLElement = render(
       <Menu>
-        <MenuItem>1</MenuItem>
-        <MenuItem>2</MenuItem>
-        <MenuGroup title={'Admin'}>
-          <MenuItem>1.1</MenuItem>
-          <MenuItem>1.2</MenuItem>
-        </MenuGroup>
+        <Menu.Item>1</Menu.Item>
+        <Menu.Item>2</Menu.Item>
+        <Menu.Group title={'Admin'}>
+          <Menu.Item>1.1</Menu.Item>
+          <Menu.Item>1.2</Menu.Item>
+        </Menu.Group>
       </Menu>,
     ).container;
 
@@ -37,13 +37,7 @@ describe('Menu', () => {
     expect(getByText(container, '1.2').textContent).toStrictEqual('1.2');
   });
 
+  test('should work without ThemeProvider', () => {});
 
-  test('should work without ThemeProvider', () => {
-
-  });
-
-  test('should read font from theme', () => {
-
-  });
-
+  test('should read font from theme', () => {});
 });

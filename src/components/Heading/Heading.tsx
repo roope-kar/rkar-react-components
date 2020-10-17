@@ -25,8 +25,6 @@ const getSizeStyles = (size?: ShirtSize) => {
 const Heading = styled.h1<HeadingProps>`
   font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
-
-  // Size
   ${(props) => getSizeStyles(props.size)}
 `;
 

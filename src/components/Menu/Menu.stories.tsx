@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { Menu, MenuGroup, MenuItem } from 'src/components/Menu';
+import { Menu } from 'src/components/Menu';
 
 export default {
   title: 'Menu',
@@ -9,34 +9,34 @@ export default {
 
 export const SimpleMenu: React.FunctionComponent = () => (
   <Menu>
-    <MenuItem>1</MenuItem>
-    <MenuItem>2</MenuItem>
-    <MenuItem>3</MenuItem>
+    <Menu.Item>1</Menu.Item>
+    <Menu.Item>2</Menu.Item>
+    <Menu.Item>3</Menu.Item>
   </Menu>
 );
 
 export const GroupedMenu: React.FunctionComponent = () => (
   <Menu>
-    <MenuItem>1</MenuItem>
-    <MenuItem>2</MenuItem>
-    <MenuGroup title={'Admin'}>
-      <MenuItem>2.1</MenuItem>
-      <MenuItem>2.2</MenuItem>
-      <MenuItem>2.3</MenuItem>
-    </MenuGroup>
+    <Menu.Item>1</Menu.Item>
+    <Menu.Item>2</Menu.Item>
+    <Menu.Group title={'Admin'}>
+      <Menu.Item>2.1</Menu.Item>
+      <Menu.Item>2.2</Menu.Item>
+      <Menu.Item>2.3</Menu.Item>
+    </Menu.Group>
   </Menu>
 );
 
 export const GroupedMenuWithMoreItems: React.FunctionComponent = () => (
   <Menu>
-    <MenuItem>1</MenuItem>
-    <MenuItem>2</MenuItem>
-    <MenuGroup title={'Admin'}>
-      <MenuItem>2.1</MenuItem>
-      <MenuItem>2.2</MenuItem>
-      <MenuItem>2.3</MenuItem>
-    </MenuGroup>
-    <MenuItem>3</MenuItem>
-    <MenuItem>4</MenuItem>
+    <Menu.Item>1</Menu.Item>
+    <Menu.Item>2</Menu.Item>
+    <Menu.Group title={'Admin'}>
+      <Menu.Item>2.1</Menu.Item>
+      <Menu.Item>2.2</Menu.Item>
+      <Menu.Item>2.3</Menu.Item>
+    </Menu.Group>
+    <Menu.Item>3</Menu.Item>
+    <Menu.Item>4</Menu.Item>
   </Menu>
 );

@@ -7,7 +7,7 @@ describe('Button', () => {
   const theme: DefaultTheme = {
     font: {
       primary: 'Roboto',
-      secondary: 'Open Sans'
+      secondary: 'Open Sans',
     },
     color: {
       success: '#38C76E',
@@ -32,16 +32,9 @@ describe('Button', () => {
     expect(getByText(container, 'Default').textContent).toStrictEqual('Default');
   });
 
-  test('should work without ThemeProvider', () => {
+  test('should work without ThemeProvider', () => {});
 
-  });
+  test('should read font from ThemeProvider', () => {});
 
-  test('should read font from ThemeProvider', () => {
-
-  });
-
-  test('should read colors from ThemeProvider', () => {
-
-  });
-
+  test('should read colors from ThemeProvider', () => {});
 });

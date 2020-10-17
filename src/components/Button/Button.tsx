@@ -36,8 +36,6 @@ const Button = styled.button<ButtonProps>`
   background: ${(props) => props.theme.color[props.intent]};
   color: white;
   font-weight: normal;
-
-  // Size
   ${(props) => size(props.size)}
 
   &::selection {

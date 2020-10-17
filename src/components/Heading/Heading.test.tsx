@@ -11,12 +11,7 @@ describe('Heading', () => {
     expect(getByText(container, 'Heading').textContent).toStrictEqual('Heading');
   });
 
-  test('should work without ThemeProvider', () => {
+  test('should work without ThemeProvider', () => {});
 
-  });
-
-  test('should read font from ThemeProvider', () => {
-
-  });
-
+  test('should read font from ThemeProvider', () => {});
 });

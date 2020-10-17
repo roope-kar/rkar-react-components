@@ -10,16 +10,9 @@ describe('Link', () => {
     expect(getByText(container, 'My Link').textContent).toStrictEqual('My Link');
   });
 
-  test('should work without ThemeProvider', () => {
+  test('should work without ThemeProvider', () => {});
 
-  });
+  test('should read font from ThemeProvider', () => {});
 
-  test('should read font from ThemeProvider', () => {
-
-  });
-
-  test('should read color from ThemeProvider', () => {
-
-  });
-
+  test('should read color from ThemeProvider', () => {});
 });
