@@ -31,7 +31,7 @@ describe('SelectSearch', () => {
 
     const inputElement = container.querySelector('input[type="text"]') as HTMLInputElement;
 
-    fireEvent.change(inputElement, { target: { value: 'test'} });
+    fireEvent.change(inputElement, { target: { value: 'test' } });
 
     expect(onSearch).toBeCalledWith('test');
   });

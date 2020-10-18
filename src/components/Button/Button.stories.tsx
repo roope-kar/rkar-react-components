@@ -9,19 +9,19 @@ export default {
 } as Meta;
 
 export const SmallButton: React.FunctionComponent = () => (
-  <Button size={'small'} intent={'none'}>
+  <Button size={'small'} intent={'primary'} onClick={() => null}>
     Small Button
   </Button>
 );
 
 export const MediumButton: React.FunctionComponent = () => (
-  <Button size={'medium'} intent={'none'}>
+  <Button size={'medium'} intent={'primary'} onClick={() => null}>
     Medium Button
   </Button>
 );
 
 export const LargeButton: React.FunctionComponent = () => (
-  <Button size={'large'} intent={'none'}>
+  <Button size={'large'} intent={'primary'} onClick={() => null}>
     Large Button
   </Button>
 );

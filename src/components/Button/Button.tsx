@@ -26,7 +26,10 @@ const size = (size?: ShirtSize): string => {
   }
 };
 
-const Button = styled.button<ButtonProps>`
+const Button = styled.button.attrs({
+  'aria-label': 'Button',
+  role: 'button',
+})<ButtonProps>`
   font-family: 'Roboto';
   border: 2px solid transparent;
   box-sizing: border-box;
@@ -57,7 +60,7 @@ const Button = styled.button<ButtonProps>`
 `;
 
 Button.defaultProps = {
-  intent: 'none',
+  intent: 'primary',
   theme,
 };
 
