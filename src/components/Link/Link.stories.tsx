@@ -7,6 +7,6 @@ export default {
   component: Link,
 } as Meta;
 
-export const DefaultLink: React.FunctionComponent = () => <Link>Default</Link>;
+export const DefaultLink: React.FunctionComponent = () => <Link href={''}>Default</Link>;
 
-export const AnotherLink: React.FunctionComponent = () => <Link>Another</Link>;
+export const AnotherLink: React.FunctionComponent = () => <Link href={''}>Another</Link>;

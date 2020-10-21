@@ -4,7 +4,7 @@ import theme from 'src/theme';
 
 const Link = styled.a.attrs({ role: 'link' })<LinkProps>`
   font-family: ${(props) => props.theme.font.primary};
-  color: ${(props) => props.theme.color.none};
+  color: ${(props) => props.theme.color.info};
 `;
 
 Link.defaultProps = {
