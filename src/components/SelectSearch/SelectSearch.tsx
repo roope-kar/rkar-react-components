@@ -27,7 +27,7 @@ SearchContainer.defaultProps = {
 const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
   border: none;
   line-height: 32px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   &:focus {
     outline: none;
   }
