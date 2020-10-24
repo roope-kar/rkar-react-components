@@ -39,7 +39,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({ checked, id, name, .
   const identifier = id || name || `checkbox-${Math.round(Math.random() * 1000)})`;
   return (
     <Container role={'checkbox'} aria-checked={checked}>
-      <Input id={identifier} type={'checkbox'} checked={checked} {...rest} />
+      <Input id={identifier} name={name} type={'checkbox'} checked={checked} {...rest} />
       <Content id={identifier} htmlFor={identifier} />
     </Container>
   );

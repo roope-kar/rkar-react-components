@@ -1,32 +1,31 @@
 import React from 'react';
 
-export function useOptionListAccessibilityControls(optionListRef: React.RefObject<HTMLUListElement>) {
+const HOME: number = 36;
+const END: number = 35;
+const UP_ARROW: number = 38;
+const DOWN_ARROW: number = 40;
+
+export function useListNavigation(optionListRef: React.RefObject<HTMLUListElement>) {
   React.useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.keyCode === 36) {
-        (optionListRef.current?.firstChild as HTMLLIElement)?.focus();
-      }
-
-      if (event.keyCode === 35) {
-        (optionListRef.current?.lastChild as HTMLLIElement)?.focus();
-      }
-
-      if (event.keyCode === 40) {
-        if (optionListRef.current?.contains(document.activeElement)) {
-          (document.activeElement?.nextSibling as HTMLLIElement)?.focus();
-        }
-      }
-
-      if (event.keyCode === 38) {
-        if (optionListRef.current?.contains(document.activeElement)) {
-          (document.activeElement?.previousSibling as HTMLLIElement)?.focus();
-        }
+      switch (event.keyCode) {
+        case HOME:
+          (optionListRef.current?.firstElementChild as HTMLElement)?.focus();
+          break;
+        case END:
+          (optionListRef.current?.lastElementChild as HTMLElement)?.focus();
+          break;
+        case DOWN_ARROW:
+          (document.activeElement?.nextElementSibling as HTMLElement)?.focus();
+          break;
+        case UP_ARROW:
+          (document.activeElement?.previousElementSibling as HTMLElement)?.focus();
+          break;
       }
     };
-
-    window.document.addEventListener('keyup', handleKeyUp);
+    optionListRef.current?.addEventListener('keyup', handleKeyUp);
     return () => {
-      window.document.removeEventListener('keyup', handleKeyUp);
+      optionListRef.current?.removeEventListener('keyup', handleKeyUp);
     };
   }, []);
 }

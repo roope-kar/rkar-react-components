@@ -46,11 +46,11 @@ const Button = styled.button.attrs({
   }
 
   &:hover {
-    background: ${(props) => lighten(0.02, props.theme.color[props.intent])};
+    background: ${(props) => darken(0.03, props.theme.color[props.intent])};
   }
 
   &:active {
-    background: ${(props) => darken(0.05, props.theme.color[props.intent])};
+    background: ${(props) => darken(0.08, props.theme.color[props.intent])};
   }
 
   &:focus {

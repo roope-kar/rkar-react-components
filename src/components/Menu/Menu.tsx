@@ -3,50 +3,57 @@ import styled from 'styled-components';
 import type { MenuProps, MenuGroupProps, MenuItemProps } from 'src/components/Menu/Menu.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
+import { useListNavigation } from 'src/hooks';
 
-const StyledMenu = styled.div.attrs({
+const MenuContainer = styled.ul.attrs({
   role: 'menu',
 })<MenuProps>`
   font-family: ${(props) => props.theme.font.primary};
   border: 1px solid ${(props) => props.theme.color.none};
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 `;
 
-StyledMenu.defaultProps = {
+MenuContainer.defaultProps = {
   theme,
 };
 
 const Menu: GroupComponent<MenuProps> = (props) => {
-  return <StyledMenu {...props} />;
+  const ref = React.createRef<HTMLUListElement>();
+  useListNavigation(ref);
+  return <MenuContainer {...props} ref={ref} />;
 };
 
-const StyledMenuGroup = styled.div``;
+const GroupContainer = styled.div``;
 
-const StyledTitle = styled.div`
+const GroupTitle = styled.div`
   font-family: 'Open Sans';
   font-size: 12px;
   padding: 5px 10px;
   text-transform: uppercase;
 `;
 
-const StyledItems = styled.div.attrs({
+const GroupItems = styled.ul.attrs({
   role: 'listbox',
-})``;
+})`
+  padding: 0;
+`;
 
 Menu.Group = function MenuGroup({ title, children }: MenuGroupProps) {
   return (
-    <StyledMenuGroup>
-      <StyledTitle>{title}</StyledTitle>
-      <StyledItems>{children}</StyledItems>
-    </StyledMenuGroup>
+    <GroupContainer>
+      <GroupTitle>{title}</GroupTitle>
+      <GroupItems>{children}</GroupItems>
+    </GroupContainer>
   );
 };
 
-const StyledMenuItem = styled.button.attrs({
+const MenuItem = styled.li.attrs({
   'aria-label': 'Action',
   'aria-selected': 'false',
   role: 'menuitem',
+  tabIndex: 0,
 })<MenuItemProps>`
   display: block;
   width: 100%;
@@ -61,7 +68,7 @@ const StyledMenuItem = styled.button.attrs({
   }
 `;
 
-Menu.Item = StyledMenuItem;
+Menu.Item = MenuItem;
 
 Menu.Item.defaultProps = {
   theme,

@@ -8,3 +8,4 @@ export { Menu } from 'src/components/Menu';
 export { SelectSearch } from 'src/components/SelectSearch';
 export { TextInput } from 'src/components/TextInput';
 export { Checkbox } from 'src/components/Checkbox';
+export { RadioButton } from 'src/components/RadioButton';

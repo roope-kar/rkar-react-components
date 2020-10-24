@@ -2,7 +2,7 @@ import React from 'react';
 import { Checkbox } from 'src/components';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 
-describe('TextInput', () => {
+describe('Checkbox', () => {
   afterEach(cleanup);
 
   test('renders', () => {
