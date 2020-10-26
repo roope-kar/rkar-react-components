@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'src/components';
 import { render, cleanup, getByText, fireEvent } from '@testing-library/react';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import theme from 'src/theme';
 
 describe('Button', () => {

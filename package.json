@@ -32,9 +32,11 @@
   },
   "homepage": "https://github.com/roope-kar/rkar-react-components#readme",
   "dependencies": {
+    "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.4",
     "polished": "^4.0.2",
     "react": "^16.13.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

@@ -38,8 +38,8 @@ Input.defaultProps = {
 const RadioButton: React.FunctionComponent<RadioButtonProps> = ({ checked, id, name, ...rest }: RadioButtonProps) => {
   const identifier = id || `radiobutton-${Math.round(Math.random() * 1000)})`;
   return (
-    <Container role={'checkbox'} aria-checked={checked}>
-      <Input id={identifier} name={name} type={'checkbox'} checked={checked} {...rest} />
+    <Container role={'radio'} aria-checked={checked}>
+      <Input id={identifier} name={name} type={'radio'} checked={checked} {...rest} />
       <Content id={identifier} htmlFor={identifier} />
     </Container>
   );
