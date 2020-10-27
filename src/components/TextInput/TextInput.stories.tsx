@@ -7,7 +7,7 @@ export default {
   component: TextInput,
 } as Meta;
 
-export const DefaultTextInput: React.FunctionComponent = () => <TextInput value={'123'} />;
+export const DefaultTextInput: React.FunctionComponent = () => <TextInput value={'123'} readOnly />;
 
 export const ControlledTextInput: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');

@@ -3,7 +3,6 @@ import { Dialog } from 'src/components';
 import { render, cleanup, getByText, fireEvent } from '@testing-library/react';
 
 describe('Dialog', () => {
-
   afterEach(cleanup);
 
   test('renders', () => {
@@ -29,9 +28,10 @@ describe('Dialog', () => {
       </Dialog>,
     ).container;
 
-    fireEvent.click(getByText(container, 'x'));
+    const closeButtonElement = document.querySelector('button') as HTMLElement;
+
+    fireEvent.click(closeButtonElement);
 
     expect(onClose).toHaveBeenCalled;
   });
-
 });
