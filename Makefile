@@ -1,6 +1,7 @@
 .PHONY: test
 
 test:
+	esbuild app.js --bundle --platform=node --target=node10.4
 	npm run test
 
 dev:
@@ -10,5 +11,5 @@ clean:
 	rm -rf storybook-static
 	rm -rf node_modules
 
-build: clean
-	./node_modules/.bin/webpack -p
+build: ./node_modules/.bin/webpack
+	npm run build

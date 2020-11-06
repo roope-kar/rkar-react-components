@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/components/index.ts',
   module: {
     rules: [
       {
@@ -10,25 +10,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.tsx?$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: {
-          loader: 'prettier-loader',
-          options: {
-            resolveConfigOptions: {
-              editorConfig: true,
-              config: '.prettierrc'
-            }
-          }
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
         }
-      },
-      {
-        test: /\.tsx$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
       }
-    ],
+    ]
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -38,7 +25,7 @@ module.exports = {
     }
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
     library: 'rkar',
     libraryTarget: 'umd'
