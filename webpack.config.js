@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const pkg = require('./package.json');
 
 module.exports = {
   entry: './src/components/index.ts',
@@ -28,7 +30,8 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
     library: 'rkar',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    libraryExport: 'default'
   },
   externals: {
     react: {
@@ -38,4 +41,15 @@ module.exports = {
       root: '_',
     },
   },
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: `
+        rkar-react-components
+        @version: ${pkg.version} | ${new Date().toDateString()}
+        @author: ${pkg.author}
+        @license: ${pkg.license}
+      `,
+      entryOnly: true
+    })
+  ]
 };

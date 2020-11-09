@@ -1,8 +1,10 @@
 {
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules"],
     "compilerOptions": {
-      "outDir": "./lib/",
+      "outDir": "lib",
       "noImplicitAny": true,
-      "moduleResolution": "Node",
+      "moduleResolution": "node",
       "esModuleInterop": true,
       "module": "ES2020",
       "target": "ES2015",
@@ -11,11 +13,10 @@
       "allowSyntheticDefaultImports": true,
       "baseUrl": ".",
       "strict": true,
+      "sourceMap": true,
+      "types": ["jest", "node"],
       "paths": {
-        "src": [
-          "src/index.ts"
-        ]
+        "@src": ["src/*"]
       },
-      "types": ["jest", "node"]
     }
 }

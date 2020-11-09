@@ -10,6 +10,7 @@ dev:
 clean:
 	rm -rf storybook-static
 	rm -rf node_modules
+	rm -rf lib/*
 
 build: ./node_modules/.bin/webpack
 	npm run build
