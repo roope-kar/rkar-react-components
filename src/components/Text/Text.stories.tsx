@@ -12,3 +12,9 @@ export const SmallText: React.FunctionComponent = () => <Text size={'small'}>Sma
 export const MediumText: React.FunctionComponent = () => <Text size={'medium'}>Medium text</Text>;
 
 export const LargeText: React.FunctionComponent = () => <Text size={'large'}>Large text</Text>;
+
+export const TextWithTooltip: React.FunctionComponent = () => (
+  <Text size={'large'} title={'This is a tooltip'}>
+    I will trigger a tooltip
+  </Text>
+);

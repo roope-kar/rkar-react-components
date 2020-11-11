@@ -7,11 +7,12 @@ const Positioned: React.FunctionComponent<PositionedProps> = ({ x, y, children }
 
   React.useEffect(() => {
     document.body.appendChild(ref.current);
+    ref.current.style.position = 'absolute';
     ref.current.style.transform = `translate(${x}px, ${y}px)`;
     return () => {
       document.body.removeChild(ref.current);
     };
-  }, []);
+  }, [x, y]);
 
   return <Portal to={ref.current}>{children}</Portal>;
 };

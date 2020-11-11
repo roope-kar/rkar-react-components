@@ -10,6 +10,7 @@ const MenuContainer = styled.ul.attrs({
 })<MenuProps>`
   font-family: ${(props) => props.theme.font.primary};
   border: 1px solid ${(props) => props.theme.color.none};
+  border-radius: 4px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -50,13 +51,12 @@ Menu.Group = function MenuGroup({ title, children }: MenuGroupProps) {
 };
 
 const MenuItem = styled.li.attrs({
-  'aria-label': 'Action',
+  'aria-label': 'Menu action',
   'aria-selected': 'false',
   role: 'menuitem',
   tabIndex: 0,
 })<MenuItemProps>`
   display: block;
-  width: 100%;
   text-align: left;
   padding: 5px 10px;
   background: transparent;

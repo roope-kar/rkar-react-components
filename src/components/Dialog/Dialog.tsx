@@ -21,7 +21,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 15px 20px;
 `;
 
 const Title = styled.h4`
@@ -64,11 +64,11 @@ const Dialog: GroupComponent<DialogProps> = ({ children, title, onClose }: Dialo
 };
 
 Dialog.Body = styled.div<DialogBodyProps>`
-  padding: 6px 12px;
+  padding: 15px 20px;
 `;
 
 Dialog.Footer = styled.div<DialogFooterProps>`
-  padding: 6px 12px;
+  padding: 15px 20px;
 `;
 
 export default Dialog;

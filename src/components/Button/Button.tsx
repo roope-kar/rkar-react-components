@@ -4,7 +4,7 @@ import { ShirtSize } from 'src/types';
 import type { ButtonProps } from 'src/components/Button/Button.d';
 import theme from 'src/theme';
 
-const size = (size?: ShirtSize): string => {
+const getSize = (size?: ShirtSize): string => {
   if (size === 'small') {
     return `
             line-height: 24px;
@@ -39,7 +39,7 @@ const Button = styled.button.attrs({
   background: ${(props) => props.theme.color[props.intent]};
   color: white;
   font-weight: normal;
-  ${(props) => size(props.size)}
+  ${(props) => getSize(props.size)}
 
   &::selection {
     background: none;
