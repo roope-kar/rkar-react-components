@@ -2,15 +2,21 @@
 
 # rkar-react-components
 
-Collection of composable react components.
+Collection of low level, typed and composable react components.
+
+Exposes Tree shakeable esm collection and regular version.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+`npm install --save rkar-react-components`
 
-### Prerequisites
+In modern environments, import components from 'esm' to utilize tree shaking:
 
-The app runs in docker container(s) so all you need is `git` and `docker` installed on your machine.
+`import { Button } from 'rkar-react-components/esm'`
+
+Or if you don't care about tree shaking, you can just do:
+
+`import { Button } from 'rkar-react-components`;
 
 ## Running the tests
 
@@ -38,20 +44,17 @@ To deploy the app locally in dev environment:
 
 `make dev`
 
-To deploy the app locally in production environment:
-
-`make prod`
-
 Master branch is deployed live to a live location.
 
 ## Built With
 
 * [Typescript](https://www.typescriptlang.org/) - Used as the main language
 * [React](https://reactjs.org/) - Used to build the user interface
-* [SCSS](https://sass-lang.com/) - Used as the pre css language
-* [PostCSS](https://postcss.org/) - Used to optimize css
+* [StyledComponents](https://styled-components.com/) - To build stylized components
+* [Polished](https://polished.js.org/) - To provide the utilities of scss to styled-components
 * [Webpack](https://webpack.js.org/) - Used to bundle, shake, split and optimize js, css and other assets
 * [Storybook](https://storybook.js.org/) - Used to develop and showcase the components in a sandbox environment
+* [Jest](https://jestjs.io/) - Used to test the components
 
 ## Contributing
 
