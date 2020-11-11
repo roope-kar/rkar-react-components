@@ -10,7 +10,7 @@ The components can be viewed live in the [storybook app](https://dazzling-saha-7
 
 ## Getting Started
 
-`npm install --save rkar-react-components`
+`npm install @roope-kar/rkar-react-components@1.0.0`
 
 In modern environments, import components from 'esm' to utilize tree shaking:
 
