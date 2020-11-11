@@ -8,6 +8,4 @@ export default {
   component: DataGrid,
 } as Meta;
 
-export const SimpleDataGrid: React.FunctionComponent = () => (
-  <DataGrid></DataGrid>
-);
+export const SimpleDataGrid: React.FunctionComponent = () => <DataGrid></DataGrid>;

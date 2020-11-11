@@ -7,11 +7,8 @@ describe('DataGrid', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
-      <DataGrid></DataGrid>
-    ).container;
+    const container: HTMLElement = render(<DataGrid></DataGrid>).container;
 
     expect(container).toBeDefined;
   });
-
 });
