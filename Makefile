@@ -1,7 +1,6 @@
 .PHONY: test
 
-test:
-	esbuild app.js --bundle --platform=node --target=node10.4
+test: ./node_modules/.bin/jest
 	npm run test
 
 dev:

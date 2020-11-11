@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "dev": "start-storybook -c .storybook -s ./src",
     "build:prod": "NODE_ENV=production webpack --mode production",

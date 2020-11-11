@@ -6,7 +6,7 @@ describe('TextInput', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<TextInput value={'123'} placeholder={'test'} />).container;
+    const container: HTMLElement = render(<TextInput value={'123'} placeholder={'test'} readOnly />).container;
 
     expect(getByPlaceholderText(container, 'test').getAttribute('value')).toStrictEqual('123');
   });
