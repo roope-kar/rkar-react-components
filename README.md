@@ -6,6 +6,8 @@ Collection of low level, typed and composable react components.
 
 Exposes Tree shakeable esm collection and regular version.
 
+The components can be viewed live in the [storybook app](https://dazzling-saha-7834e0.netlify.app/)
+
 ## Getting Started
 
 `npm install --save rkar-react-components`
