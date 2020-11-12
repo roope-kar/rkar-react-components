@@ -5,6 +5,9 @@ import { Heading, Paragraph } from 'src/components';
 export default {
   title: 'Heading',
   component: Heading,
+  parameters: {
+    jest: ['Heading.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultHeader: React.FunctionComponent = () => <Heading>Default Heading</Heading>;

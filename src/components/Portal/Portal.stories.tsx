@@ -6,6 +6,9 @@ import 'src/types';
 export default {
   title: 'Portal',
   component: Portal,
+  parameters: {
+    jest: ['Portal.test.tsx'],
+  },
 } as Meta;
 
 export const SimplePortal: React.FunctionComponent = () => {

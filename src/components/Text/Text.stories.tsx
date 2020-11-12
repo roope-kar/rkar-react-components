@@ -5,6 +5,9 @@ import { Text } from 'src/components';
 export default {
   title: 'Text',
   component: Text,
+  parameters: {
+    jest: ['Text.test.tsx'],
+  },
 } as Meta;
 
 export const SmallText: React.FunctionComponent = () => <Text size={'small'}>Small text</Text>;

@@ -5,6 +5,9 @@ import { TextInput } from 'src/components/TextInput';
 export default {
   title: 'TextInput',
   component: TextInput,
+  parameters: {
+    jest: ['TextInput.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultTextInput: React.FunctionComponent = () => <TextInput value={'123'} readOnly />;

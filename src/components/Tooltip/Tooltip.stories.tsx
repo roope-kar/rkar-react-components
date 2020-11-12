@@ -5,6 +5,9 @@ import { Tooltip, Positioner, Positioned, Text } from 'src/components';
 export default {
   title: 'Tooltip',
   component: Tooltip,
+  parameters: {
+    jest: ['Tooltip.test.tsx'],
+  },
 } as Meta;
 
 export const SimpleTooltip: React.FunctionComponent = () => <Tooltip>Simple Tooltip</Tooltip>;

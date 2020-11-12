@@ -5,6 +5,9 @@ import { Checkbox } from 'src/components/Checkbox';
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  parameters: {
+    jest: ['Checkbox.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultCheckbox: React.FunctionComponent = () => <Checkbox value={'true'} checked={true} readOnly />;

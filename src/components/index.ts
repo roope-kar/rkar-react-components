@@ -16,3 +16,5 @@ export { Positioned } from 'src/components/Positioned';
 export { Tooltip } from 'src/components/Tooltip';
 export { Dialog } from 'src/components/Dialog';
 export { DataGrid } from 'src/components/DataGrid';
+export { TextArea } from 'src/components/TextArea';
+export { Code } from 'src/components/Code';

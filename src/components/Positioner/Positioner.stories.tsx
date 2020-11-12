@@ -6,6 +6,9 @@ import 'src/types';
 export default {
   title: 'Positioner',
   component: Positioner,
+  parameters: {
+    jest: ['Positioner.test.tsx'],
+  },
 } as Meta;
 
 export const PositionedDiv: React.FunctionComponent = () => (

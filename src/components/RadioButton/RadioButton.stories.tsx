@@ -5,6 +5,9 @@ import { RadioButton } from 'src/components/RadioButton';
 export default {
   title: 'RadioButton',
   component: RadioButton,
+  parameters: {
+    jest: ['RadioButton.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultRadioButton: React.FunctionComponent = () => (

@@ -6,6 +6,9 @@ import 'src/types';
 export default {
   title: 'Tabs',
   component: Tabs,
+  parameters: {
+    jest: ['Tabs.test.tsx'],
+  },
 } as Meta;
 
 export const SimpleTabs: React.FunctionComponent = () => (

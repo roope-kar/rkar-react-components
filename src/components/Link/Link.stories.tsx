@@ -5,6 +5,9 @@ import { Link } from 'src/components';
 export default {
   title: 'Link',
   component: Link,
+  parameters: {
+    jest: ['Link.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultLink: React.FunctionComponent = () => <Link href={''}>Default</Link>;

@@ -5,6 +5,9 @@ import { Menu } from 'src/components/Menu';
 export default {
   title: 'Menu',
   component: Menu,
+  parameters: {
+    jest: ['Menu.test.tsx'],
+  },
 } as Meta;
 
 export const SimpleMenu: React.FunctionComponent = () => (

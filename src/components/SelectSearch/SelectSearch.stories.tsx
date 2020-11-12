@@ -6,6 +6,9 @@ import 'src/types';
 export default {
   title: 'SelectSearch',
   component: SelectSearch,
+  parameters: {
+    jest: ['SelectSearch.test.tsx'],
+  },
 } as Meta;
 
 export const DefaultSelectSearch: React.FunctionComponent = () => (

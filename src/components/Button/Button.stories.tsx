@@ -6,6 +6,9 @@ import 'src/types';
 export default {
   title: 'Button',
   component: Button,
+  parameters: {
+    jest: ['Button.test.tsx'],
+  },
 } as Meta;
 
 export const SmallButton: React.FunctionComponent = () => (

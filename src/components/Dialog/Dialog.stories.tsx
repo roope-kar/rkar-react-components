@@ -7,6 +7,9 @@ import 'src/types';
 export default {
   title: 'Dialog',
   component: Dialog,
+  parameters: {
+    jest: ['Dialog.test.tsx'],
+  },
 } as Meta;
 
 export const SimpleDialog: React.FunctionComponent = () => (

@@ -17,12 +17,13 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:output": "jest --json --outputFile=.test-results.json || true",
     "test:watch": "jest --watch",
     "dev": "start-storybook -c .storybook -s ./src",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build:esm": "ttsc -p tsconfig.esm.json",
     "build": "rm -rf lib/* && npm run build:prod && npm run build:esm",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "npm run test:output && build-storybook -s public"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
+    "@storybook/addon-jest": "^6.0.28",
     "@storybook/react": "^6.0.24",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
