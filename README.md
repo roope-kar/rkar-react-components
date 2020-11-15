@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/940aae8e-025e-461d-85ff-94b2fbcd26f1/deploy-status)](https://app.netlify.com/sites/dazzling-saha-7834e0/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/940aae8e-025e-461d-85ff-94b2fbcd26f1/deploy-status)](https://app.netlify.com/sites/dazzling-saha-7834e0/deploys)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)]https://img.shields.io/github/languages/top/roope-kar/rkar-react-components
 
 # rkar-react-components
 

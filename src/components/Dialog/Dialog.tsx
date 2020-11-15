@@ -22,16 +22,23 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.9);
 `;
 
 const Title = styled.h4`
-  font-family: Roboto;
+  font-size: 18px;
+  font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
   margin: 0px;
 `;
 
+Title.defaultProps = {
+  theme,
+};
+
 const Close = styled.button`
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.font.primary}
   padding: 0;
   width: 32px;
   height: 32px;
@@ -40,8 +47,8 @@ const Close = styled.button`
   font-size: 20px;
   background: transparent;
   &:focus {
-    outline: ${(props) => props.theme.color['grey-1']};
-    background: ${(props) => props.theme.color['grey-1']};
+    outline: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.1);
   }
 `;
 
@@ -65,6 +72,7 @@ const Dialog: GroupComponent<DialogProps> = ({ children, title, onClose }: Dialo
 
 Dialog.Body = styled.div<DialogBodyProps>`
   padding: 15px 20px;
+  padding-top: 25px;
 `;
 
 Dialog.Footer = styled.div<DialogFooterProps>`

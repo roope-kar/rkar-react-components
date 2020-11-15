@@ -17,7 +17,9 @@ export const HeaderAndParagraph: React.FunctionComponent = () => (
     <Heading>Default Heading</Heading>
     <Paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit accumsan massa, ac finibus ligula
-      tincidunt ut. Curabitur turpis enim, lacinia et tortor non, finibus suscipit magna
+      tincidunt ut. Curabitur turpis enim, lacinia et tortor non, finibus suscipit magna. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Phasellus hendrerit accumsan massa, ac finibus ligula tincidunt ut. Curabitur turpis
+      enim, lacinia et tortor non, finibus suscipit magna.
     </Paragraph>
   </div>
 );

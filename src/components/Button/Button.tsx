@@ -34,10 +34,11 @@ const Button = styled.button.attrs({
   border: 2px solid transparent;
   box-sizing: border-box;
   border-radius: 3px;
+  white-space: nowrap;
   cursor: pointer;
   text-align: center;
   background: ${(props) => props.theme.color[props.intent]};
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: normal;
   ${(props) => getSize(props.size)}
 
@@ -55,7 +56,7 @@ const Button = styled.button.attrs({
 
   &:focus {
     outline: 0;
-    border: 2px solid ${(props) => lighten(0.2, props.theme.color[props.intent])};
+    border: 2px solid ${(props) => lighten(0.1, props.theme.color[props.intent])};
   }
 `;
 
