@@ -10,7 +10,7 @@ describe('Button', () => {
   test('renders', () => {
     const container: HTMLElement = render(
       <ThemeProvider theme={theme}>
-        <Button size={'medium'} intent={'none'} onClick={() => null}>
+        <Button size={'medium'} appearance={'primary'} intent={'none'} onClick={() => null}>
           Default
         </Button>
       </ThemeProvider>,
@@ -23,7 +23,7 @@ describe('Button', () => {
     const onClick = jest.fn();
 
     const container: HTMLElement = render(
-      <Button size={'medium'} intent={'none'} onClick={() => null}>
+      <Button size={'medium'} appearance={'primary'} intent={'none'} onClick={() => null}>
         Default
       </Button>,
     ).container;

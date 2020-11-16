@@ -20,7 +20,7 @@ const Title = styled.li`
   font-family: ${(props) => props.theme.font.primary};
   padding: 6px 12px;
   min-width: 75px;
-  border: 1px solid ${(props) => props.theme.color['grey-1']};
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 0px;
   border-right: 0px;
 `;

@@ -13,25 +13,19 @@ export default {
 
 const AllButtons: Story<{ size: ShirtSize }> = ({ size }: { size: ShirtSize }) => (
   <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
-    <Button size={size} intent={'primary'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'none'} onClick={() => null}>
       Small Button
     </Button>
-    <Button size={size} intent={'secondary'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'info'} onClick={() => null}>
       Small Button
     </Button>
-    <Button size={size} intent={'none'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'success'} onClick={() => null}>
       Small Button
     </Button>
-    <Button size={size} intent={'info'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'danger'} onClick={() => null}>
       Small Button
     </Button>
-    <Button size={size} intent={'success'} onClick={() => null}>
-      Small Button
-    </Button>
-    <Button size={size} intent={'danger'} onClick={() => null}>
-      Small Button
-    </Button>
-    <Button size={size} intent={'warning'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'warning'} onClick={() => null}>
       Small Button
     </Button>
   </div>
@@ -45,7 +39,7 @@ AllButtonsTest.args = {
 
 export const ButtonForSmallContext: React.FunctionComponent = () => (
   <div>
-    <Button size={'small'} intent={'primary'} onClick={() => null}>
+    <Button size={'small'} appearance={'primary'} intent={'none'} onClick={() => null}>
       +
     </Button>
   </div>
@@ -57,7 +51,7 @@ export const ButtonForMediumContext: React.FunctionComponent = () => (
       <Text size={'medium'}>Are you sure you want to delete this resource?</Text>
     </Dialog.Body>
     <Dialog.Footer>
-      <Button size={'medium'} intent={'danger'} onClick={() => null}>
+      <Button size={'medium'} appearance={'primary'} intent={'danger'} onClick={() => null}>
         Delete
       </Button>
     </Dialog.Footer>
@@ -73,7 +67,7 @@ export const ButtonForLargeContext: React.FunctionComponent = () => (
       consectetur adipiscing elit. Phasellus hendrerit accumsan massa, ac finibus ligula tincidunt ut. Curabitur turpis
       enim, lacinia et tortor non, finibus suscipit magna.
     </Paragraph>
-    <Button size={'large'} intent={'info'} onClick={() => null}>
+    <Button size={'large'} appearance={'primary'} intent={'info'} onClick={() => null}>
       Learn more
     </Button>
   </div>

@@ -1,5 +1,19 @@
 import 'styled-components';
 
+export interface DefaultTheme {
+  font: {
+    primary: string;
+    secondary: string;
+  };
+  color: {
+    success: string;
+    warning: string;
+    danger: string;
+    info: string;
+    none: string;
+  };
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     font: {
@@ -12,12 +26,6 @@ declare module 'styled-components' {
       danger: string;
       info: string;
       none: string;
-      primary: string;
-      secondary: string;
-      'grey-1': string;
-      'grey-2': string;
-      'grey-3': string;
-      'grey-5': string;
     };
   }
 }
@@ -28,4 +36,5 @@ export interface GroupComponent<T> extends React.FunctionComponent<T> {
 
 export type StringOrUndefined = string | undefined;
 export type ShirtSize = 'small' | 'medium' | 'large';
-export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'none' | 'primary' | 'secondary';
+export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'none';
+export type Appearance = 'primary' | 'secondary';

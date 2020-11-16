@@ -9,7 +9,7 @@ const Backdrop = styled.div``;
 const Container = styled.div.attrs({
   role: 'dialog',
 })`
-  border: 1px solid ${(props) => props.theme.color['grey-1']};
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { Badge } from 'src/components/Badge';
+import { Intent } from 'src/types';
 
 export default {
   title: 'Badge',
@@ -10,4 +11,18 @@ export default {
   },
 } as Meta;
 
-export const SimpleBadge: React.FunctionComponent = () => <Badge>Simple Badge</Badge>;
+const AllButtons: Story<{ intent: Intent }> = ({ intent }: { intent: Intent }) => (
+  <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
+    <Badge intent={intent}>Small Badge</Badge>
+    <Badge intent={intent}>Small Badge</Badge>
+    <Badge intent={intent}>Small Badge</Badge>
+    <Badge intent={intent}>Small Badge</Badge>
+    <Badge intent={intent}>Small Badge</Badge>
+  </div>
+);
+
+export const AllButtonsTest = AllButtons.bind({});
+
+AllButtonsTest.args = {
+  intent: 'none',
+};
