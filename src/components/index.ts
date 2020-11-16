@@ -18,3 +18,4 @@ export { Dialog } from 'src/components/Dialog';
 export { DataGrid } from 'src/components/DataGrid';
 export { TextArea } from 'src/components/TextArea';
 export { Code } from 'src/components/Code';
+export { Badge } from 'src/components/Badge';
