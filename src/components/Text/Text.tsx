@@ -31,6 +31,7 @@ const getTooltip = (title: string): string => {
 };
 
 const Text = styled.span<TextProps>`
+  color: rgba(255, 255, 255, 0.9);
   font-family: ${(props) => props.theme.font.primary};
   ${(props) => getSize(props.size)}
   ${(props) => (props.title ? getTooltip(props.title) : '')}

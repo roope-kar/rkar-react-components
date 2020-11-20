@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import type { TabsProps, TabProps } from 'src/components/Tabs/Tabs.d';
+import type { TabsProps, TabProps, TitleProps } from 'src/components/Tabs/Tabs.d';
 import { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
-const Container = styled.div``;
+const Container = styled.div`
+  color: rgba(255, 255, 255, 0.9);
+`;
 
 const Titles = styled.ul.attrs({
   role: 'navigation',
@@ -16,20 +18,19 @@ const Titles = styled.ul.attrs({
   flex-flow: nowrap row;
 `;
 
-const Title = styled.li`
+const Title = styled.li<TitleProps>`
+  cursor: pointer;
   font-family: ${(props) => props.theme.font.primary};
   padding: 6px 12px;
   min-width: 75px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 0px;
-  border-right: 0px;
 `;
 
 Title.defaultProps = {
   theme,
+  isActive: false,
 };
 
-const Tab = styled.div`
+const Tab = styled.div<TabProps>`
   font-family: ${(props) => props.theme.font.primary};
   padding: 6px 12px;
 `;
@@ -44,7 +45,12 @@ const Tabs: GroupComponent<TabsProps> = ({ children, className = '', activeTab, 
     <Container className={className}>
       <Titles>
         {React.Children.map(children, (tabNode) => (
-          <Title onClick={() => onSetActiveTab(tabNode.props.title)}>{tabNode?.props.title}</Title>
+          <Title
+            onClick={() => onSetActiveTab(tabNode.props.title)}
+            isActive={activeTabNode?.props.title === activeTab}
+          >
+            {tabNode?.props.title}
+          </Title>
         ))}
       </Titles>
       {activeTabNode}
@@ -52,8 +58,6 @@ const Tabs: GroupComponent<TabsProps> = ({ children, className = '', activeTab, 
   );
 };
 
-Tabs.Tab = function TabsTab(props: TabProps) {
-  return <Tab {...props} />;
-};
+Tabs.Tab = Tab;
 
 export default Tabs;

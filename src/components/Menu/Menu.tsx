@@ -8,9 +8,8 @@ import { useListNavigation } from 'src/hooks';
 const MenuContainer = styled.ul.attrs({
   role: 'menu',
 })<MenuProps>`
+  color: rgba(255, 255, 255, 0.9);
   font-family: ${(props) => props.theme.font.primary};
-  border: 1px solid ${(props) => props.theme.color.none};
-  border-radius: 4px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import type { RadioButtonProps } from 'src/components/RadioButton/RadioButton.d';
 import theme from 'src/theme';
 
-const Container = styled.span``;
+const Container = styled.span`'
+  cursor: pointer;
+`;
 
 Container.defaultProps = {
   theme,
@@ -15,7 +17,7 @@ const Content = styled.label`
   align-items: center;
   width: 24px;
   height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   background: transparent;
 `;
@@ -27,7 +29,7 @@ Content.defaultProps = {
 const Input = styled.input<RadioButtonProps>`
   display: none;
   &:checked + label {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
   }
 `;
 

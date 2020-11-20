@@ -23,6 +23,7 @@ const getSizeStyles = (size?: ShirtSize) => {
 };
 
 const Paragraph = styled.p<ParagraphProps>`
+  color: rgba(255, 255, 255, 0.9);
   font-family: ${(props) => props.theme.font.secondary};
   ${(props) => getSizeStyles(props.size)}
 `;

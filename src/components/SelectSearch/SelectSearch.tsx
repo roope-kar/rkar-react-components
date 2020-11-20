@@ -6,6 +6,7 @@ import theme from 'src/theme';
 import { useListNavigation } from 'src/hooks';
 
 const Container = styled.div`
+  color: rgba(255, 255, 255, 0.9);
   position: relative;
   font-family: ${(props) => props.theme.font.primary};
   font-size: 12px;
@@ -25,7 +26,12 @@ SearchContainer.defaultProps = {
 };
 
 const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  background: transparent;
   border: none;
+  box-sizing: border-box;
   line-height: 32px;
   padding: 0px 10px;
   &:focus {

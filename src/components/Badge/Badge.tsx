@@ -6,13 +6,13 @@ import theme from 'src/theme';
 const getIntent = (props: BadgeProps): string => {
   if (props.intent === 'none') {
     return `
-            color: rgba(0,0,0,0.2);
-            background: rgba(0,0,0,0.1);
+            color: rgba(0,0,0,0.6);
+            background: rgba(255,255,255,0.9);
         `;
   } else {
     return `
             color: ${props.theme.color[props.intent]};
-            background: ${lighten('2%', props.theme.color[props.intent])};
+            background: ${lighten(0.4, props.theme.color[props.intent])};
         `;
   }
 };

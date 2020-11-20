@@ -12,3 +12,7 @@ export type TabProps = {
   className?: string;
   children: React.ReactNode | React.ReactNodeArray;
 }
+
+export type TitleProps = {
+  isActive: boolean;
+}

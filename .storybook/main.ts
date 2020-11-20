@@ -1,13 +1,7 @@
 import path from 'path';
-import { themes } from '@storybook/theming';
 
 module.exports = {
-  addons: ['@storybook/addon-jest', {
-    name: '@storybook/addon-essentials', options: {
-      docs: {
-        theme: themes.dark,
-      },
-  } }, '@storybook/addon-a11y'],
+  addons: ['@storybook/addon-jest', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   stories: ['../src/**/*.stories.tsx'],
   webpackFinal: async config => {
     config.module.rules = [

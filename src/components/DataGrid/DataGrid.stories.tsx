@@ -17,7 +17,11 @@ export const SimpleDataGrid: React.FunctionComponent = () => {
     <DataGrid>
       {data.map((dot) => (
         <DataGrid.Row key={dot}>
-          <DataGrid.Cell width={'1fr'}>{dot}</DataGrid.Cell>
+          <DataGrid.Cell width={'1fr'}>1</DataGrid.Cell>
+          <DataGrid.Cell width={'1fr'}>2</DataGrid.Cell>
+          <DataGrid.Cell width={'1fr'}>3</DataGrid.Cell>
+          <DataGrid.Cell width={'1fr'}>4</DataGrid.Cell>
+          <DataGrid.Cell width={'1fr'}>5</DataGrid.Cell>
         </DataGrid.Row>
       ))}
     </DataGrid>

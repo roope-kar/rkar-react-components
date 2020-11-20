@@ -9,7 +9,7 @@ const Backdrop = styled.div``;
 const Container = styled.div.attrs({
   role: 'dialog',
 })`
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 `;
 
@@ -22,11 +22,12 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
 `;
 
 const Title = styled.h4`
+  color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
   font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
@@ -38,6 +39,7 @@ Title.defaultProps = {
 };
 
 const Close = styled.button`
+  color: rgba(255, 255, 255, 0.9);
   font-family: ${(props) => props.theme.font.primary}
   padding: 0;
   width: 32px;

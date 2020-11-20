@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Badge } from 'src/components/Badge';
-import { Intent } from 'src/types';
 
 export default {
   title: 'Badge',
@@ -11,18 +10,12 @@ export default {
   },
 } as Meta;
 
-const AllButtons: Story<{ intent: Intent }> = ({ intent }: { intent: Intent }) => (
+export const AllBadges: Story = () => (
   <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
-    <Badge intent={intent}>Small Badge</Badge>
-    <Badge intent={intent}>Small Badge</Badge>
-    <Badge intent={intent}>Small Badge</Badge>
-    <Badge intent={intent}>Small Badge</Badge>
-    <Badge intent={intent}>Small Badge</Badge>
+    <Badge intent={'none'}>Small Badge</Badge>
+    <Badge intent={'info'}>Small Badge</Badge>
+    <Badge intent={'danger'}>Small Badge</Badge>
+    <Badge intent={'warning'}>Small Badge</Badge>
+    <Badge intent={'success'}>Small Badge</Badge>
   </div>
 );
-
-export const AllButtonsTest = AllButtons.bind({});
-
-AllButtonsTest.args = {
-  intent: 'none',
-};

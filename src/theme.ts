@@ -4,11 +4,11 @@ export const lightTheme = {
     secondary: 'Open Sans',
   },
   color: {
-    success: '#32b061',
-    warning: '#c1a732',
-    danger: '#d52a3a',
+    success: '#2ea172',
+    warning: '#a48e2a',
+    danger: '#b52431',
     info: '#3a88a4',
-    none: 'transparent',
+    none: 'rgba(255,255,255,0.1)',
   },
 };
 
@@ -18,11 +18,11 @@ export const darkTheme = {
     secondary: 'Open Sans',
   },
   color: {
-    success: '#32b061',
-    warning: '#c1a732',
-    danger: '#d52a3a',
+    success: '#2ea172',
+    warning: '#a48e2a',
+    danger: '#b52431',
     info: '#3a88a4',
-    none: 'transparent',
+    none: 'rgba(255,255,255,0.1)',
   },
 };
 

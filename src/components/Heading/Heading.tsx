@@ -23,6 +23,7 @@ const getSizeStyles = (size?: ShirtSize) => {
 };
 
 const Heading = styled.h1<HeadingProps>`
+  color: rgba(255, 255, 255, 0.9);
   font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
   margin: 0;
