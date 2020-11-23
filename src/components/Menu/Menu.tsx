@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import type { MenuProps, MenuGroupProps, MenuItemProps } from 'src/components/Menu/Menu.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
-import { useListNavigation } from 'src/hooks';
+import { useKeyboardNavigation } from 'src/hooks';
 
 const MenuContainer = styled.ul.attrs({
   role: 'menu',
@@ -21,7 +21,7 @@ MenuContainer.defaultProps = {
 
 const Menu: GroupComponent<MenuProps> = (props) => {
   const ref = React.createRef<HTMLUListElement>();
-  useListNavigation(ref);
+  useKeyboardNavigation(ref);
   return <MenuContainer {...props} ref={ref} />;
 };
 

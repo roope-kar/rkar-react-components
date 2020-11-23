@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import type { SelectSearchProps, SelectSearchOptionProps } from 'src/components/SelectSearch/SelectSearch.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
-import { useListNavigation } from 'src/hooks';
+import { useKeyboardNavigation } from 'src/hooks';
 
 const Container = styled.div`
   color: rgba(255, 255, 255, 0.9);
@@ -69,7 +69,7 @@ const SelectSearch: GroupComponent<SelectSearchProps> = ({
   placeholder,
 }: SelectSearchProps) => {
   const ref = React.createRef<HTMLUListElement>();
-  useListNavigation(ref);
+  useKeyboardNavigation(ref);
   const context = { onSelect };
   const handleSearchChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => onSearch(event.target.value),

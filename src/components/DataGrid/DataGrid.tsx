@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import type { DataGridProps, DataGridRowProps, DataGridCellProps } from 'src/components/DataGrid/DataGrid.d';
 import type { GroupComponent } from 'src/types';
+import { useKeyboardNavigation } from 'src/hooks';
 import theme from 'src/theme';
 
 const Container = styled.div.attrs({
@@ -34,7 +35,9 @@ const Cell = styled.div.attrs({
 `;
 
 const DataGrid: GroupComponent<DataGridProps> = ({ children }: DataGridProps) => {
-  return <Container>{children}</Container>;
+  const ref = React.createRef<HTMLDivElement>();
+  useKeyboardNavigation(ref);
+  return <Container ref={ref}>{children}</Container>;
 };
 
 DataGrid.Row = Row;

@@ -5,7 +5,7 @@ const END: number = 35;
 const UP_ARROW: number = 38;
 const DOWN_ARROW: number = 40;
 
-export function useListNavigation(optionListRef: React.RefObject<HTMLUListElement>) {
+export function useKeyboardNavigation(optionListRef: React.RefObject<any>) {
   React.useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
       switch (event.keyCode) {
