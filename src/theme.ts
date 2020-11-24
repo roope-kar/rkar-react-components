@@ -2,6 +2,7 @@ export const lightTheme = {
   font: {
     primary: 'Roboto',
     secondary: 'Open Sans',
+    code: 'Monospace',
   },
   color: {
     success: '#2ea172',
@@ -16,6 +17,7 @@ export const darkTheme = {
   font: {
     primary: 'Roboto',
     secondary: 'Open Sans',
+    code: 'Monospace',
   },
   color: {
     success: '#2ea172',

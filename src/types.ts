@@ -4,6 +4,7 @@ export interface DefaultTheme {
   font: {
     primary: string;
     secondary: string;
+    code: string;
   };
   color: {
     success: string;
@@ -19,6 +20,7 @@ declare module 'styled-components' {
     font: {
       primary: string;
       secondary: string;
+      code: string;
     };
     color: {
       success: string;

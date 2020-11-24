@@ -4,7 +4,7 @@ import theme from 'src/theme';
 
 const Code = styled.code<CodeProps>`
   display: block;
-  font-family: ${(props) => props.theme.font.secondary};
+  font-family: ${(props) => props.theme.font.code};
   background: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
