@@ -1,3 +1,4 @@
+import React from 'react';
 import { ShirtSize, Intent, Appearance, DefaultTheme } from "src/types";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
