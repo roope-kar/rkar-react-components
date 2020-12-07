@@ -5,10 +5,10 @@ const END: number = 35;
 const UP_ARROW: number = 38;
 const DOWN_ARROW: number = 40;
 
-export function useKeyboardNavigation(optionListRef: React.RefObject<any>) {
+export default function useKeyboardNavigation(optionListRef: React.RefObject<any>) {
   React.useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
-      switch (event.keyCode) {
+      switch (event.key || event.keyCode) {
         case HOME:
           (optionListRef.current?.firstElementChild as HTMLElement)?.focus();
           break;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { Form, Button } from 'src/components';
+import { Form, Button, TextInput } from 'src/components';
 
 export default {
   title: 'Form',
@@ -11,22 +11,17 @@ export default {
 } as Meta;
 
 export const SimpleForm: React.FunctionComponent = () => {
-    
-    return (
-        <Form onSubmit={}>
-    <Form.Field>
-        <Form.Label error={}>Email</Form.Label>
-        <Form.Input>
-            <EmailInput error={} />
-        </Form.Input>
-    </Form.Field>
-    <Form.Field>
-        <Form.Label error={}>Password</Form.Label>
-        <Form.Input>
-            <PasswordInput error={} />
-        </Form.Input>
-    </Form.Field>
-    <Button></Button>
-  </Form>
-    )
-}
+  return (
+    <Form>
+      <Form.Field>
+        <TextInput />
+      </Form.Field>
+      <Form.Field>
+        <TextInput />
+      </Form.Field>
+      <Form.Field>
+        <Button>Submit</Button>
+      </Form.Field>
+    </Form>
+  );
+};
