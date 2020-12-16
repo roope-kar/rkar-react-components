@@ -8,7 +8,7 @@ const DOWN_ARROW: number = 40;
 export default function useKeyboardNavigation(optionListRef: React.RefObject<any>) {
   React.useEffect(() => {
     const handleKeyUp = (event: KeyboardEvent) => {
-      switch (event.key || event.keyCode) {
+      switch (event.key || event.keyCode) {
         case HOME:
           (optionListRef.current?.firstElementChild as HTMLElement)?.focus();
           break;

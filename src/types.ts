@@ -32,11 +32,26 @@ declare module 'styled-components' {
   }
 }
 
+/**
+ * Enables to use components like List.Item
+ */
 export interface GroupComponent<T> extends React.FunctionComponent<T> {
   [name: string]: any;
 }
 
 export type StringOrUndefined = string | undefined;
+
+/**
+ * The size to interpret by the component
+ */
 export type ShirtSize = 'small' | 'medium' | 'large';
+
+/**
+ * The intention interpret by the component
+ */
 export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'none';
+
+/**
+ * The visual variaton interpret by the component
+ */
 export type Appearance = 'primary' | 'secondary';
