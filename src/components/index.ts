@@ -20,3 +20,4 @@ export { TextArea } from 'src/components/TextArea';
 export { Code } from 'src/components/Code';
 export { Badge } from 'src/components/Badge';
 export { Form } from 'src/components/Form';
+export { Avatar } from 'src/components/Avatar';

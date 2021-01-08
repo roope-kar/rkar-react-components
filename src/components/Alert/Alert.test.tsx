@@ -10,13 +10,13 @@ describe('Alert', () => {
   test('renders', () => {
     const container: HTMLElement = render(
       <ThemeProvider theme={theme}>
-        <Alert title={'Please note'} appearance={'primary'} intent={'none'} theme={theme}>
-          Alert Description
+        <Alert appearance={'primary'} intent={'none'} theme={theme}>
+          <Alert.Title>Title</Alert.Title>
+          <Alert.Description>Description</Alert.Description>
         </Alert>
       </ThemeProvider>,
     ).container;
 
     expect(getByText(container, 'Alert Description').textContent).toStrictEqual('Alert Description');
   });
-
 });
