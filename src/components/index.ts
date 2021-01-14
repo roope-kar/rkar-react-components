@@ -21,3 +21,4 @@ export { Code } from 'src/components/Code';
 export { Badge } from 'src/components/Badge';
 export { Form } from 'src/components/Form';
 export { Avatar } from 'src/components/Avatar';
+export { Breadcrumbs } from 'src/components/Breadcrumbs';
