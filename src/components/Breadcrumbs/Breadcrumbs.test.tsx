@@ -3,7 +3,6 @@ import { Breadcrumbs } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
 describe('Breadcrumbs', () => {
-
   afterEach(cleanup);
 
   test('renders', () => {
@@ -11,13 +10,12 @@ describe('Breadcrumbs', () => {
   });
 
   test('should render all children as links', () => {
-
     const container: HTMLElement = render(
       <Breadcrumbs>
         <Breadcrumbs.Item>One</Breadcrumbs.Item>
         <Breadcrumbs.Item>Two</Breadcrumbs.Item>
         <Breadcrumbs.Item>Three</Breadcrumbs.Item>
-      </Breadcrumbs>
+      </Breadcrumbs>,
     ).container;
 
     const links = container.querySelectorAll('a') as NodeListOf<HTMLAnchorElement>;
