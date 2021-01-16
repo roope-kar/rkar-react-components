@@ -23,3 +23,4 @@ export { Form } from 'src/components/Form';
 export { Avatar } from 'src/components/Avatar';
 export { Breadcrumbs } from 'src/components/Breadcrumbs';
 export { Chip } from 'src/components/Chip';
+export { Divider } from 'src/components/Divider';
