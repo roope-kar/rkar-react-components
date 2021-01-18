@@ -18,7 +18,7 @@ Container.defaultProps = {
 
 const SearchContainer = styled.div`
   height: 100%;
-  border: 1px solid ${(props) => props.theme.color.none};
+  background: rgba(255, 255, 255, 0.1);
 `;
 
 SearchContainer.defaultProps = {

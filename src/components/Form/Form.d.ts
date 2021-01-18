@@ -7,3 +7,5 @@ export type FormFieldProps = {};
 export type FormLabelProps = {};
 
 export type FormInputProps = {};
+
+export type FormGroupProps = React.FieldsetHTMLAttributes<HTMLFieldSetElement> & {};
