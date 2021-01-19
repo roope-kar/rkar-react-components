@@ -6,6 +6,6 @@ describe('FileInput', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<FileInput />);
+    render(<FileInput label={'Select file'} />);
   });
 });
