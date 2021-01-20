@@ -27,3 +27,4 @@ export { Divider } from 'src/components/Divider';
 export { ProgressBar } from 'src/components/ProgressBar';
 export { FileInput } from 'src/components/FileInput';
 export { Spinner } from 'src/components/Spinner';
+export { Switch } from 'src/components/Switch';
