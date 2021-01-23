@@ -28,3 +28,4 @@ export { ProgressBar } from 'src/components/ProgressBar';
 export { FileInput } from 'src/components/FileInput';
 export { Spinner } from 'src/components/Spinner';
 export { Switch } from 'src/components/Switch';
+export { Placeholder } from 'src/components/Placeholder';

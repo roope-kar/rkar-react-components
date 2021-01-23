@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Divider } from 'src/components';
 import type { MenuProps, MenuGroupProps, MenuItemProps } from 'src/components/Menu/Menu.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
@@ -73,5 +74,9 @@ Menu.Item.defaultProps = {
   theme,
   intent: 'none',
 };
+
+const MenuDivider: React.FunctionComponent = () => <Divider alignment={'horizontal'} />;
+
+Menu.Divider = MenuDivider;
 
 export default Menu;

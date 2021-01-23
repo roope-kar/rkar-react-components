@@ -43,3 +43,18 @@ export const GroupedMenuWithMoreItems: React.FunctionComponent = () => (
     <Menu.Item>4</Menu.Item>
   </Menu>
 );
+
+export const GroupedMenuWithDivider: React.FunctionComponent = () => (
+  <Menu>
+    <Menu.Item>1</Menu.Item>
+    <Menu.Item>2</Menu.Item>
+    <Menu.Divider />
+    <Menu.Group title={'Admin'}>
+      <Menu.Item>2.1</Menu.Item>
+      <Menu.Item>2.2</Menu.Item>
+      <Menu.Item>2.3</Menu.Item>
+    </Menu.Group>
+    <Menu.Item>3</Menu.Item>
+    <Menu.Item>4</Menu.Item>
+  </Menu>
+);
