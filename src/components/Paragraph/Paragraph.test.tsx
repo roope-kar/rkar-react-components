@@ -6,7 +6,7 @@ describe('Paragraph', () => {
   afterEach(cleanup);
 
   it('renders', () => {
-    const container: HTMLElement = render(<Paragraph size={'medium'}>Paragraph</Paragraph>).container;
+    const container = render(<Paragraph size={'medium'}>Paragraph</Paragraph>).container as HTMLElement;
 
     expect(getByText(container, 'Paragraph').textContent).toStrictEqual('Paragraph');
   });

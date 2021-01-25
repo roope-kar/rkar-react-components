@@ -6,7 +6,7 @@ describe('Checkbox', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<Checkbox value={'false'} />).container;
+    const container = render(<Checkbox value={'false'} />).container as HTMLElement;
 
     const checkboxElement = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
 
@@ -16,7 +16,7 @@ describe('Checkbox', () => {
   test('should call onChange callback on change', () => {
     const onChange = jest.fn();
 
-    const container: HTMLElement = render(<Checkbox value={'123'} onChange={onChange} />).container;
+    const container = render(<Checkbox value={'123'} onChange={onChange} />).container as HTMLElement;
 
     const checkboxElement = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
 

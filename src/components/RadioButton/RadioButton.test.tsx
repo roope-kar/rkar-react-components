@@ -6,7 +6,7 @@ describe('RadioButton', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<RadioButton value={'false'} />).container;
+    const container = render(<RadioButton value={'false'} />).container as HTMLElement;
 
     const radioButtonElement = container.querySelector('input[type="radio"]') as HTMLInputElement;
 
@@ -16,7 +16,7 @@ describe('RadioButton', () => {
   test('should call onChange callback on change', () => {
     const onChange = jest.fn();
 
-    const container: HTMLElement = render(<RadioButton value={'123'} onChange={onChange} />).container;
+    const container = render(<RadioButton value={'123'} onChange={onChange} />).container as HTMLElement;
 
     const radioButtonElement = container.querySelector('input[type="radio"]') as HTMLInputElement;
 

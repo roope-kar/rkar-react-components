@@ -6,13 +6,13 @@ describe('Menu', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Menu>
         <Menu.Item>1</Menu.Item>
         <Menu.Item>2</Menu.Item>
         <Menu.Item>3</Menu.Item>
       </Menu>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, '1').textContent).toStrictEqual('1');
     expect(getByText(container, '2').textContent).toStrictEqual('2');
@@ -20,7 +20,7 @@ describe('Menu', () => {
   });
 
   test('group items under a title', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Menu>
         <Menu.Item>1</Menu.Item>
         <Menu.Item>2</Menu.Item>
@@ -29,7 +29,7 @@ describe('Menu', () => {
           <Menu.Item>1.2</Menu.Item>
         </Menu.Group>
       </Menu>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, '1').textContent).toStrictEqual('1');
     expect(getByText(container, '2').textContent).toStrictEqual('2');

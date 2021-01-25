@@ -4,15 +4,16 @@ import theme from 'src/theme';
 
 const getAppearanceAndIntent = (props: ChipProps): string => {
   const intent = props.intent || 'none';
+  const color = (props.theme && props.theme.color[intent]) || '';
   if (props.appearance === 'primary') {
     return `
-        background: ${props.theme.color[intent]};
+        background: ${color};
         color: rgba(255,255,255,0.9);
       `;
   } else {
     return `
         background: transparent;
-        color: ${props.theme.color[intent]};
+        color: ${color};
       `;
   }
 };
@@ -22,7 +23,7 @@ const Chip = styled.span<ChipProps>`
   padding-right: 6px;
   font-size: 12px;
   border-radius: 999px;
-  ${getAppearanceAndIntent}
+  ${(props) => getAppearanceAndIntent(props)}
   font-family: Roboto;
 `;
 

@@ -6,12 +6,12 @@ describe('Dialog', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Dialog title={'MyDialog'} onClose={() => null}>
         <Dialog.Body>body</Dialog.Body>
         <Dialog.Footer>footer</Dialog.Footer>
       </Dialog>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, 'MyDialog')).toBeTruthy;
     expect(getByText(container, 'body')).toBeTruthy;
@@ -21,12 +21,12 @@ describe('Dialog', () => {
   test('should call onClose callback on close icon click', () => {
     const onClose = jest.fn();
 
-    const container: HTMLElement = render(
+    render(
       <Dialog title={'MyDialog'} onClose={onClose}>
         <Dialog.Body>body</Dialog.Body>
         <Dialog.Footer>footer</Dialog.Footer>
       </Dialog>,
-    ).container;
+    ).container as HTMLElement;
 
     const closeButtonElement = document.querySelector('button') as HTMLElement;
 

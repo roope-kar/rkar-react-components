@@ -6,11 +6,11 @@ describe('Positioned', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const baseElement: HTMLElement = render(
+    const baseElement = render(
       <Positioned x={100} y={100}>
         Positioned Div
       </Positioned>,
-    ).baseElement;
+    ).baseElement as HTMLElement;
 
     expect(getByText(baseElement, 'Positioned Div')).toBeTruthy;
   });

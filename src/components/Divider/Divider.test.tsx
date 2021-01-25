@@ -6,7 +6,7 @@ describe('Divider', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<Divider>20</Divider>).container;
+    const container = render(<Divider>20</Divider>).container as HTMLElement;
 
     expect(getByText(container, '20').textContent).toStrictEqual('20');
   });

@@ -1,3 +1,1 @@
-export type CodeProps = {
-  
-}
+export type CodeProps = {}

@@ -6,13 +6,13 @@ describe('Tabs', () => {
   afterEach(cleanup);
 
   test('renders all titles as link and the active content', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Tabs activeTab={'1'} onSetActiveTab={() => null}>
         <Tabs.Tab title={'1'}>one</Tabs.Tab>
         <Tabs.Tab title={'2'}>two</Tabs.Tab>
         <Tabs.Tab title={'3'}>three</Tabs.Tab>
       </Tabs>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, '1').textContent).toStrictEqual('1');
     expect(getByText(container, '2').textContent).toStrictEqual('2');
@@ -23,13 +23,13 @@ describe('Tabs', () => {
   test('should call onSetActiveTab callback on Tabs.Tab title click', () => {
     const onSetActiveTab = jest.fn();
 
-    const container: HTMLElement = render(
+    const container = render(
       <Tabs activeTab={'1'} onSetActiveTab={onSetActiveTab}>
         <Tabs.Tab title={'1'}>one</Tabs.Tab>
         <Tabs.Tab title={'2'}>two</Tabs.Tab>
         <Tabs.Tab title={'3'}>three</Tabs.Tab>
       </Tabs>,
-    ).container;
+    ).container as HTMLElement;
 
     fireEvent.click(getByText(container, '1'));
 

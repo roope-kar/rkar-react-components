@@ -1,6 +1,6 @@
 import React from 'react';
 import { Portal } from 'src/components';
-import { render, cleanup, getByText } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 
 describe('Button', () => {
   const target = document.createElement('div');
@@ -15,8 +15,12 @@ describe('Button', () => {
   });
 
   test('renders', () => {
-    const baseElement: HTMLElement = render(<Portal to={target}>MyPortal</Portal>).baseElement;
+    render(
+      <Portal to={target}>
+        <div>MyPortal</div>
+      </Portal>,
+    ).baseElement;
 
-    expect(getByText(baseElement, 'MyPortal')).toBeTruthy;
+    expect(document.body.querySelectorAll('div')).toBeTruthy;
   });
 });

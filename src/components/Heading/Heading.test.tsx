@@ -6,7 +6,7 @@ describe('Heading', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<Heading size={'medium'}>Heading</Heading>).container;
+    const container = render(<Heading size={'medium'}>Heading</Heading>).container as HTMLElement;
 
     expect(getByText(container, 'Heading').textContent).toStrictEqual('Heading');
   });

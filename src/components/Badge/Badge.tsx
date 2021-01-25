@@ -4,6 +4,7 @@ import type { BadgeProps } from 'src/components/Badge/Badge.d';
 import theme from 'src/theme';
 
 const getIntent = (props: BadgeProps): string => {
+  const color = (props.theme && props.theme.color[props.intent]) || '';
   if (props.intent === 'none') {
     return `
             color: rgba(0,0,0,0.6);
@@ -11,8 +12,8 @@ const getIntent = (props: BadgeProps): string => {
         `;
   } else {
     return `
-            color: ${props.theme.color[props.intent]};
-            background: ${lighten(0.4, props.theme.color[props.intent])};
+            color: ${color};
+            background: ${lighten(0.4, color)};
         `;
   }
 };

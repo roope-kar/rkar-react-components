@@ -1,3 +1,1 @@
-export type LinkProps = React.PropsWithChildren<{
-    className?: string;
-}>;
+export type LinkProps = React.PropsWithChildren<{}>;

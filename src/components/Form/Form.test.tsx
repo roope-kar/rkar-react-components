@@ -6,7 +6,7 @@ describe('Form', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Form>
         <Form.Field>
           <Form.Label>Default</Form.Label>
@@ -15,7 +15,7 @@ describe('Form', () => {
           </Form.Input>
         </Form.Field>
       </Form>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, 'Default').textContent).toStrictEqual('Default');
   });

@@ -6,7 +6,7 @@ describe('Link', () => {
   afterEach(cleanup);
 
   it('renders', () => {
-    const container: HTMLElement = render(<Link>My Link</Link>).container;
+    const container = render(<Link>My Link</Link>).container as HTMLElement;
     expect(getByText(container, 'My Link').textContent).toStrictEqual('My Link');
   });
 

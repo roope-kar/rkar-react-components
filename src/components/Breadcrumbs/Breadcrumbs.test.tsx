@@ -6,17 +6,17 @@ describe('Breadcrumbs', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Breadcrumbs />).container;
+    render(<Breadcrumbs />);
   });
 
   test('should render all children as links', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <Breadcrumbs>
         <Breadcrumbs.Item>One</Breadcrumbs.Item>
         <Breadcrumbs.Item>Two</Breadcrumbs.Item>
         <Breadcrumbs.Item>Three</Breadcrumbs.Item>
       </Breadcrumbs>,
-    ).container;
+    ).container as HTMLElement;
 
     const links = container.querySelectorAll('a') as NodeListOf<HTMLAnchorElement>;
 

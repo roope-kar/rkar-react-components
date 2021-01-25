@@ -6,13 +6,13 @@ describe('SelectSearch', () => {
   afterEach(cleanup);
 
   test('renders all options', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <SelectSearch onSelect={() => null} onSearch={() => null}>
         <SelectSearch.Option value={1}>one</SelectSearch.Option>
         <SelectSearch.Option value={2}>two</SelectSearch.Option>
         <SelectSearch.Option value={3}>three</SelectSearch.Option>
       </SelectSearch>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, 'one').textContent).toStrictEqual('one');
     expect(getByText(container, 'two').textContent).toStrictEqual('two');
@@ -21,13 +21,13 @@ describe('SelectSearch', () => {
 
   test('calls onSearch callback when input changes', () => {
     const onSearch = jest.fn();
-    const container: HTMLElement = render(
+    const container = render(
       <SelectSearch onSelect={() => null} onSearch={onSearch}>
         <SelectSearch.Option value={1}>one</SelectSearch.Option>
         <SelectSearch.Option value={2}>two</SelectSearch.Option>
         <SelectSearch.Option value={3}>three</SelectSearch.Option>
       </SelectSearch>,
-    ).container;
+    ).container as HTMLElement;
 
     const inputElement = container.querySelector('input[type="text"]') as HTMLInputElement;
 
@@ -39,13 +39,13 @@ describe('SelectSearch', () => {
   test('calls onSelect callback with the SelectSearch.Option value on click', () => {
     const onSelect = jest.fn();
     const placeholder = 'Search by name ...';
-    const container: HTMLElement = render(
+    const container = render(
       <SelectSearch onSelect={onSelect} onSearch={() => null} placeholder={placeholder}>
         <SelectSearch.Option value={1}>one</SelectSearch.Option>
         <SelectSearch.Option value={2}>two</SelectSearch.Option>
         <SelectSearch.Option value={3}>three</SelectSearch.Option>
       </SelectSearch>,
-    ).container;
+    ).container as HTMLElement;
 
     fireEvent.click(getByText(container, 'two'));
 

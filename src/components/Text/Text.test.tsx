@@ -6,7 +6,7 @@ describe('Text', () => {
   afterEach(cleanup);
 
   it('renders', () => {
-    const container: HTMLElement = render(<Text>My Text</Text>).container;
+    const container = render(<Text>My Text</Text>).container as HTMLElement;
 
     expect(getByText(container, 'My Text').textContent).toStrictEqual('My Text');
   });

@@ -9,5 +9,5 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     // Describes the visual look of the button
     appearance: Appearance;
     // Theme object
-    theme: DefaultTheme
+    theme?: DefaultTheme
 };

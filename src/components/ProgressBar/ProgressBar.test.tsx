@@ -6,7 +6,7 @@ describe('ProgressBar', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<ProgressBar value={40} />).container;
+    const container = render(<ProgressBar value={40} />).container as HTMLElement;
     expect(getByText(container, '40%').textContent).toStrictEqual('40%');
   });
 });

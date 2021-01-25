@@ -6,7 +6,7 @@ describe('Button', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<Tooltip>Test</Tooltip>).container;
+    const container = render(<Tooltip>Test</Tooltip>).container as HTMLElement;
 
     expect(getByText(container, 'Test').textContent).toStrictEqual('Test');
   });

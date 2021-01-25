@@ -6,6 +6,6 @@ describe('Avatar', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Avatar src={''} size={'medium'} appearance={'primary'} />).container;
+    render(<Avatar src={''} size={'medium'} appearance={'primary'} />).container as HTMLElement;
   });
 });

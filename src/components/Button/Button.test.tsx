@@ -8,13 +8,13 @@ describe('Button', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <ThemeProvider theme={theme}>
         <Button size={'medium'} appearance={'primary'} intent={'none'} onClick={() => null}>
           Default
         </Button>
       </ThemeProvider>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(getByText(container, 'Default').textContent).toStrictEqual('Default');
   });
@@ -22,11 +22,11 @@ describe('Button', () => {
   test('should call onClick callback on click', () => {
     const onClick = jest.fn();
 
-    const container: HTMLElement = render(
+    const container = render(
       <Button size={'medium'} appearance={'primary'} intent={'none'} onClick={() => null}>
         Default
       </Button>,
-    ).container;
+    ).container as HTMLElement;
 
     fireEvent.click(getByText(container, 'Default'));
 

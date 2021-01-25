@@ -6,8 +6,6 @@ describe('Badge', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(<Badge intent={'none'}>Default</Badge>).container;
-
-    expect(getByText(container, 'Default').textContent).toStrictEqual('Default');
+    render(<Badge intent={'none'}>Default</Badge>);
   });
 });

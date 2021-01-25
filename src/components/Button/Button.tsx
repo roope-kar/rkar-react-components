@@ -26,28 +26,29 @@ const getSize = (props: ButtonProps): string => {
 };
 
 const getAppearanceAndIntent = (props: ButtonProps): string => {
+  const color = (props.theme && props.theme.color[props.intent]) || '';
   if (props.appearance === 'primary') {
     return `
-      background: ${props.theme.color[props.intent]};
+      background: ${color};
       color: rgba(255,255,255,0.9);
 
       &:hover {
-        background: ${darken(0.03, props.theme.color[props.intent])};
+        background: ${darken(0.03, color)};
       }
     
       &:active {
-        background: ${darken(0.08, props.theme.color[props.intent])};
+        background: ${darken(0.08, color)};
       }
     
       &:focus {
         outline: 0;
-        border: 2px solid ${lighten(0.1, props.theme.color[props.intent])};
+        border: 2px solid ${lighten(0.1, color)};
       }
     `;
   } else {
     return `
       background: transparent;
-      color: ${props.theme.color[props.intent]};
+      color: ${color};
 
       &:hover {
         background: rgba(0,0,0,0.1);
@@ -59,7 +60,7 @@ const getAppearanceAndIntent = (props: ButtonProps): string => {
     
       &:focus {
         outline: 0;
-        border: 2px solid ${lighten(0.1, props.theme.color[props.intent])};
+        border: 2px solid ${lighten(0.1, color)};
       }
     `;
   }

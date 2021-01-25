@@ -6,7 +6,7 @@ describe('DataGrid', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container: HTMLElement = render(
+    const container = render(
       <DataGrid>
         <DataGrid.Row>
           <DataGrid.Cell>1</DataGrid.Cell>
@@ -16,7 +16,7 @@ describe('DataGrid', () => {
           <DataGrid.Cell>5</DataGrid.Cell>
         </DataGrid.Row>
       </DataGrid>,
-    ).container;
+    ).container as HTMLElement;
 
     expect(container).toBeDefined;
   });
