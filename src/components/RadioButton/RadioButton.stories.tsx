@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { RadioButton } from 'src/components/RadioButton';
+import { RadioButton } from 'src/components';
 
 export default {
   title: 'RadioButton',
@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 export const DefaultRadioButton: React.FunctionComponent = () => (
-  <div>
+  <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
     <RadioButton name={'group-1'} value={'1'} />
     <RadioButton name={'group-1'} value={'2'} />
     <RadioButton name={'group-1'} value={'3'} />
@@ -21,7 +21,7 @@ export const DefaultRadioButton: React.FunctionComponent = () => (
 export const ControlledRadioButton: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
   return (
-    <div>
+    <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
       <RadioButton
         name={'group-2'}
         checked={value === '1'}

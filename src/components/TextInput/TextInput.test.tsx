@@ -10,5 +10,4 @@ describe('TextInput', () => {
 
     expect(getByPlaceholderText(container, 'test').getAttribute('value')).toStrictEqual('123');
   });
-
 });

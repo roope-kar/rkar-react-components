@@ -1,10 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import type { RadioButtonProps } from 'src/components/RadioButton/RadioButton.d';
 import theme from 'src/theme';
 
-const Container = styled.span`'
-  cursor: pointer;
+const appear = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const Container = styled.span`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
 `;
 
 Container.defaultProps = {
@@ -12,14 +29,14 @@ Container.defaultProps = {
 };
 
 const Content = styled.label`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   width: 24px;
   height: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background: transparent;
+  margin: 0;
 `;
 
 Content.defaultProps = {
@@ -27,9 +44,17 @@ Content.defaultProps = {
 };
 
 const Input = styled.input<RadioButtonProps>`
-  display: none;
-  &:checked + label {
-    background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  margin: 0;
+  &:checked + label::after {
+    animation: ${appear} 0.1s linear;
+    background: rgba(255, 255, 255, 0.2);
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
   }
 `;
 
@@ -40,7 +65,7 @@ Input.defaultProps = {
 const RadioButton: React.FunctionComponent<RadioButtonProps> = ({ checked, id, name, ...rest }: RadioButtonProps) => {
   const identifier = id || `radiobutton-${Math.round(Math.random() * 1000)})`;
   return (
-    <Container role={'radio'} aria-checked={checked}>
+    <Container>
       <Input id={identifier} name={name} type={'radio'} checked={checked} {...rest} />
       <Content id={identifier} htmlFor={identifier} />
     </Container>
