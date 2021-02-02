@@ -11,7 +11,7 @@ export default {
   },
 } as Meta;
 
-const AllAlerts: Story = () => (
+export const AllAlerts: React.FunctionComponent = () => (
   <div style={{ display: 'flex', flexFlow: 'wrap column' }}>
     <Alert appearance={'primary'} intent={'none'} theme={theme}>
       <Alert.Title>Please note</Alert.Title>
@@ -35,12 +35,6 @@ const AllAlerts: Story = () => (
     </Alert>
   </div>
 );
-
-export const AllAlertsTest = AllAlerts.bind({});
-
-AllAlertsTest.args = {
-  size: 'medium',
-};
 
 export const InfoAlert: React.FunctionComponent = () => (
   <Alert intent={'info'} appearance={'primary'} theme={theme}>
