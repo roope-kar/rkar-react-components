@@ -6,7 +6,7 @@ const TextArea = styled.textarea<TextAreaProps>`
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 3px;
-  padding: 6px;
+  padding: 8px;
   box-sizing: border-box;
   resize: ${(props) => (props.resize ? 'default' : 'none')};
 `;

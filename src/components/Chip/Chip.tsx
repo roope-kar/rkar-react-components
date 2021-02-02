@@ -19,8 +19,8 @@ const getAppearanceAndIntent = (props: ChipProps): string => {
 };
 
 const Chip = styled.span<ChipProps>`
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   font-size: 12px;
   border-radius: 999px;
   ${(props) => getAppearanceAndIntent(props)}

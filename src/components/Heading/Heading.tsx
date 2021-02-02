@@ -6,17 +6,17 @@ import theme from 'src/theme';
 const getSizeStyles = (size?: ShirtSize) => {
   if (size === 'large') {
     return `
-        font-size: 45px;
+        font-size: 48px;
         line-height: 48px;
     `;
   } else if (size === 'medium') {
     return `
-            font-size: 45px;
+            font-size: 48px;
             line-height: 48px;
         `;
   } else {
     return `
-            font-size: 45px;
+            font-size: 48px;
             line-height: 48px;
         `;
   }

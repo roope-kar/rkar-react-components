@@ -31,7 +31,7 @@ const GroupContainer = styled.div``;
 const GroupTitle = styled.div`
   font-family: 'Open Sans';
   font-size: 12px;
-  padding: 5px 10px;
+  padding: 4px 8px;
   text-transform: uppercase;
 `;
 
@@ -58,7 +58,7 @@ const MenuItem = styled.li.attrs({
 })<MenuItemProps>`
   display: block;
   text-align: left;
-  padding: 5px 10px;
+  padding: 4px 8px;
   background: transparent;
   cursor: pointer;
   border: 0;

@@ -14,7 +14,7 @@ const Content = styled.label`
   width: 24px;
   height: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 3px;
   background: transparent;
 `;
 

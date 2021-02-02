@@ -6,9 +6,11 @@ describe('RadioButtonCard', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<RadioButtonCard>
+    render(
+      <RadioButtonCard>
         <RadioButtonCard.Title>Title</RadioButtonCard.Title>
         <RadioButtonCard.Description>Description</RadioButtonCard.Description>
-    </RadioButtonCard>);
+      </RadioButtonCard>,
+    );
   });
 });

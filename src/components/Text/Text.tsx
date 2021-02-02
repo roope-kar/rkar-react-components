@@ -18,9 +18,9 @@ const getTooltip = (title: string): string => {
     position: absolute;
     font-family: Roboto;
     display: inline-block;
-    line-height: 22px;
-    border-radius: 4px;
-    padding: 0px 10px;
+    line-height: 24px;
+    border-radius: 3px;
+    padding: 0px 8px;
     font-size: 12px;
     background: black;
     color: white;

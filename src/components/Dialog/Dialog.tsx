@@ -10,7 +10,7 @@ const Container = styled.div.attrs({
   role: 'dialog',
 })`
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 3px;
 `;
 
 Container.defaultProps = {
@@ -21,7 +21,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 16px 24px;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.9);
 `;
@@ -73,12 +73,12 @@ const Dialog: GroupComponent<DialogProps> = ({ children, title, onClose }: Dialo
 };
 
 Dialog.Body = styled.div<DialogBodyProps>`
-  padding: 15px 20px;
-  padding-top: 25px;
+  padding: 16px 24px;
+  padding-top: 24px;
 `;
 
 Dialog.Footer = styled.div<DialogFooterProps>`
-  padding: 15px 20px;
+  padding: 16px 24px;
 `;
 
 export default Dialog;

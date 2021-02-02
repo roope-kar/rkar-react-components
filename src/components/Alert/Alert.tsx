@@ -5,11 +5,11 @@ import type { AlertProps } from 'src/components/Alert/Alert.d';
 import { GroupComponent } from 'src/types';
 
 const Container = styled.div<AlertProps>`
-  padding: 12px 16px;
+  padding: 8px 16px;
   font-family: ${(props) => props.theme.font.primary};
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.1);
-  border-left: 6px solid ${(props) => props.theme.color[props.intent]};
+  border-left: 8px solid ${(props) => props.theme.color[props.intent]};
   color: rgba(255, 255, 255, 0.9);
 `;
 
@@ -27,7 +27,7 @@ Title.defaultProps = {
 };
 
 const Description = styled.div<AlertProps>`
-  line-height: 22px;
+  line-height: 24px;
 `;
 
 Description.defaultProps = {

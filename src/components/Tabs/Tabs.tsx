@@ -21,7 +21,7 @@ const Titles = styled.ul.attrs({
 const Title = styled.li<TitleProps>`
   cursor: pointer;
   font-family: ${(props) => props.theme.font.primary};
-  padding: 6px 12px;
+  padding: 8px 16px;
   min-width: 75px;
 `;
 
@@ -32,7 +32,7 @@ Title.defaultProps = {
 
 const Tab = styled.div<TabProps>`
   font-family: ${(props) => props.theme.font.primary};
-  padding: 6px 12px;
+  padding: 8px 16px;
 `;
 
 Tab.defaultProps = {

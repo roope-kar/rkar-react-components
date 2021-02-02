@@ -11,7 +11,7 @@ import theme from 'src/theme';
 
 const Container = styled.div`
   display: flex;
-  padding: 12px 16px;
+  padding: 8px 16px;
   flex-flow: nowrap row;
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);

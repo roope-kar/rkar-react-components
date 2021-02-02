@@ -12,13 +12,13 @@ const blink = keyframes`
 const getSize = (size: ShirtSize) => {
   switch (size) {
     case 'small':
-      return '20px';
+      return '24px';
     case 'medium':
-      return '26px';
+      return '28px';
     case 'large':
       return '32px';
     default:
-      return '26px';
+      return '28px';
   }
 };
 

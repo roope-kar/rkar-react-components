@@ -8,7 +8,7 @@ const Code = styled.code<CodeProps>`
   background: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
-  padding: 15px 20px;
+  padding: 16px 24px;
 `;
 
 Code.defaultProps = {

@@ -15,8 +15,8 @@ const Container = styled.div`
 `;
 
 const Dot = styled.div`
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   display: inline-block;
@@ -27,13 +27,13 @@ const Dot = styled.div`
 const Dot1 = styled(Dot)`
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 const Dot2 = styled(Dot)`
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 const Dot3 = styled(Dot)``;

@@ -9,7 +9,6 @@ const Container = styled.div`
   color: rgba(255, 255, 255, 0.9);
   position: relative;
   font-family: ${(props) => props.theme.font.primary};
-  font-size: 12px;
 `;
 
 Container.defaultProps = {
@@ -33,7 +32,7 @@ const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
   border: none;
   box-sizing: border-box;
   line-height: 32px;
-  padding: 0px 10px;
+  padding: 0px 8px;
   &:focus {
     outline: none;
   }
@@ -48,6 +47,9 @@ const SelectContainer = styled.ul.attrs({
   margin: 0;
   padding: 0;
   list-style: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
   border: 1px solid ${(props) => props.theme.color.none};
   border-top: 0px;
 `;
@@ -89,7 +91,7 @@ const SelectSearch: GroupComponent<SelectSearchProps> = ({
 };
 
 const SearchOption = styled.li.attrs({ role: 'option', 'aria-selected': false, tabIndex: 0 })`
-  padding: 5px 10px;
+  padding: 4px 8px;
   cursor: pointer;
   &:focus {
     outline: 0;
