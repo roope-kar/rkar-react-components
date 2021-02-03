@@ -30,3 +30,4 @@ export { Spinner } from 'src/components/Spinner';
 export { Switch } from 'src/components/Switch';
 export { Placeholder } from 'src/components/Placeholder';
 export { RadioButtonCard } from 'src/components/RadioButtonCard';
+export { TagInput } from 'src/components/TagInput';
