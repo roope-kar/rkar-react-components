@@ -1,1 +1,1 @@
-export { default as TagInput } from 'src/components/TagInput/TagInput';
+export { default as TagInput } from 'src/components/TagInput/TagInput';

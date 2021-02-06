@@ -3,4 +3,4 @@ export type TagInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
       | Array<React.ReactElement<TagProps>>;
   };
 
-export type TagProps = {}
+export type TagProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {};
