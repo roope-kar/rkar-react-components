@@ -28,7 +28,7 @@ const Placeholder: GroupComponent<PlaceholderProps> = ({ children }: Placeholder
   return <Container>{children}</Container>;
 };
 
-const PlaceholderBlock = styled.div<PlaceholderProps>`
+Placeholder.Block = styled.div<PlaceholderProps>`
   background: rgba(255, 255, 255, 0.1);
   animation: ${blink} 1s linear infinite;
   width: 100%;
@@ -36,13 +36,11 @@ const PlaceholderBlock = styled.div<PlaceholderProps>`
   border-radius: 3px;
 `;
 
-PlaceholderBlock.defaultProps = {
+Placeholder.Block.defaultProps = {
   size: 'medium',
 };
 
-Placeholder.Block = PlaceholderBlock;
-
-const PlaceholderCircle = styled.div<PlaceholderProps>`
+Placeholder.Circle = styled.div<PlaceholderProps>`
   background: rgba(255, 255, 255, 0.1);
   animation: ${blink} 1s linear infinite;
   width: ${(props) => getSize(props.size || 'medium')};
@@ -50,10 +48,8 @@ const PlaceholderCircle = styled.div<PlaceholderProps>`
   border-radius: 50%;
 `;
 
-PlaceholderCircle.defaultProps = {
+Placeholder.Circle.defaultProps = {
   size: 'medium',
 };
-
-Placeholder.Circle = PlaceholderCircle;
 
 export default Placeholder;

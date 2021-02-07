@@ -31,3 +31,4 @@ export { Switch } from 'src/components/Switch';
 export { Placeholder } from 'src/components/Placeholder';
 export { RadioButtonCard } from 'src/components/RadioButtonCard';
 export { TagInput } from 'src/components/TagInput';
+export { Toast } from 'src/components/Toast';
