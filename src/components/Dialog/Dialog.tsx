@@ -45,6 +45,7 @@ const Close = styled.button`
   width: 32px;
   height: 32px;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
   font-size: 20px;
   background: transparent;
