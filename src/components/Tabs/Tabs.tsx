@@ -18,11 +18,22 @@ const Titles = styled.ul.attrs({
   flex-flow: nowrap row;
 `;
 
-const Title = styled.li<TitleProps>`
+const Title = styled.button<TitleProps>`
   cursor: pointer;
   font-family: ${(props) => props.theme.font.primary};
   padding: 8px 16px;
   min-width: 75px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0px;
+  box-sizing: border-box;
+  &:first-child  {
+    border-top-left-radius: 3px;
+  }
+  &:last-child {
+    border-top-right-radius: 3px;
+  }
 `;
 
 Title.defaultProps = {
@@ -33,6 +44,11 @@ Title.defaultProps = {
 const Tab = styled.div<TabProps>`
   font-family: ${(props) => props.theme.font.primary};
   padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 100px;
 `;
 
 Tab.defaultProps = {
