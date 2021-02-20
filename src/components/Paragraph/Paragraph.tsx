@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { ShirtSize } from 'src/types';
 import type { ParagraphProps } from 'src/components/Paragraph/Paragraph.d';
 import theme from 'src/theme';
+import { getBackgroundColor } from 'src/utils/color';
 
 const getSizeStyles = (size?: ShirtSize) => {
   if (size === 'large') {
