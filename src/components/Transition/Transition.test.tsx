@@ -6,7 +6,12 @@ describe('Transition', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container = render(<Transition>Test</Transition>).container as HTMLElement;
+    const A: React.FunctionComponent = () => <div>Test</div>;
+    const container = render(
+      <Transition cssRule={'opacity 0.1s linear'}>
+        <A />
+      </Transition>,
+    ).container as HTMLElement;
 
     expect(getByText(container, 'Test').textContent).toStrictEqual('Test');
   });

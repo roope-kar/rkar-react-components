@@ -26,7 +26,7 @@ const getSize = (props: ButtonProps): string => {
 };
 
 const getAppearanceAndIntent = (props: ButtonProps): string => {
-  const color = (props.theme && props.theme.color[props.intent]) || '';
+  const color = (props.theme && props.theme.color[props.intent || 'none']) || '';
   if (props.appearance === 'primary') {
     return `
       background: ${color};
