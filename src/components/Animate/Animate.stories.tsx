@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { Animate } from 'src/components/Animate';
+import { Animate, Text } from 'src/components';
 import 'src/types';
 
 export default {
@@ -11,4 +11,8 @@ export default {
   },
 } as Meta;
 
-export const SimpleAnimate: React.FunctionComponent = () => <Animate />;
+export const SimpleAnimate: React.FunctionComponent = () => (
+  <Animate inRule={''} outRule={''}>
+    <Text>Hello World</Text>
+  </Animate>
+);

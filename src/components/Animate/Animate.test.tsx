@@ -1,11 +1,15 @@
 import React from 'react';
-import { Animate } from 'src/components';
+import { Animate, Text } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
 describe('Animate', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Animate />);
+    render(
+      <Animate inRule={''} outRule={''}>
+        <Text>Hello World</Text>
+      </Animate>,
+    );
   });
 });
