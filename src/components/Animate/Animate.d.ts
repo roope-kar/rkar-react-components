@@ -1,4 +1,5 @@
-export type AnimateProps = React.PropsWithChildren<{
-    inRule: string;
-    outRule: string
-}>;
+export type AnimateProps = {
+    from: {},
+    to: {},
+    children: (current: {}) => React.ReactNode | null;
+};

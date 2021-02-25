@@ -32,5 +32,4 @@ export { Placeholder } from 'src/components/Placeholder';
 export { RadioButtonCard } from 'src/components/RadioButtonCard';
 export { TagInput } from 'src/components/TagInput';
 export { Toast } from 'src/components/Toast';
-export { Transition } from 'src/components/Transition';
 export { Animate } from 'src/components/Animate';

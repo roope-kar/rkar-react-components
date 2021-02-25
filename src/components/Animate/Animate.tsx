@@ -1,27 +1,28 @@
 import React from 'react';
 import type { AnimateProps } from 'src/components/Animate/Animate.d';
 
-const Animate: React.FunctionComponent<AnimateProps> = ({ inRule, outRule, children }: AnimateProps) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const [show, setShow] = React.useState<boolean>(true);
-  React.useEffect(() => {
-    if (ref.current) {
-      ref.current.addEventListener('animationstart', () => console.log('mount start'));
-      ref.current.addEventListener('animationend', () => console.log('mount end'));
-      ref.current.style.animation = inRule;
+const Animate = ({ children, from, to }: AnimateProps): React.ReactNode => {
+  const [styles, setStyles] = React.useState<{}>({});
+  const prevStylesRef = React.useRef<number | null>(null);
+  const requestRef = React.useRef<number | null>(null);
+
+  const animate = (time: number, current: {}, final: {}) => {
+    if (prevStylesRef.current != null) {
+      setStyles((prevStyles) => ({ ...prevStyles, ...current }));
     }
+    requestRef.current = requestAnimationFrame((time: number) => animate(time, styles, final));
+  };
+
+  React.useEffect(() => {
+    requestRef.current = requestAnimationFrame((time: number) => animate(time, from, to));
     return () => {
-      if (ref.current) {
-        ref.current.addEventListener('animationstart', () => console.log('unmount start'));
-        ref.current.addEventListener('animationend', () => {
-          setShow(false);
-          console.log('unmount end');
-        });
-        ref.current.style.animation = outRule;
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
       }
     };
   }, []);
-  return <div ref={ref}>{show && children}</div>;
+
+  return children(styles);
 };
 
 export default Animate;

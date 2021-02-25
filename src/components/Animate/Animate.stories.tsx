@@ -11,8 +11,4 @@ export default {
   },
 } as Meta;
 
-export const SimpleAnimate: React.FunctionComponent = () => (
-  <Animate inRule={''} outRule={''}>
-    <Text>Hello World</Text>
-  </Animate>
-);
+export const SimpleAnimate: React.FunctionComponent = () => null;
