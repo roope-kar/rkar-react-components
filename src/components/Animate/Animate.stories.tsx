@@ -11,4 +11,6 @@ export default {
   },
 } as Meta;
 
-export const SimpleAnimate: React.FunctionComponent = () => null;
+export const SimpleAnimate: React.FunctionComponent = () => (
+  <Animate>{(count) => <Text>{Math.round(count)}</Text>}</Animate>
+);
