@@ -33,3 +33,4 @@ export { RadioButtonCard } from 'src/components/RadioButtonCard';
 export { TagInput } from 'src/components/TagInput';
 export { Toast } from 'src/components/Toast';
 export { Animate } from 'src/components/Animate';
+export { DataTable } from 'src/components/DataTable';

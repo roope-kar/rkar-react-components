@@ -6,6 +6,6 @@ describe('TagInput', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<TagInput value={'123'} />);
+    render(<TagInput value={'123'} readOnly />);
   });
 });
