@@ -23,7 +23,7 @@
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build:esm": "ttsc -p tsconfig.esm.json",
     "build": "rm -rf lib/* && npm run build:prod && npm run build:esm",
-    "build-storybook": "npm run test:output && build-storybook -s storybook-static"
+    "build-storybook": "npm run test:output && build-storybook -s storybook-static && cp -r src/fonts storybook-static/"
   },
   "repository": {
     "type": "git",
