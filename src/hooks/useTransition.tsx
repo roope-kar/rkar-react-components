@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function useTransition(callback: (time: number, delta: number) => void, deps?: any[]) {
+export default function useTransition(callback: (time: number, delta: number) => void, deps?: unknown[]): void {
   const requestRef = React.useRef<number>(0);
   const prevTimeRef = React.useRef<number>(Date.now());
   const startRef = React.useRef<number>(Date.now());
