@@ -13,7 +13,7 @@ export default {
 
 export const AllAlerts: React.FunctionComponent = () => (
   <div style={{ display: 'flex', flexFlow: 'wrap column' }}>
-    <Alert appearance={'primary'} intent={'none'} theme={theme}>
+    <Alert appearance={'primary'} intent={'default'} theme={theme}>
       <Alert.Title>Please note</Alert.Title>
       <Alert.Description>This is the descriptive content for the alert.</Alert.Description>
     </Alert>

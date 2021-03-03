@@ -6,6 +6,6 @@ describe('Badge', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Badge intent={'none'}>Default</Badge>);
+    render(<Badge intent={'default'}>Default</Badge>);
   });
 });

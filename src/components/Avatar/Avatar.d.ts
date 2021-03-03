@@ -1,7 +1,7 @@
-import { ShirtSize, Appearance } from "src/types";
+import { Size, Appearance } from "src/types";
 
 export type AvatarProps = {
     src: string,
-    size: ShirtSize,
+    size: Size,
     appearance: Appearance
 };

@@ -5,13 +5,17 @@ import { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
 const Container = styled.div`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
 `;
+
+Container.defaultProps = {
+  theme,
+};
 
 const Titles = styled.ul.attrs({
   role: 'navigation',
 })`
-  list-style: none;
+  list-style: default;
   margin: 0;
   padding: 0;
   display: flex;
@@ -23,9 +27,9 @@ const Title = styled.button<TitleProps>`
   font-family: ${(props) => props.theme.font.primary};
   padding: 8px 16px;
   min-width: 75px;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: ${(props) => props.theme.color.default};
+  background: ${(props) => props.theme.background.default};
+  border: 1px solid ${(props) => props.theme.background.default};
   border-bottom: 0px;
   box-sizing: border-box;
   &:first-child  {
@@ -44,11 +48,11 @@ Title.defaultProps = {
 const Tab = styled.div<TabProps>`
   font-family: ${(props) => props.theme.font.primary};
   padding: 8px 16px;
-  background: rgba(0, 0, 0, 0.1);
+  background: ${(props) => props.theme.background.default};
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  min-height: 100px;
+  border: 1px solid ${(props) => props.theme.background.default};
+  min-height: 160px;
 `;
 
 Tab.defaultProps = {

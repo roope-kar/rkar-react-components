@@ -3,14 +3,14 @@ import theme from 'src/theme';
 import type { TextInputProps } from 'src/components/TextInput/TextInput.d';
 
 const TextInput = styled.input.attrs({ type: 'text' })<TextInputProps>`
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
+  background: ${(props) => props.theme.background.default};
+  color: ${(props) => props.theme.color.default};
   border-radius: 3px;
   padding: 0px 8px;
-  border: none;
+  border: default;
   line-height: 32px;
   &:focus {
-    outline: none;
+    outline: default;
   }
 `;
 

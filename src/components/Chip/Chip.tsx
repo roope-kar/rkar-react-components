@@ -3,12 +3,12 @@ import { ChipProps } from 'src/components/Chip/Chip.d';
 import theme from 'src/theme';
 
 const getAppearanceAndIntent = (props: ChipProps): string => {
-  const intent = props.intent || 'none';
-  const color = (props.theme && props.theme.color[intent]) || '';
+  const background = props.theme?.background[props.intent || 'default'];
+  const color = props.theme?.color[props.intent || 'default'];
   if (props.appearance === 'primary') {
     return `
-        background: ${color};
-        color: rgba(255,255,255,0.9);
+        background: ${background};
+        color: ${color};
       `;
   } else {
     return `
@@ -24,11 +24,11 @@ const Chip = styled.span<ChipProps>`
   font-size: 12px;
   border-radius: 999px;
   ${(props) => getAppearanceAndIntent(props)}
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.font.primary};
 `;
 
 Chip.defaultProps = {
-  intent: 'none',
+  intent: 'default',
   appearance: 'primary',
   theme,
 };

@@ -12,7 +12,7 @@ const Container = styled.div`
 const Divider = styled.div`
   margin-left: 8px;
   margin-right: 8px;
-  color: rgba(255, 255, 255, 0.6);
+  color: ${(props) => props.theme.color.default};
 `;
 
 const Breadcrumbs: GroupComponent<BreadcrumbsProps> = ({ children }: BreadcrumbsProps) => (

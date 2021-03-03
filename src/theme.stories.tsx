@@ -36,7 +36,7 @@ export const DefaultThemeColors: React.FunctionComponent = () => {
   return (
     <div>
       <div style={colorContainer}>
-        <div style={{ ...colorBlock, background: theme.color.none }}></div>
+        <div style={{ ...colorBlock, background: theme.color.default }}></div>
         <div style={{ color: 'rgba(255, 255, 255, 0.9)', fontFamily: theme.font.primary, fontSize: '16px' }}>
           Default
         </div>

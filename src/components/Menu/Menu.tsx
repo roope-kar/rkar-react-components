@@ -9,7 +9,7 @@ import { useKeyboardNavigation } from 'src/hooks';
 const MenuContainer = styled.ul.attrs({
   role: 'menu',
 })<MenuProps>`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   font-family: ${(props) => props.theme.font.primary};
   box-sizing: border-box;
   margin: 0;
@@ -72,7 +72,7 @@ Menu.Item = MenuItem;
 
 Menu.Item.defaultProps = {
   theme,
-  intent: 'none',
+  intent: 'default',
 };
 
 const MenuDivider: React.FunctionComponent = () => <Divider alignment={'horizontal'} />;

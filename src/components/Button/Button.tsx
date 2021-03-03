@@ -26,23 +26,24 @@ const getSize = (props: ButtonProps): string => {
 };
 
 const getAppearanceAndIntent = (props: ButtonProps): string => {
-  const color = (props.theme && props.theme.color[props.intent || 'none']) || '';
+  const background = props.theme?.background[props.intent || 'default'] || 'rgba(0, 0, 0, 0.1)';
+  const color = props.theme?.color[props.intent || 'default'] || 'rgba(255, 255, 255, 0.1)';
   if (props.appearance === 'primary') {
     return `
-      background: ${color};
-      color: rgba(255,255,255,0.9);
+      background: ${background};
+      color: ${color};
 
       &:hover {
-        background: ${darken(0.03, color)};
+        background: ${darken(0.03, background)};
       }
     
       &:active {
-        background: ${darken(0.08, color)};
+        background: ${darken(0.08, background)};
       }
     
       &:focus {
         outline: 0;
-        border: 2px solid ${lighten(0.1, color)};
+        border: 2px solid ${lighten(0.1, background)};
       }
     `;
   } else {
@@ -60,7 +61,7 @@ const getAppearanceAndIntent = (props: ButtonProps): string => {
     
       &:focus {
         outline: 0;
-        border: 2px solid ${lighten(0.1, color)};
+        border: 2px solid ${lighten(0.1, background)};
       }
     `;
   }
@@ -77,19 +78,18 @@ const Button = styled.button.attrs({
   white-space: nowrap;
   cursor: pointer;
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
   font-weight: normal;
   ${(props) => getSize(props)};
   ${(props) => getAppearanceAndIntent(props)};
 
   &::selection {
-    background: none;
+    background: default;
   }
 `;
 
 Button.defaultProps = {
   size: 'medium',
-  intent: 'none',
+  intent: 'default',
   appearance: 'primary',
   theme,
 };

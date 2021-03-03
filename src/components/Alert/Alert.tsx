@@ -7,10 +7,10 @@ import { GroupComponent } from 'src/types';
 const Container = styled.div<AlertProps>`
   padding: 8px 16px;
   font-family: ${(props) => props.theme.font.primary};
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px ${(props) => props.theme.background.default};
+  background: ${(props) => props.theme.background.default};
   border-left: 8px solid ${(props) => props.theme.color[props.intent]};
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
 `;
 
 Container.defaultProps = {
@@ -39,7 +39,7 @@ const Alert: GroupComponent<AlertProps> = (props: AlertProps) => {
 };
 
 Alert.defaultProps = {
-  intent: 'none',
+  intent: 'default',
   appearance: 'primary',
   theme,
 };

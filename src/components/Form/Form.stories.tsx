@@ -20,7 +20,7 @@ export const SimpleForm: React.FunctionComponent = () => {
         <TextInput />
       </Form.Field>
       <Form.Field>
-        <Button size={'small'} intent={'none'} appearance={'primary'}>
+        <Button size={'small'} intent={'default'} appearance={'primary'}>
           Submit
         </Button>
       </Form.Field>

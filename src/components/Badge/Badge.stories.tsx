@@ -12,7 +12,7 @@ export default {
 
 export const AllBadges: Story = () => (
   <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
-    <Badge intent={'none'}>Small Badge</Badge>
+    <Badge intent={'default'}>Small Badge</Badge>
     <Badge intent={'info'}>Small Badge</Badge>
     <Badge intent={'danger'}>Small Badge</Badge>
     <Badge intent={'warning'}>Small Badge</Badge>

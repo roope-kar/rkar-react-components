@@ -7,7 +7,7 @@ describe('Alert', () => {
 
   test('renders', () => {
     render(
-      <Alert appearance={'primary'} intent={'none'}>
+      <Alert appearance={'primary'} intent={'default'}>
         <Alert.Title>Title</Alert.Title>
         <Alert.Description>Description</Alert.Description>
       </Alert>,

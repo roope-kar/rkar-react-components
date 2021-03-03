@@ -1,5 +1,5 @@
-import { ShirtSize } from "src/types";
+import { Size } from "src/types";
 
 export type HeadingProps = React.PropsWithChildren<{
-    size?: ShirtSize
+    size?: Size
 }>;

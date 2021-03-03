@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import type { TextAreaProps } from 'src/components/TextArea/TextArea.d';
 
 const TextArea = styled.textarea<TextAreaProps>`
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
+  color: ${(props) => props.theme.color.default};
+  background: ${(props) => props.theme.background.default};
+  border: default;
   border-radius: 3px;
   padding: 8px;
   box-sizing: border-box;

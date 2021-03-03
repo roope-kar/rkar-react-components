@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { Button, Paragraph, Heading, Dialog, Text } from 'src/components';
-import { ShirtSize } from 'src/types';
+import { Size } from 'src/types';
 
 export default {
   title: 'Button',
@@ -11,9 +11,9 @@ export default {
   },
 } as Meta;
 
-const AllButtons: Story<{ size: ShirtSize }> = ({ size }: { size: ShirtSize }) => (
+const AllButtons: Story<{ size: Size }> = ({ size }: { size: Size }) => (
   <div style={{ display: 'flex', flexFlow: 'nowrap row', justifyContent: 'space-around' }}>
-    <Button size={size} appearance={'primary'} intent={'none'} onClick={() => null}>
+    <Button size={size} appearance={'primary'} intent={'default'} onClick={() => null}>
       Small Button
     </Button>
     <Button size={size} appearance={'primary'} intent={'info'} onClick={() => null}>
@@ -39,7 +39,7 @@ AllButtonsTest.args = {
 
 export const ButtonForSmallContext: React.FunctionComponent = () => (
   <div>
-    <Button size={'small'} appearance={'primary'} intent={'none'} onClick={() => null}>
+    <Button size={'small'} appearance={'primary'} intent={'default'} onClick={() => null}>
       +
     </Button>
   </div>

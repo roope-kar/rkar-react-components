@@ -12,7 +12,7 @@ export default {
 
 export const AllToasts: React.FunctionComponent = () => (
   <div style={{ display: 'flex', flexFlow: 'wrap column' }}>
-    <Toast intent={'none'}>Filters have been reset</Toast>
+    <Toast intent={'default'}>Filters have been reset</Toast>
     <Toast intent={'info'}>There is a new update available</Toast>
     <Toast intent={'success'}>Success! User has been created.</Toast>
     <Toast intent={'danger'}>Sorry, something went wrong!</Toast>

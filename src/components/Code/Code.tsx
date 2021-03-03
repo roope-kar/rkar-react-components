@@ -5,8 +5,8 @@ import theme from 'src/theme';
 const Code = styled.code<CodeProps>`
   display: block;
   font-family: ${(props) => props.theme.font.code};
-  background: rgba(0, 0, 0, 0.1);
-  color: rgba(255, 255, 255, 0.9);
+  background: ${(props) => props.theme.background.default};
+  color: ${(props) => props.theme.color.default};
   border-radius: 3px;
   padding: 16px 24px;
 `;

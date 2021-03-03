@@ -32,8 +32,12 @@ Label.defaultProps = {
 const Info = styled.div`
   font-size: 12px;
   font-family: Roboto;
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
 `;
+
+Info.defaultProps = {
+  theme,
+};
 
 const FileInput: React.FunctionComponent<FileInputProps> = ({ label }: FileInputProps) => {
   const [file, setFile] = React.useState<File | null>();

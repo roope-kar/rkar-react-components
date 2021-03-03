@@ -11,7 +11,14 @@ export interface DefaultTheme {
     warning: string;
     danger: string;
     info: string;
-    none: string;
+    default: string;
+  };
+  background: {
+    success: string;
+    warning: string;
+    danger: string;
+    info: string;
+    default: string;
   };
 }
 
@@ -27,7 +34,14 @@ declare module 'styled-components' {
       warning: string;
       danger: string;
       info: string;
-      none: string;
+      default: string;
+    };
+    background: {
+      success: string;
+      warning: string;
+      danger: string;
+      info: string;
+      default: string;
     };
   }
 }
@@ -39,17 +53,15 @@ export interface GroupComponent<T> extends React.FunctionComponent<T> {
   [name: string]: any;
 }
 
-export type StringOrUndefined = string | undefined;
-
 /**
  * The size to interpret by the component
  */
-export type ShirtSize = 'small' | 'medium' | 'large';
+export type Size = 'small' | 'medium' | 'large';
 
 /**
  * The intention interpret by the component
  */
-export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'none';
+export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'default';
 
 /**
  * The visual variaton interpret by the component

@@ -13,16 +13,19 @@ const Container = styled.div`
   display: flex;
   padding: 8px 16px;
   flex-flow: nowrap row;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background: ${(props) => props.theme.background.default};
+  border: 1px solid ${(props) => props.theme.background.default};
   border-radius: 3px;
   cursor: pointer;
   transition: background 0.1s linear;
   &:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: ${(props) => props.theme.background.default};
   }
 `;
+
+Container.defaultProps = {
+  theme,
+};
 
 const InputContainer = styled.div`
   display: flex;
@@ -57,7 +60,7 @@ RadioButtonCard.defaultProps = {
 
 RadioButtonCard.Title = styled.div<RadioButtonCardTitleProps>`
   font-family: ${(props) => props.theme.font.primary};
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   margin-bottom: 4px;
 `;
 
@@ -67,7 +70,7 @@ RadioButtonCard.Title.defaultProps = {
 
 RadioButtonCard.Description = styled.div<RadioButtonCardDescriptionProps>`
   font-family: ${(props) => props.theme.font.primary};
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   line-height: 22px;
 `;
 

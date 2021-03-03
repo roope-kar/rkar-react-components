@@ -9,7 +9,7 @@ const Backdrop = styled.div``;
 const Container = styled.div.attrs({
   role: 'dialog',
 })`
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid ${(props) => props.theme.color.default};
   border-radius: 3px;
 `;
 
@@ -22,12 +22,16 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
+  background: ${(props) => props.theme.background.default};
+  color: ${(props) => props.theme.color.default};
 `;
 
+Header.defaultProps = {
+  theme,
+};
+
 const Title = styled.h4`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   font-size: 18px;
   font-family: ${(props) => props.theme.font.primary};
   font-weight: normal;
@@ -39,19 +43,19 @@ Title.defaultProps = {
 };
 
 const Close = styled.button`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   font-family: ${(props) => props.theme.font.primary}
   padding: 0;
   width: 32px;
   height: 32px;
-  border: none;
+  border: default;
   border-radius: 3px;
   cursor: pointer;
   font-size: 20px;
   background: transparent;
   &:focus {
-    outline: rgba(0,0,0,0.1);
-    background: rgba(0,0,0,0.1);
+    outline: ${(props) => props.theme.background.default};
+    background: ${(props) => props.theme.background.default};
   }
 `;
 

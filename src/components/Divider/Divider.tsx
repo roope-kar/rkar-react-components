@@ -4,12 +4,12 @@ import type { DividerProps } from 'src/components/Divider/Divider.d';
 const getAlignment = (props: DividerProps): string => {
   if (props.alignment === 'horizontal') {
     return `
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid ${props.theme?.background.default};
         `;
   } else {
     return `
             display: inline-block;
-            border-right: 2px solid rgba(0, 0, 0, 0.1);
+            border-right: 2px solid ${props.theme?.background.default};
         `;
   }
 };

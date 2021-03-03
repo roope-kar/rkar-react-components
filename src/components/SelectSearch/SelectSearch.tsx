@@ -6,7 +6,7 @@ import theme from 'src/theme';
 import { useKeyboardNavigation } from 'src/hooks';
 
 const Container = styled.div`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   position: relative;
   font-family: ${(props) => props.theme.font.primary};
 `;
@@ -17,7 +17,7 @@ Container.defaultProps = {
 
 const SearchContainer = styled.div`
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: ${(props) => props.theme.background.default};
 `;
 
 SearchContainer.defaultProps = {
@@ -26,15 +26,15 @@ SearchContainer.defaultProps = {
 
 const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
   display: block;
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   width: 100%;
   background: transparent;
-  border: none;
+  border: default;
   box-sizing: border-box;
   line-height: 32px;
   padding: 0px 8px;
   &:focus {
-    outline: none;
+    outline: default;
   }
 `;
 
@@ -46,11 +46,11 @@ const SelectContainer = styled.ul.attrs({
 })`
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: default;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   box-sizing: border-box;
-  border: 1px solid ${(props) => props.theme.color.none};
+  border: 1px solid ${(props) => props.theme.color.default};
   border-top: 0px;
 `;
 
@@ -95,7 +95,7 @@ const SearchOption = styled.li.attrs({ role: 'option', 'aria-selected': false, t
   cursor: pointer;
   &:focus {
     outline: 0;
-    background: ${(props) => props.theme.color.none};
+    background: ${(props) => props.theme.color.default};
   }
 `;
 

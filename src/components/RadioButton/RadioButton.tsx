@@ -21,7 +21,7 @@ const Container = styled.span`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: ${(props) => props.theme.background.default};
 `;
 
 Container.defaultProps = {
@@ -50,7 +50,7 @@ const Input = styled.input<RadioButtonProps>`
   margin: 0;
   &:checked + label::after {
     animation: ${appear} 0.1s linear;
-    background: rgba(255, 255, 255, 0.2);
+    background: ${(props) => props.theme.background.default};
     content: '';
     width: 16px;
     height: 16px;

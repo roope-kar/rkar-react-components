@@ -9,31 +9,31 @@ const Container = styled.div<ToastProps>`
   justify-content: space-between;
   padding: 8px 16px;
   font-family: ${(props) => props.theme.font.primary};
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.1);
-  border-left: 8px solid ${(props) => props.theme.color[props.intent || 'none']};
-  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 1px 1px ${(props) => props.theme.background.default};
+  background: ${(props) => props.theme.background.default};
+  border-left: 8px solid ${(props) => props.theme.color[props.intent || 'default']};
+  color: ${(props) => props.theme.color.default};
 `;
 
 Container.defaultProps = {
   theme,
-  intent: 'none',
+  intent: 'default',
 };
 
 const Close = styled.button`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.color.default};
   font-family: ${(props) => props.theme.font.primary}
   padding: 0;
   width: 32px;
   height: 32px;
-  border: none;
+  border: default;
   border-radius: 3px;
   cursor: pointer;
   font-size: 20px;
   background: transparent;
   &:focus {
-    outline: rgba(0,0,0,0.1);
-    background: rgba(0,0,0,0.1);
+    outline: ${(props) => props.theme.background.default};
+    background: ${(props) => props.theme.background.default};
   }
 `;
 

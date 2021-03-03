@@ -13,7 +13,7 @@ const Content = styled.label`
   align-items: center;
   width: 24px;
   height: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid ${(props) => props.theme.background.default};
   border-radius: 3px;
   background: transparent;
 `;
@@ -23,12 +23,12 @@ Content.defaultProps = {
 };
 
 const Input = styled.input<CheckboxProps>`
-  display: none;
+  display: default;
   &:checked + label {
-    background: rgba(255, 255, 255, 0.1);
+    background: ${(props) => props.theme.background.default};
     &::after {
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.9);
+      font-size: 18px;
+      color: ${(props) => props.theme?.color.default};
       content: '✓';
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import type { ShirtSize, Appearance } from 'src/types';
+import type { Size, Appearance } from 'src/types';
 import type { AvatarProps } from 'src/components/Avatar/Avatar.d';
 
 const Container = styled.div<{ appearance: Appearance }>`
@@ -14,7 +14,7 @@ const Image = styled.img<{ appearance: Appearance }>`
   border-radius: ${(props) => (props.appearance === 'primary' ? '3px' : '50%')};
 `;
 
-const getSize = (size: ShirtSize) => {
+const getSize = (size: Size) => {
   switch (size) {
     case 'small':
       return '24px';

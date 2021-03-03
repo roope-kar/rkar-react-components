@@ -10,7 +10,8 @@ const Container = styled.label<SwitchProps>`
   justify-content: ${(props) => (props.value === 'true' ? 'flex-end' : 'flex-start')};
   width: 32px;
   height: 16px;
-  background: ${(props) => (props.value === 'true' ? lighten(0.1, props.theme.color.success) : 'rgba(0, 0, 0, 0.1)')};
+  background: ${(props) =>
+    props.value === 'true' ? lighten(0.1, props.theme.color.success) : props.theme.color.default};
   border-radius: 9999px;
   cursor: pointer;
 `;
@@ -30,7 +31,7 @@ const Dot = styled.div<SwitchProps>`
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: ${(props) => (props.value === 'true' ? props.theme.color.success : 'rgba(255, 255, 255, 0.1)')};
+  background: ${(props) => (props.value === 'true' ? props.theme.color.success : props.theme.background.default)};
 `;
 
 Dot.defaultProps = {

@@ -8,7 +8,7 @@ import theme from 'src/theme';
 const Container = styled.div.attrs({
   role: 'grid',
 })<DataGridProps>`
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme?.color.default};
   font-family: ${(props) => props.theme.font.secondary};
   display: flex;
   flex-direction: column;
