@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BreadcrumbsProps } from 'src/components/Breadcrumbs/Breadcrumbs.d';
 import { GroupComponent } from 'src/types';
 import { Link } from 'src/components';
+import theme from 'src/theme';
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,10 @@ const Divider = styled.div`
   margin-right: 8px;
   color: ${(props) => props.theme.color.default};
 `;
+
+Divider.defaultProps = {
+  theme
+}
 
 const Breadcrumbs: GroupComponent<BreadcrumbsProps> = ({ children }: BreadcrumbsProps) => (
   <Container>

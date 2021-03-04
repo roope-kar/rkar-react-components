@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import type { TextAreaProps } from 'src/components/TextArea/TextArea.d';
+import theme from 'src/theme';
 
 const TextArea = styled.textarea<TextAreaProps>`
   color: ${(props) => props.theme.color.default};
@@ -13,6 +14,7 @@ const TextArea = styled.textarea<TextAreaProps>`
 
 TextArea.defaultProps = {
   resize: false,
+  theme
 };
 
 export default TextArea;

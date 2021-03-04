@@ -6,7 +6,6 @@ describe('TextArea', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const container = render(<TextArea value={'This is a placeholder text'} readOnly />).container as HTMLElement;
-    expect(container).toBeDefined;
+    render(<TextArea value={'This is a placeholder text'} readOnly />);
   });
 });

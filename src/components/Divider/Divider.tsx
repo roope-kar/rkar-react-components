@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import type { DividerProps } from 'src/components/Divider/Divider.d';
+import theme from 'src/theme';
 
 const getAlignment = (props: DividerProps): string => {
   if (props.alignment === 'horizontal') {
@@ -20,6 +21,7 @@ const Divider = styled.div<DividerProps>`
 
 Divider.defaultProps = {
   alignment: 'horizontal',
+  theme
 };
 
 export default Divider;
