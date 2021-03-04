@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Collection of composable react components",
   "resolutions": {
     "styled-components": "^5"
@@ -12,7 +12,8 @@
   "module": "lib/esm/",
   "sideEffects": false,
   "files": [
-    "lib/"
+    "src",
+    "lib"
   ],
   "scripts": {
     "test": "jest",

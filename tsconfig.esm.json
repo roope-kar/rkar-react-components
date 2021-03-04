@@ -2,7 +2,7 @@
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "outDir": "lib/esm",
+    "outDir": "lib/esm/",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -14,7 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "strict": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "types": ["jest", "node"],
     "paths": {
       "src": ["src/*"],

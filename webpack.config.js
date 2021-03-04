@@ -27,14 +27,6 @@ module.exports = {
     libraryTarget: 'umd',
     libraryExport: 'default'
   },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react',
-      root: '_',
-    },
-  },
   plugins: [
     new webpack.BannerPlugin({
       banner: `
