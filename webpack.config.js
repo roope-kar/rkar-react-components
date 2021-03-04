@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const pkg = require('./package.json');
 
 module.exports = {
-  entry: './src/components/index.ts',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
