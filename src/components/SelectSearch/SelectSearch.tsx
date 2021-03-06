@@ -39,8 +39,8 @@ const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
 `;
 
 SearchInput.defaultProps = {
-  theme
-}
+  theme,
+};
 
 const SelectContainer = styled.ul.attrs({
   role: 'listbox',

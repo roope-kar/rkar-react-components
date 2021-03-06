@@ -21,7 +21,7 @@ const Divider = styled.div<DividerProps>`
 
 Divider.defaultProps = {
   alignment: 'horizontal',
-  theme
+  theme,
 };
 
 export default Divider;

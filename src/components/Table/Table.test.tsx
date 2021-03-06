@@ -1,11 +1,11 @@
 import React from 'react';
-import { DataTable } from 'src/components';
+import { Table } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
-describe('DataTable', () => {
+describe('Table', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<DataTable />);
+    render(<Table />);
   });
 });

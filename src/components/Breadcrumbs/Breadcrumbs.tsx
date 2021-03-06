@@ -17,8 +17,8 @@ const Divider = styled.div`
 `;
 
 Divider.defaultProps = {
-  theme
-}
+  theme,
+};
 
 const Breadcrumbs: GroupComponent<BreadcrumbsProps> = ({ children }: BreadcrumbsProps) => (
   <Container>

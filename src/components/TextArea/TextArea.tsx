@@ -14,7 +14,7 @@ const TextArea = styled.textarea<TextAreaProps>`
 
 TextArea.defaultProps = {
   resize: false,
-  theme
+  theme,
 };
 
 export default TextArea;
