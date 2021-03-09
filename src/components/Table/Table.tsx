@@ -4,20 +4,24 @@ import styled from 'styled-components';
 
 const Table: GroupComponent<TableProps> = styled.div``;
 
-const Header = styled.div``;
+const Head = styled.div``;
 
 const Body = styled.div``;
 
+const Foot = styled.div``;
+
 const Row = styled.div``;
 
-const Column = styled.div``;
+const Cell = styled.div``;
 
-Table.Header = Header;
+Table.Head = Head;
 
 Table.Body = Body;
 
+Table.Foot = Foot;
+
 Table.Row = Row;
 
-Table.Column = Column;
+Table.Cell = Cell;
 
 export default Table;
