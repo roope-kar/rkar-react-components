@@ -7,10 +7,10 @@ const TextInput = styled.input.attrs({ type: 'text' })<TextInputProps>`
   color: ${(props) => props.theme.color.default};
   border-radius: 3px;
   padding: 0px 8px;
-  border: default;
+  border: none;
   line-height: 32px;
   &:focus {
-    outline: default;
+    outline: none;
   }
 `;
 

@@ -27,9 +27,9 @@ Container.defaultProps = {
 const Input = styled.input`
   background: transparent;
   color: ${(props) => props.theme.color.default};
-  border: default;
+  border: none;
   &:focus {
-    outline: default;
+    outline: none;
   }
 `;
 

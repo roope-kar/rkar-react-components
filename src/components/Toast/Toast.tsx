@@ -22,11 +22,11 @@ Container.defaultProps = {
 
 const Close = styled.button`
   color: ${(props) => props.theme.color.default};
-  font-family: ${(props) => props.theme.font.primary}
+  font-family: ${(props) => props.theme.font.primary};
   padding: 0;
   width: 32px;
   height: 32px;
-  border: default;
+  border: none;
   border-radius: 3px;
   cursor: pointer;
   font-size: 20px;

@@ -11,52 +11,32 @@ export default {
   },
 } as Meta;
 
-/**
- * TODO:
- *  - Selectable Rows
- *  - MultiSelect Actions
- *  - Pagination
- *  - Resize Column
- *  - Customize columns
- *  - Virtualized Table
- *  - Responsive: Collapse columns into 1 column
- *  - Responsive: Action content should be full screen
- *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px
- *  - Fixed Header: Maintain context while scrolling
- *  - 
- */
+type UserData = Array<{ name: string; age: number; weight: number }>;
 
-export const SimpleTable: React.FunctionComponent = () => null;
+const userData: UserData = [
+  { name: 'alice', age: 21, weight: 60 },
+  { name: 'bob', age: 22, weight: 80 },
+  { name: 'charlie', age: 26, weight: 100 },
+];
 
-{/* <Table>
-  <Table.Header>
-    <Table.Name>Simple Table</Table.Name>
-    <Table.Actions>
-      <Table.Action></Table.Action>
-      <Table.Action></Table.Action>
-      <Table.Action></Table.Action>
-    </Table.Actions>
-    <Table.Controls>
-      <Table.Control></Table.Control>
-      <Table.Control></Table.Control>
-      <Table.Control></Table.Control>
-    </Table.Controls>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>John</Table.Cell>
-      <Table.Cell>21</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>Alice</Table.Cell>
-      <Table.Cell>23</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>Bob</Table.Cell>
-      <Table.Cell>33</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-  <Table.Footer>
-    <Table.Pagination />
-  </Table.Footer>
-</Table> */}
+export const SimpleTable: React.FunctionComponent = () => {
+  const [data] = React.useState<UserData>(userData);
+  return (
+    <Table>
+      <Table.Head>
+        <Table.Col>Name</Table.Col>
+        <Table.Col>Age</Table.Col>
+        <Table.Col>Weight</Table.Col>
+      </Table.Head>
+      <Table.Body>
+        {data.map((dot, index) => (
+          <Table.Row key={index}>
+            <Table.Col>{dot.name}</Table.Col>
+            <Table.Col>{dot.age}</Table.Col>
+            <Table.Col>{dot.weight}</Table.Col>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+};

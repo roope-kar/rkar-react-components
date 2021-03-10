@@ -15,7 +15,7 @@ Container.defaultProps = {
 const Titles = styled.ul.attrs({
   role: 'navigation',
 })`
-  list-style: default;
+  list-style: none;
   margin: 0;
   padding: 0;
   display: flex;

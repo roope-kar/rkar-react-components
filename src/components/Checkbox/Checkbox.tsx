@@ -23,7 +23,7 @@ Content.defaultProps = {
 };
 
 const Input = styled.input<CheckboxProps>`
-  display: default;
+  display: none;
   &:checked + label {
     background: ${(props) => props.theme.background.default};
     &::after {

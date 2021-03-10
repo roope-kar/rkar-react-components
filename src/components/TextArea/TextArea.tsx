@@ -5,7 +5,7 @@ import theme from 'src/theme';
 const TextArea = styled.textarea<TextAreaProps>`
   color: ${(props) => props.theme.color.default};
   background: ${(props) => props.theme.background.default};
-  border: default;
+  border: none;
   border-radius: 3px;
   padding: 8px;
   box-sizing: border-box;

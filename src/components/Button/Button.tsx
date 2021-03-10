@@ -27,7 +27,7 @@ const getSize = (props: ButtonProps): string => {
 
 const getAppearanceAndIntent = (props: ButtonProps): string => {
   const background = props.theme?.background[props.intent || 'default'] || 'rgba(0, 0, 0, 0.1)';
-  const color = props.theme?.color[props.intent || 'default'] || 'rgba(255, 255, 255, 0.1)';
+  const color = props.theme?.color.default;
   if (props.appearance === 'primary') {
     return `
       background: ${background};
@@ -83,7 +83,7 @@ const Button = styled.button.attrs({
   ${(props) => getAppearanceAndIntent(props)};
 
   &::selection {
-    background: default;
+    background: none;
   }
 `;
 

@@ -29,12 +29,12 @@ const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
   color: ${(props) => props.theme.color.default};
   width: 100%;
   background: transparent;
-  border: default;
+  border: none;
   box-sizing: border-box;
   line-height: 32px;
   padding: 0px 8px;
   &:focus {
-    outline: default;
+    outline: none;
   }
 `;
 
@@ -50,7 +50,7 @@ const SelectContainer = styled.ul.attrs({
 })`
   margin: 0;
   padding: 0;
-  list-style: default;
+  list-style: none;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   box-sizing: border-box;
