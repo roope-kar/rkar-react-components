@@ -1,9 +1,13 @@
+import React from 'react';
 import { GroupComponent, Size } from 'src/types';
-import type { TableProps, RowProps } from 'src/components/Table/Table.d';
+import type { TableProps, TableRowProps, TableHeadProps, TableColProps } from 'src/components/Table/Table.d';
 import styled from 'styled-components';
 
-const getRowHeight = (size: Size) => {
-  switch (size) {
+// Use container to share props in table
+const TableContext = React.createContext<{}>({});
+
+const getRowHeight = (height: Size): string => {
+  switch (height) {
     case 'small':
       return '40px';
     case 'medium':
@@ -16,42 +20,63 @@ const getRowHeight = (size: Size) => {
 /**
  * TODO:
  *  - Initial Layout [OK]
- *  - Selectable Rows
+ *  - Selectable Rows [OK]
+ *  - Sticky Header [OK]
  *  - MultiSelect Actions
- *  - Sort column
+ *  - Sort column [OK]
  *  - Pagination
- *  - Resize Column
- *  - Customize columns
  *  - Virtualized Table
  *  - Responsive: Collapse columns into 1 column
  *  - Responsive: Action content should be full screen
- *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px
- *  - Fixed Header: Maintain context while scrolling
- *  -
+ *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px [OK]
  */
 
-const Table: GroupComponent<TableProps> = styled.div``;
+const TableContainer = styled.div``;
 
-const Head = styled.div``;
-
-const Body = styled.div``;
-
-const Row = styled.div<RowProps>`
-  height: ${(props) => getRowHeight(props.size || 'medium')};
-`;
-
-Row.defaultProps = {
-  size: 'medium',
+const Table: GroupComponent<TableProps> = ({ children }: TableProps) => {
+  const context = {};
+  return (
+    <TableContext.Provider value={context}>
+      <TableContainer>{children}</TableContainer>
+    </TableContext.Provider>
+  );
 };
 
-const Col = styled.div``;
+const Head = styled.div<TableHeadProps>`
+  height: ${props => props.height};
+  position: ${props => props.useSticky ? 'sticky' : 'static'};
+  top: ${props => props.useSticky ? '0' : 'unset'};
+`;
+
+Head.defaultProps = {
+  height: 'medium',
+  useSticky: false
+}
 
 Table.Head = Head;
 
+const Body = styled.div``;
+
 Table.Body = Body;
 
-Table.Row = Row;
+const RowContainer = styled.div<TableRowProps>`
+  height: ${(props) => getRowHeight(props.height || 'medium')};
+`;
 
-Table.Col = Col;
+RowContainer.defaultProps = {
+  height: 'medium',
+};
+
+Table.Row = function TableRow({ height = 'medium', onSelect, children }: TableRowProps) {
+  return <RowContainer height={height}>
+    {children}
+  </RowContainer>
+}
+
+const ColContainer = styled.div``;
+
+Table.Col = function TableCol({ useSort = false, onSortClick, direction = null, children }: TableColProps) {
+  return <ColContainer>{children}</ColContainer>
+};
 
 export default Table;

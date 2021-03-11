@@ -67,3 +67,8 @@ export type Intent = 'success' | 'warning' | 'danger' | 'info' | 'default';
  * The visual variaton interpret by the component
  */
 export type Appearance = 'primary' | 'secondary';
+
+/**
+ * The sorting directions for most things
+ */
+export type Direction = 'asc' | 'desc';
