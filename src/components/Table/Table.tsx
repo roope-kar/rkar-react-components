@@ -24,6 +24,7 @@ const getRowHeight = (height: Size): string => {
  *  - Sticky Header [OK]
  *  - MultiSelect Actions
  *  - Sort column [OK]
+ *  - Highlight Row [OK]
  *  - Pagination
  *  - Virtualized Table
  *  - Responsive: Collapse columns into 1 column
@@ -61,6 +62,9 @@ Table.Body = Body;
 
 const RowContainer = styled.div<TableRowProps>`
   height: ${(props) => getRowHeight(props.height || 'medium')};
+  &:hover {
+    background: ${props => props.theme.background.default};
+  }
 `;
 
 RowContainer.defaultProps = {
