@@ -1,10 +1,23 @@
 import React from 'react';
 import { GroupComponent, Size } from 'src/types';
-import type { TableProps, TableRowProps, TableHeadProps, TableColProps } from 'src/components/Table/Table.d';
+import { Checkbox } from 'src/components';
+import type {
+  TableProps,
+  TableRowProps,
+  TableHeadProps,
+  TableColProps,
+  TableSelectColProps,
+  TableSortColProps,
+} from 'src/components/Table/Table.d';
 import styled from 'styled-components';
+import theme from 'src/theme';
 
 // Use container to share props in table
-const TableContext = React.createContext<{}>({});
+const TableContext = React.createContext<{
+  secret: string;
+}>({
+  secret: 'test',
+});
 
 const getRowHeight = (height: Size): string => {
   switch (height) {
@@ -32,10 +45,17 @@ const getRowHeight = (height: Size): string => {
  *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px [OK]
  */
 
-const TableContainer = styled.div``;
+const TableContainer = styled.div`
+  font-family: ${(props) => props.theme.font.primary};
+  color: ${(props) => props.theme.color.default};
+`;
+
+TableContainer.defaultProps = {
+  theme,
+};
 
 const Table: GroupComponent<TableProps> = ({ children }: TableProps) => {
-  const context = {};
+  const context = { secret: 'test' };
   return (
     <TableContext.Provider value={context}>
       <TableContainer>{children}</TableContainer>
@@ -44,15 +64,21 @@ const Table: GroupComponent<TableProps> = ({ children }: TableProps) => {
 };
 
 const Head = styled.div<TableHeadProps>`
-  height: ${props => props.height};
-  position: ${props => props.useSticky ? 'sticky' : 'static'};
-  top: ${props => props.useSticky ? '0' : 'unset'};
+  display: flex;
+  flex-flow: nowrap row;
+  font-size: 12px;
+  font-weight: bold;
+  height: ${(props) => getRowHeight(props.height || 'medium')};
+  position: ${(props) => (props.useSticky ? 'sticky' : 'static')};
+  top: ${(props) => (props.useSticky ? '0' : 'unset')};
+  border-bottom: 2px solid ${(props) => props.theme.background.default};
 `;
 
 Head.defaultProps = {
   height: 'medium',
-  useSticky: false
-}
+  useSticky: false,
+  theme,
+};
 
 Table.Head = Head;
 
@@ -61,26 +87,49 @@ const Body = styled.div``;
 Table.Body = Body;
 
 const RowContainer = styled.div<TableRowProps>`
+  display: flex;
+  flex-flow: nowrap row;
   height: ${(props) => getRowHeight(props.height || 'medium')};
+  border-bottom: 1px solid ${(props) => props.theme.background.default};
   &:hover {
-    background: ${props => props.theme.background.default};
+    background: ${(props) => props.theme.background.default};
   }
 `;
 
 RowContainer.defaultProps = {
   height: 'medium',
+  theme,
 };
 
-Table.Row = function TableRow({ height = 'medium', onSelect, children }: TableRowProps) {
-  return <RowContainer height={height}>
-    {children}
-  </RowContainer>
-}
+Table.Row = function TableRow({ height = 'medium', onClick, children }: TableRowProps) {
+  return (
+    <RowContainer height={height} onClick={onClick}>
+      {children}
+    </RowContainer>
+  );
+};
 
-const ColContainer = styled.div``;
+const ColContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 16px;
+`;
 
-Table.Col = function TableCol({ useSort = false, onSortClick, direction = null, children }: TableColProps) {
-  return <ColContainer>{children}</ColContainer>
+Table.Col = function TableCol({ children }: TableColProps) {
+  return <ColContainer>{children}</ColContainer>;
+};
+
+Table.SelectCol = function TableSelectCol(props: TableSelectColProps) {
+  return (
+    <ColContainer>
+      <Checkbox {...props} />
+    </ColContainer>
+  );
+};
+
+Table.SortCol = function TableSortCol({ direction, onClick }: TableSortColProps) {
+  return <ColContainer onClick={onClick}>{direction}</ColContainer>;
 };
 
 export default Table;

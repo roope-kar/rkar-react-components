@@ -24,13 +24,15 @@ export const SimpleTable: React.FunctionComponent = () => {
   return (
     <Table>
       <Table.Head>
+        <Table.SelectCol />
         <Table.Col>Name</Table.Col>
         <Table.Col>Age</Table.Col>
-        <Table.Col>Weight</Table.Col>
+        <Table.SortCol direction={'desc'}>Weight</Table.SortCol>
       </Table.Head>
       <Table.Body>
         {data.map((dot, index) => (
-          <Table.Row key={index}>
+          <Table.Row key={index} onClick={() => null}>
+            <Table.SelectCol />
             <Table.Col>{dot.name}</Table.Col>
             <Table.Col>{dot.age}</Table.Col>
             <Table.Col>{dot.weight}</Table.Col>
