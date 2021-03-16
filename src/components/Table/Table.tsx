@@ -39,7 +39,6 @@ const getRowHeight = (height: Size): string => {
  *  - Sort column [OK]
  *  - Highlight Row [OK]
  *  - Pagination
- *  - Virtualized Table
  *  - Responsive: Collapse columns into 1 column
  *  - Responsive: Action content should be full screen
  *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px [OK]
@@ -66,8 +65,6 @@ const Table: GroupComponent<TableProps> = ({ children }: TableProps) => {
 const Head = styled.div<TableHeadProps>`
   display: flex;
   flex-flow: nowrap row;
-  font-size: 12px;
-  font-weight: bold;
   height: ${(props) => getRowHeight(props.height || 'medium')};
   position: ${(props) => (props.useSticky ? 'sticky' : 'static')};
   top: ${(props) => (props.useSticky ? '0' : 'unset')};
@@ -109,20 +106,28 @@ Table.Row = function TableRow({ height = 'medium', onClick, children }: TableRow
   );
 };
 
-const ColContainer = styled.div`
+const ColContainer = styled.div<TableColProps>`
   display: flex;
-  justify-content: flex-start;
+  flex-basis: ${({ flexBasis }) => flexBasis};
+  flex: ${({ flexGrow }) => flexGrow};
+  flex-shrink: ${({ flexShrink }) => flexShrink};
   align-items: center;
   padding: 0px 16px;
 `;
 
-Table.Col = function TableCol({ children }: TableColProps) {
-  return <ColContainer>{children}</ColContainer>;
+ColContainer.defaultProps = {
+  flexBasis: 'auto',
+  flexGrow: 1,
+  flexShrink: 0,
+};
+
+Table.Col = function TableCol(props: TableColProps) {
+  return <ColContainer {...props} />;
 };
 
 Table.SelectCol = function TableSelectCol(props: TableSelectColProps) {
   return (
-    <ColContainer>
+    <ColContainer flexGrow={0}>
       <Checkbox {...props} />
     </ColContainer>
   );

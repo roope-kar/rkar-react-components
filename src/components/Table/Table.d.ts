@@ -14,7 +14,11 @@ export type TableRowProps = React.PropsWithChildren<{
     selected?: boolean;
 }>;
 
-export type TableColProps = React.PropsWithChildren<{}>;
+export type TableColProps = React.PropsWithChildren<{
+    flexBasis?: number | 'auto';
+    flexGrow?: number;
+    flexShrink?: number;
+}>;
 
 export type TableSelectColProps = React.InputHTMLAttributes<HTMLInputElement>;
 
