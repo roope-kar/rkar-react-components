@@ -1,6 +1,6 @@
 import React from 'react';
 import { GroupComponent, Size } from 'src/types';
-import { Checkbox } from 'src/components';
+import { Checkbox, ArrowIcon } from 'src/components';
 import type {
   TableProps,
   TableRowProps,
@@ -133,8 +133,11 @@ Table.SelectCol = function TableSelectCol(props: TableSelectColProps) {
   );
 };
 
-Table.SortCol = function TableSortCol({ direction, onClick }: TableSortColProps) {
-  return <ColContainer onClick={onClick}>{direction}</ColContainer>;
+Table.SortCol = function TableSortCol({ children, direction, onClick }: TableSortColProps) {
+  return <ColContainer onClick={onClick}>
+    {children}
+    <ArrowIcon direction={direction} />
+  </ColContainer>;
 };
 
 export default Table;

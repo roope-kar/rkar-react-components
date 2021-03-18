@@ -33,3 +33,4 @@ export { TagInput } from 'src/components/TagInput';
 export { Toast } from 'src/components/Toast';
 export { Animate } from 'src/components/Animate';
 export { Table } from 'src/components/Table';
+export { ArrowIcon } from 'src/components/ArrowIcon';
