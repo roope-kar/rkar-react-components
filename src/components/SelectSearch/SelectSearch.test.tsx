@@ -7,10 +7,16 @@ describe('SelectSearch', () => {
 
   test('renders all options', () => {
     const container = render(
-      <SelectSearch onSelect={() => null} onSearch={() => null}>
-        <SelectSearch.Option value={1}>one</SelectSearch.Option>
-        <SelectSearch.Option value={2}>two</SelectSearch.Option>
-        <SelectSearch.Option value={3}>three</SelectSearch.Option>
+      <SelectSearch onChange={() => null}>
+        <SelectSearch.Option onClick={() => null} value={1}>
+          one
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={() => null} value={2}>
+          two
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={() => null} value={3}>
+          three
+        </SelectSearch.Option>
       </SelectSearch>,
     ).container as HTMLElement;
 
@@ -19,13 +25,19 @@ describe('SelectSearch', () => {
     expect(getByText(container, 'three').textContent).toStrictEqual('three');
   });
 
-  test('calls onSearch callback when input changes', () => {
-    const onSearch = jest.fn();
+  test('calls onChange callback when input changes', () => {
+    const onChange = jest.fn();
     const container = render(
-      <SelectSearch onSelect={() => null} onSearch={onSearch}>
-        <SelectSearch.Option value={1}>one</SelectSearch.Option>
-        <SelectSearch.Option value={2}>two</SelectSearch.Option>
-        <SelectSearch.Option value={3}>three</SelectSearch.Option>
+      <SelectSearch onChange={onChange}>
+        <SelectSearch.Option onClick={() => null} value={1}>
+          one
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={() => null} value={2}>
+          two
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={() => null} value={3}>
+          three
+        </SelectSearch.Option>
       </SelectSearch>,
     ).container as HTMLElement;
 
@@ -33,28 +45,29 @@ describe('SelectSearch', () => {
 
     fireEvent.change(inputElement, { target: { value: 'test' } });
 
-    expect(onSearch).toBeCalledWith('test');
+    expect(onChange).toBeCalled;
   });
 
-  test('calls onSelect callback with the SelectSearch.Option value on click', () => {
-    const onSelect = jest.fn();
+  test('calls onClick callback with the SelectSearch.Option value on click', () => {
+    const onClick = jest.fn();
     const placeholder = 'Search by name ...';
     const container = render(
-      <SelectSearch onSelect={onSelect} onSearch={() => null} placeholder={placeholder}>
-        <SelectSearch.Option value={1}>one</SelectSearch.Option>
-        <SelectSearch.Option value={2}>two</SelectSearch.Option>
-        <SelectSearch.Option value={3}>three</SelectSearch.Option>
+      <SelectSearch onChange={() => null} placeholder={placeholder}>
+        <SelectSearch.Option onClick={onClick} value={1}>
+          one
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={onClick} value={2}>
+          two
+        </SelectSearch.Option>
+        <SelectSearch.Option onClick={onClick} value={3}>
+          three
+        </SelectSearch.Option>
       </SelectSearch>,
     ).container as HTMLElement;
 
     fireEvent.click(getByText(container, 'two'));
 
-    expect(onSelect).toBeCalledWith(2);
+    expect(onClick).toBeCalledWith(2);
   });
 
-  test('should work without ThemeProvider', () => {});
-
-  test('should read font from ThemeProvider', () => {});
-
-  test('should read colors from ThemeProvider', () => {});
 });

@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import type { SelectSearchProps, SelectSearchOptionProps } from 'src/components/SelectSearch/SelectSearch.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
-import { useKeyboardNavigation } from 'src/hooks';
 
 const Container = styled.div`
   color: ${(props) => props.theme.color.default};
-  position: relative;
+  background: ${(props) => props.theme.background.default};
   font-family: ${(props) => props.theme.font.primary};
+  position: relative;
 `;
 
 Container.defaultProps = {
@@ -17,15 +17,15 @@ Container.defaultProps = {
 
 const SearchContainer = styled.div`
   height: 100%;
-  background: ${(props) => props.theme.background.default};
 `;
 
 SearchContainer.defaultProps = {
   theme,
 };
 
-const SearchInput = styled.input.attrs({ type: 'text', role: 'searchbox' })`
+const SearchInput = styled.input<SelectSearchProps>`
   display: block;
+  font-family: ${(props) => props.theme.font.primary};
   color: ${(props) => props.theme.color.default};
   width: 100%;
   background: transparent;
@@ -42,64 +42,35 @@ SearchInput.defaultProps = {
   theme,
 };
 
-const SelectContainer = styled.ul.attrs({
-  role: 'listbox',
-  'aria-label': 'Items matching search',
-  'aria-activedescendant': '[id of selected item]',
-  'aria-expanded': true,
-})`
+const SelectContainer = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  box-sizing: border-box;
-  border: 1px solid ${(props) => props.theme.color.default};
-  border-top: 0px;
 `;
 
 SelectContainer.defaultProps = {
   theme,
 };
 
-const Context = React.createContext<{
-  onSelect: (value: unknown) => void;
-}>({
-  onSelect: () => null,
-});
-
-const SelectSearch: GroupComponent<SelectSearchProps> = ({
-  children,
-  onSearch,
-  onSelect,
-  placeholder,
-}: SelectSearchProps) => {
-  const ref = React.createRef<HTMLUListElement>();
-  useKeyboardNavigation(ref);
-  const context = { onSelect };
-  const handleSearchChange = React.useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => onSearch(event.target.value),
-    [],
-  );
-
+const SelectSearch: GroupComponent<SelectSearchProps> = ({ children, ...inputProps }: SelectSearchProps) => {
   return (
-    <Context.Provider value={context}>
-      <Container>
-        <SearchContainer>
-          <SearchInput onChange={handleSearchChange} placeholder={placeholder} />
-        </SearchContainer>
-        {!!children && <SelectContainer ref={ref}>{children}</SelectContainer>}
-      </Container>
-    </Context.Provider>
+    <Container>
+      <SearchContainer>
+        <SearchInput {...inputProps} type={'text'} role={'searchbox'} />
+      </SearchContainer>
+      {!!children && <SelectContainer role={'listbox'}>{children}</SelectContainer>}
+    </Container>
   );
 };
 
-const SearchOption = styled.li.attrs({ role: 'option', 'aria-selected': false, tabIndex: 0 })`
+const SearchOption = styled.li<SelectSearchOptionProps>`
   padding: 4px 8px;
   cursor: pointer;
   &:focus {
     outline: 0;
-    background: ${(props) => props.theme.color.default};
+    background: ${(props) => props.theme.background.default};
   }
 `;
 
@@ -107,10 +78,12 @@ SearchOption.defaultProps = {
   theme,
 };
 
-SelectSearch.Option = function SelectSearchOption({ value, children }: SelectSearchOptionProps) {
-  const { onSelect } = React.useContext(Context);
-  const handleClick = React.useCallback(() => onSelect(value), []);
-  return <SearchOption onClick={handleClick}>{children}</SearchOption>;
+SelectSearch.Option = function SelectSearchOption({ onClick, value, children }: SelectSearchOptionProps) {
+  return (
+    <SearchOption onClick={() => onClick(value)} role={'option'} tabIndex={0}>
+      {children}
+    </SearchOption>
+  );
 };
 
 export default SelectSearch;

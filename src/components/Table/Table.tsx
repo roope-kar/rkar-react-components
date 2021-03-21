@@ -134,10 +134,12 @@ Table.SelectCol = function TableSelectCol(props: TableSelectColProps) {
 };
 
 Table.SortCol = function TableSortCol({ children, direction, onClick }: TableSortColProps) {
-  return <ColContainer onClick={onClick}>
-    {children}
-    <ArrowIcon direction={direction} />
-  </ColContainer>;
+  return (
+    <ColContainer onClick={onClick}>
+      {children}
+      <ArrowIcon direction={direction} />
+    </ColContainer>
+  );
 };
 
 export default Table;

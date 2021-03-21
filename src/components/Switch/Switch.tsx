@@ -11,7 +11,7 @@ const Container = styled.label<SwitchProps>`
   width: 32px;
   height: 16px;
   background: ${(props) =>
-    props.value === 'true' ? lighten(0.1, props.theme.color.success) : props.theme.color.default};
+    props.value === 'true' ? lighten(0.1, props.theme.background.success) : props.theme.background.default};
   border-radius: 9999px;
   cursor: pointer;
 `;
@@ -28,21 +28,21 @@ const Input = styled.input<SwitchProps>`
 `;
 
 const Dot = styled.div<SwitchProps>`
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: ${(props) => (props.value === 'true' ? props.theme.color.success : props.theme.background.default)};
+  background: ${(props) => (props.value === 'true' ? props.theme.background.success : props.theme.background.default)};
 `;
 
 Dot.defaultProps = {
   theme,
 };
 
-const Switch: React.FunctionComponent<SwitchProps> = (props: SwitchProps) => {
+const Switch: React.FunctionComponent<SwitchProps> = ({ value = 'false', onChange }: SwitchProps) => {
   return (
-    <Container value={props.value}>
-      <Input type={'checkbox'} value={props.value} onChange={props.onChange} />
-      <Dot value={props.value} />
+    <Container value={value}>
+      <Input type={'checkbox'} value={value} onChange={onChange} />
+      <Dot value={value} />
     </Container>
   );
 };
