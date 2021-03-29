@@ -1,10 +1,11 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/940aae8e-025e-461d-85ff-94b2fbcd26f1/deploy-status)](https://app.netlify.com/sites/dazzling-saha-7834e0/deploys) ![GitHub top language](https://img.shields.io/github/languages/top/roope-kar/rkar-react-components)
+<img src="https://img.shields.io/badge/coverage-100%25-brightgreen" />
 
 # rkar-react-components
 
 Collection of low level, typed and composable react components.
 
-Exposes Tree shakeable esm collection and regular version.
+Exposes Tree shakeable esm collection
 
 The components can be viewed live in the [storybook app](https://dazzling-saha-7834e0.netlify.app/)
 
@@ -12,13 +13,9 @@ The components can be viewed live in the [storybook app](https://dazzling-saha-7
 
 `npm install @roope-kar/rkar-react-components`
 
-In modern environments, import components from 'esm' to utilize tree shaking:
+`import { Button } from '@roope-kar/rkar-react-components'`
 
-`import { Button } from '@roope-kar/rkar-react-components/esm'`
-
-Or if you don't care about tree shaking, you can just do:
-
-`import { Button } from '@roope-kar/rkar-react-components`;
+This will only import code related to Button keeping your bundle size nice and lean!
 
 ## Running the tests
 
@@ -54,7 +51,7 @@ Master branch is deployed live to a live location.
 * [React](https://reactjs.org/) - Used to build the user interface
 * [StyledComponents](https://styled-components.com/) - To build stylized components
 * [Polished](https://polished.js.org/) - To provide the utilities of scss to styled-components
-* [Webpack](https://webpack.js.org/) - Used to bundle, shake, split and optimize js, css and other assets
+* [esbuild](https://esbuild.github.io/) - Used to bundle, shake, split and optimize js, css and other assets
 * [Storybook](https://storybook.js.org/) - Used to develop and showcase the components in a sandbox environment
 * [Jest](https://jestjs.io/) - Used to test the components
 

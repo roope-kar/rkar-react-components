@@ -11,5 +11,5 @@ clean:
 	rm -rf node_modules
 	rm -rf lib/*
 
-build: ./node_modules/.bin/webpack
+build: ./node_modules/.bin/esbuild
 	npm run build
