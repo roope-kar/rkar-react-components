@@ -10,6 +10,7 @@
   },
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "types": "lib",
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -22,7 +23,8 @@
     "test:watch": "jest --watch",
     "dev": "start-storybook -c .storybook -s src",
     "build:prod": "esbuild src --bundle --format=esm --minify --external:react --external:react-dom --outfile=lib/index.esm.js --define:process.env.NODE_ENV=\\\"production\\\"",
-    "build": "rm -rf lib/* && npm run build:prod",
+    "build:prod:types": "tsc --emitDeclarationOnly",
+    "build": "rm -rf lib/* && npm run build:prod && npm run build:prod:types",
     "build-storybook": "npm run test:output && build-storybook -s storybook-static && cp -r src/fonts storybook-static/"
   },
   "repository": {

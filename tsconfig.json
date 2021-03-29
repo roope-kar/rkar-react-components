@@ -1,6 +1,6 @@
 {
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/**/*.stories.*", "src/**/*.test.*"],
   "compilerOptions": {
     "outDir": "lib",
     "noImplicitAny": true,
