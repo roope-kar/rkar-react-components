@@ -4,9 +4,7 @@ import type { AnimateProps } from 'src/components/Animate/Animate.d';
 
 const Animate: React.FunctionComponent<AnimateProps> = ({ children }) => {
   const [count, setCount] = React.useState<number>(0);
-  useTransition((time: number) => {
-    setCount(time);
-  });
+  useTransition(setCount);
   return children(count);
 };
 

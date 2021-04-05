@@ -1,11 +1,11 @@
 import React from 'react';
-import { Animate } from 'src/components';
+import { DynamicTable } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
-describe('Animate', () => {
+describe('DynamicTable', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Animate>{() => null}</Animate>);
+    render(<DynamicTable />);
   });
 });

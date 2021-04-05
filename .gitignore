@@ -2,3 +2,4 @@
 /storybook-static/
 /lib/**/*
 .test-results.json
+/coverage/

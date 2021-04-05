@@ -1,13 +1,8 @@
 module.exports = {
+    preset: 'ts-jest',
     // The root of your source code, typically /src
     // `<rootDir>` is a token Jest substitutes
     roots: ["<rootDir>/src"],
-  
-    // Jest transformations -- this adds support for TypeScript
-    // using ts-jest
-    transform: {
-      "^.+\\.tsx?$": "ts-jest"
-    },
   
     // Runs special logic, such as cleaning up components
     // when using React Testing Library and adds special
@@ -27,7 +22,6 @@ module.exports = {
     // Map with webpack aliases
     moduleNameMapper: {
       "\\.scss$": "<rootDir>/__mocks__/styleMock.js",
-      "^src(.*)$": "<rootDir>/src$1",
-      "^components(.*)$": "<rootDir>/src/components$1"
+      "^src(.*)$": "<rootDir>/src/$1",
     }
   };

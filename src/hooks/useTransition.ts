@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function useTransition(callback: (time: number, delta: number) => void, deps?: unknown[]): void {
+export default function useTransition(callback: (time: number, delta: number) => void): void {
   const requestRef = React.useRef<number>(0);
   const prevTimeRef = React.useRef<number>(Date.now());
   const startRef = React.useRef<number>(Date.now());
@@ -17,5 +17,5 @@ export default function useTransition(callback: (time: number, delta: number) =>
   React.useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
-  }, deps); // Make sure to change it if the deps change
+  });
 }

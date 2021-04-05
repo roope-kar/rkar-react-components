@@ -1,11 +1,11 @@
 import React from 'react';
-import { Animate } from 'src/components';
+import { DynamicForm } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
-describe('Animate', () => {
+describe('DynamicForm', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Animate>{() => null}</Animate>);
+    render(<DynamicForm />);
   });
 });

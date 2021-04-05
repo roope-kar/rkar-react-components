@@ -1,7 +1,9 @@
-function get8PointGrid(scale: number = 1): number {
+import { GridScalePoint } from "src/types";
+
+export function get8PointGrid(scale: GridScalePoint): number {
   return 8 * scale;
 }
 
-function get4PointGrid(scale: number = 1): number {
+export function get4PointGrid(scale: GridScalePoint): number {
   return 4 * scale;
 }
