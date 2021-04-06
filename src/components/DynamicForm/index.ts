@@ -1,1 +1,1 @@
-export { default as DynamicForm } from 'src/components/DynamicForm/DynamicForm';
+export { default as DynamicForm } from 'src/components/DynamicForm/DynamicForm';

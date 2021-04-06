@@ -6,6 +6,6 @@ describe('Animate', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Animate>{() => null}</Animate>);
+    render(<Animate>{(time: number) => <span>{time}</span>}</Animate>);
   });
 });

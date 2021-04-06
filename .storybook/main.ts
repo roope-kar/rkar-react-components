@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 module.exports = {
   addons: ['@storybook/addon-jest', '@storybook/addon-essentials', '@storybook/addon-a11y'],

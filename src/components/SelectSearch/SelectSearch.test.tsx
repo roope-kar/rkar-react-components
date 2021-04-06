@@ -69,5 +69,4 @@ describe('SelectSearch', () => {
 
     expect(onClick).toBeCalledWith(2);
   });
-
 });

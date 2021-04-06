@@ -76,4 +76,4 @@ export type Direction = 'asc' | 'desc';
 /**
  * Point from the grid system
  */
-export type GridScalePoint = 1 | 2 | 3 | 4 | 5;
+export type GridScalePoint = 1 | 2 | 3 | 4 | 5;

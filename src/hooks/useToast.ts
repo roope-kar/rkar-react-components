@@ -1,3 +1,3 @@
 export default function useToast() {
-    return null;
+  return null;
 }
