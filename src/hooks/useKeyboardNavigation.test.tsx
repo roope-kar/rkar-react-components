@@ -1,11 +1,10 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { useKeyboardNavigation } from 'src/hooks';
 
 describe('useKeyboardNavigation', () => {
   it('works', () => {
-
     const listRef = React.createRef<HTMLOListElement>();
 
     const list: React.FunctionComponent = () => (
@@ -21,6 +20,5 @@ describe('useKeyboardNavigation', () => {
     fireEvent.keyUp(listRef.current as HTMLOListElement, { keyCode: 9 });
 
     expect(window.document.activeElement?.innerHTML).toBe(1);
-
   });
 });

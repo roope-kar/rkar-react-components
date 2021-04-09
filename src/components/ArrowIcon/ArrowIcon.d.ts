@@ -1,5 +1,6 @@
-import { Direction } from 'src/types';
+import { DefaultTheme, Direction } from 'src/types';
 
 export type ArrowIconProps = {
-    direction: Direction
+    direction: Direction;
+    theme?: DefaultTheme
 }

@@ -11,4 +11,6 @@ export default {
   },
 } as Meta;
 
-export const SimpleCode: React.FunctionComponent = () => <ArrowIcon direction={'asc'} />;
+export const ArrowIconUp: React.FunctionComponent = () => <ArrowIcon direction={'asc'} />;
+
+export const ArrowIconDown: React.FunctionComponent = () => <ArrowIcon direction={'desc'} />;
