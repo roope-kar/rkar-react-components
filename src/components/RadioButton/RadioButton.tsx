@@ -50,7 +50,7 @@ const Input = styled.input<RadioButtonProps>`
   margin: 0;
   &:checked + label::after {
     animation: ${appear} 0.1s linear;
-    background: ${(props) => props.theme.background.default};
+    background: ${(props) => props.theme.color.default};
     content: '';
     width: 16px;
     height: 16px;

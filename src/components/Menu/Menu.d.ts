@@ -1,3 +1,4 @@
+import React from 'react';
 import { Intent } from "src/types";
 
 export type MenuProps = {
@@ -7,10 +8,9 @@ export type MenuProps = {
     | Array<React.ReactElement<MenuGroupProps>>
 };
 
-export type MenuItemProps = React.PropsWithChildren<{
+export type MenuItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   intent: Intent;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}>;
+};
 
 export type MenuGroupProps = {
   title: string;

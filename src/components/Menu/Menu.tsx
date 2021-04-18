@@ -4,42 +4,30 @@ import { Divider } from 'src/components';
 import type { MenuProps, MenuGroupProps, MenuItemProps } from 'src/components/Menu/Menu.d';
 import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
-import { useKeyboardNavigation } from 'src/hooks';
 
-const MenuContainer = styled.ul.attrs({
-  role: 'menu',
-})<MenuProps>`
+const MenuContainer = styled.div<MenuProps>`
   color: ${(props) => props.theme.color.default};
   font-family: ${(props) => props.theme.font.primary};
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  background: ${(props) => props.theme.background.default};
+  border-radius: 3px;
+  overflow: hidden;
 `;
 
 MenuContainer.defaultProps = {
   theme,
 };
 
-const Menu: GroupComponent<MenuProps> = (props) => {
-  const ref = React.createRef<HTMLUListElement>();
-  useKeyboardNavigation(ref);
-  return <MenuContainer {...props} ref={ref} />;
-};
+const Menu: GroupComponent<MenuProps> = (props) => <MenuContainer {...props} />;
 
 const GroupContainer = styled.div``;
 
 const GroupTitle = styled.div`
-  font-family: 'Open Sans';
   font-size: 12px;
   padding: 4px 8px;
   text-transform: uppercase;
 `;
 
-const GroupItems = styled.ul.attrs({
-  role: 'listbox',
-})`
-  padding: 0;
-`;
+const GroupItems = styled.div``;
 
 Menu.Group = function MenuGroup({ title, children }: MenuGroupProps) {
   return (
@@ -50,33 +38,27 @@ Menu.Group = function MenuGroup({ title, children }: MenuGroupProps) {
   );
 };
 
-const MenuItem = styled.li.attrs({
-  'aria-label': 'Menu action',
-  'aria-selected': 'false',
-  role: 'menuitem',
-  tabIndex: 0,
-})<MenuItemProps>`
+Menu.Item = styled.button<MenuItemProps>`
   display: block;
+  width: 100%;
   text-align: left;
-  padding: 4px 8px;
+  color: ${(props) => props.theme.color.default};
   background: transparent;
-  cursor: pointer;
+  padding: 4px 8px;
   border: 0;
   &:focus {
     outline: 0;
-    background: ${(props) => props.theme.color[props.intent]};
+    background: ${(props) => props.theme.background[props.intent]};
   }
 `;
-
-Menu.Item = MenuItem;
 
 Menu.Item.defaultProps = {
   theme,
   intent: 'default',
 };
 
-const MenuDivider: React.FunctionComponent = () => <Divider alignment={'horizontal'} />;
-
-Menu.Divider = MenuDivider;
+Menu.Divider = function MenuDivider() {
+  return <Divider alignment={'horizontal'} />;
+};
 
 export default Menu;

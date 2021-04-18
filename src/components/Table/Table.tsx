@@ -47,6 +47,9 @@ const getRowHeight = (height: Size): string => {
 const TableContainer = styled.div`
   font-family: ${(props) => props.theme.font.primary};
   color: ${(props) => props.theme.color.default};
+  background: ${(props) => props.theme.background.default};
+  overflow: hidden;
+  border-radius: 3px;
 `;
 
 TableContainer.defaultProps = {

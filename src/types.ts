@@ -72,8 +72,3 @@ export type Appearance = 'primary' | 'secondary';
  * The sorting directions for most things
  */
 export type Direction = 'asc' | 'desc';
-
-/**
- * Point from the grid system
- */
-export type GridScalePoint = 1 | 2 | 3 | 4 | 5;

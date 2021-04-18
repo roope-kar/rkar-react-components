@@ -5,12 +5,12 @@ import theme from 'src/theme';
 const getAlignment = (props: DividerProps): string => {
   if (props.alignment === 'horizontal') {
     return `
-            border-bottom: 2px solid ${props.theme?.background.default};
+            border-bottom: 1px solid ${props.theme?.background.default};
         `;
   } else {
     return `
             display: inline-block;
-            border-right: 2px solid ${props.theme?.background.default};
+            border-right: 1px solid ${props.theme?.background.default};
         `;
   }
 };

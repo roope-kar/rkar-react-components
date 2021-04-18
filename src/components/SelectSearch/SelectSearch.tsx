@@ -9,6 +9,8 @@ const Container = styled.div`
   background: ${(props) => props.theme.background.default};
   font-family: ${(props) => props.theme.font.primary};
   position: relative;
+  border-radius: 3px;
+  overflow: hidden;
 `;
 
 Container.defaultProps = {
@@ -28,6 +30,7 @@ const SearchInput = styled.input<SelectSearchProps>`
   font-family: ${(props) => props.theme.font.primary};
   color: ${(props) => props.theme.color.default};
   width: 100%;
+  font-size: 14px;
   background: transparent;
   border: none;
   box-sizing: border-box;
@@ -46,8 +49,6 @@ const SelectContainer = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
 `;
 
 SelectContainer.defaultProps = {
@@ -68,6 +69,7 @@ const SelectSearch: GroupComponent<SelectSearchProps> = ({ children, ...inputPro
 const SearchOption = styled.li<SelectSearchOptionProps>`
   padding: 4px 8px;
   cursor: pointer;
+  font-size: 14px;
   &:focus {
     outline: 0;
     background: ${(props) => props.theme.background.default};
