@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import type { DialogProps, DialogBodyProps, DialogFooterProps } from 'src/components/Dialog/Dialog.d';
+import { CloseIcon } from 'src/components';
 import { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
@@ -69,7 +70,9 @@ const Dialog: GroupComponent<DialogProps> = ({ children, title, onClose }: Dialo
       <Container>
         <Header>
           <Title>{title}</Title>
-          <Close onClick={onClose}>&times;</Close>
+          <Close onClick={onClose}>
+            <CloseIcon />
+          </Close>
         </Header>
         {children}
       </Container>

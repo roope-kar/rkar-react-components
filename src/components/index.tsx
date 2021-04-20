@@ -34,3 +34,4 @@ export { Table } from 'src/components/Table';
 export { DynamicTable } from 'src/components/DynamicTable';
 export { DynamicForm } from 'src/components/DynamicForm';
 export { ArrowIcon } from 'src/components/ArrowIcon';
+export { CloseIcon } from 'src/components/CloseIcon';
