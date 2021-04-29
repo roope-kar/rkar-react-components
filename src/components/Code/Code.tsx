@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import type { CodeProps } from 'src/components/Code/Code.d';
 import theme from 'src/theme';
@@ -14,5 +15,13 @@ const Code = styled.code<CodeProps>`
 Code.defaultProps = {
   theme,
 };
+
+const If: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) => <span className={'if'}>{children}</span>;
+
+const Fn: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) => <span className={'fn'}>{children}</span>;
+
+const Class: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) => (
+  <span className={'class'}>{children}</span>
+);
 
 export default Code;

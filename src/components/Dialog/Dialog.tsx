@@ -10,8 +10,9 @@ const Backdrop = styled.div``;
 const Container = styled.div.attrs({
   role: 'dialog',
 })`
-  border: 1px solid ${(props) => props.theme.color.default};
   border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 `;
 
 Container.defaultProps = {
@@ -45,7 +46,10 @@ Title.defaultProps = {
 
 const Close = styled.button`
   color: ${(props) => props.theme.color.default};
-  font-family: ${(props) => props.theme.font.primary}
+  font-family: ${(props) => props.theme.font.primary};
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   width: 32px;
   height: 32px;
@@ -86,6 +90,8 @@ Dialog.Body = styled.div<DialogBodyProps>`
 `;
 
 Dialog.Footer = styled.div<DialogFooterProps>`
+  display: flex;
+  justify-content: flex-end;
   padding: 16px 24px;
 `;
 

@@ -13,7 +13,7 @@ const Content = styled.label`
   align-items: center;
   width: 24px;
   height: 24px;
-  border: 1px solid ${(props) => props.theme.background.default};
+  border: 2px solid ${(props) => props.theme.background.default};
   border-radius: 3px;
   background: transparent;
 `;
