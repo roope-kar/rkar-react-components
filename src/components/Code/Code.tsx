@@ -29,7 +29,7 @@ const Keyword: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) =>
 );
 
 const Code: React.FunctionComponent<CodeProps> = ({ children }) => {
-  return null;
+  return <Container>{children}</Container>;
 };
 
 export default Code;
