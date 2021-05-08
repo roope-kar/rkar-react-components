@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import type { TabsProps, TabProps, TitleProps } from 'src/components/Tabs/Tabs.d';
-import { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
 const Container = styled.div`
@@ -59,7 +58,9 @@ Tab.defaultProps = {
   theme,
 };
 
-const Tabs: GroupComponent<TabsProps> = ({ children, className = '', activeTab, onSetActiveTab }: TabsProps) => {
+const Tabs: React.FunctionComponent<TabsProps> & {
+  Tab: React.FunctionComponent<TabProps>
+} = ({ children, className = '', activeTab, onSetActiveTab }: TabsProps) => {
   const activeTabNode = children.find((tabNode) => tabNode.props.title === activeTab);
   return (
     <Container className={className}>

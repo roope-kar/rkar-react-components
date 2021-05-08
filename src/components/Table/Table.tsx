@@ -1,5 +1,5 @@
 import React from 'react';
-import { GroupComponent, Size } from 'src/types';
+import { Size } from 'src/types';
 import { Checkbox, ArrowIcon } from 'src/components';
 import type {
   TableProps,
@@ -56,7 +56,14 @@ TableContainer.defaultProps = {
   theme,
 };
 
-const Table: GroupComponent<TableProps> = ({ children }: TableProps) => {
+const Table: React.FunctionComponent<TableProps> & {
+  Head: React.FunctionComponent<TableHeadProps>,
+  Body: React.FunctionComponent,
+  Row: React.FunctionComponent<TableRowProps>,
+  Col: React.FunctionComponent<TableColProps>,
+  SelectCol: React.FunctionComponent<TableSelectColProps>,
+  SortCol: React.FunctionComponent<TableSortColProps>
+} = ({ children }: TableProps) => {
   const context = { secret: 'test' };
   return (
     <TableContext.Provider value={context}>

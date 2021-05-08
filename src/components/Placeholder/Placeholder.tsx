@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import type { GroupComponent, Size } from 'src/types';
+import type { Size } from 'src/types';
 import type { PlaceholderProps } from 'src/components/Placeholder/Placeholder.d';
 import theme from 'src/theme';
 
@@ -25,7 +25,10 @@ const getSize = (size: Size) => {
 
 const Container = styled.div<PlaceholderProps>``;
 
-const Placeholder: GroupComponent<PlaceholderProps> = ({ children }: PlaceholderProps) => {
+const Placeholder: React.FunctionComponent<PlaceholderProps> & {
+  Block: React.FunctionComponent<PlaceholderProps>,
+  Circle: React.FunctionComponent<PlaceholderProps>
+} = ({ children }: PlaceholderProps) => {
   return <Container>{children}</Container>;
 };
 

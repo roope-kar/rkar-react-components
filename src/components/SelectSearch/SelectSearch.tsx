@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import type { SelectSearchProps, SelectSearchOptionProps } from 'src/components/SelectSearch/SelectSearch.d';
-import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
 const Container = styled.div`
@@ -55,7 +54,9 @@ SelectContainer.defaultProps = {
   theme,
 };
 
-const SelectSearch: GroupComponent<SelectSearchProps> = ({ children, ...inputProps }: SelectSearchProps) => {
+const SelectSearch: React.FunctionComponent<SelectSearchProps> & {
+  Option: React.FunctionComponent<SelectSearchOptionProps>
+} = ({ children, ...inputProps }: SelectSearchProps) => {
   return (
     <Container>
       <SearchContainer>

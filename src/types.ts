@@ -1,3 +1,4 @@
+import React from 'react';
 import 'styled-components';
 
 export interface DefaultTheme {
@@ -44,13 +45,6 @@ declare module 'styled-components' {
       default: string;
     };
   }
-}
-
-/**
- * Enables to use components like List.Item
- */
-export interface GroupComponent<T> extends React.FunctionComponent<T> {
-  [name: string]: any;
 }
 
 /**

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from 'src/theme';
 import type { AlertProps } from 'src/components/Alert/Alert.d';
-import { GroupComponent } from 'src/types';
 
 const Container = styled.div<AlertProps>`
   padding: 8px 16px;
@@ -34,7 +33,10 @@ Description.defaultProps = {
   theme,
 };
 
-const Alert: GroupComponent<AlertProps> = (props: AlertProps) => {
+const Alert: React.FunctionComponent<AlertProps> & { 
+  Title: React.FunctionComponent<AlertProps>, 
+  Description: React.FunctionComponent<AlertProps> 
+} = (props: AlertProps) => {
   return <Container {...props} />;
 };
 

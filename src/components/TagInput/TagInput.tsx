@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import type { GroupComponent } from 'src/types';
 import type { TagInputProps, TagProps } from 'src/components/TagInput/TagInput.d';
 import theme from 'src/theme';
 
@@ -40,7 +39,9 @@ Input.defaultProps = {
   theme,
 };
 
-const TagInput: GroupComponent<TagInputProps> = ({ children, maxLength = 32, ...inputProps }: TagInputProps) => {
+const TagInput: React.FunctionComponent<TagInputProps> & {
+  Tag: React.FunctionComponent<TagProps>
+} = ({ children, maxLength = 32, ...inputProps }: TagInputProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const handleClick = React.useCallback(() => inputRef.current?.focus(), []);
   return (

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Divider } from 'src/components';
 import type { MenuProps, MenuGroupProps, MenuItemProps } from 'src/components/Menu/Menu.d';
-import type { GroupComponent } from 'src/types';
 import theme from 'src/theme';
 
 const MenuContainer = styled.div<MenuProps>`
@@ -17,7 +16,11 @@ MenuContainer.defaultProps = {
   theme,
 };
 
-const Menu: GroupComponent<MenuProps> = (props) => <MenuContainer {...props} />;
+const Menu: React.FunctionComponent<MenuProps> & {
+  Group: React.FunctionComponent<MenuGroupProps>,
+  Item: React.FunctionComponent<MenuItemProps>,
+  Divider: React.FunctionComponent
+} = (props) => <MenuContainer {...props} />;
 
 const GroupContainer = styled.div``;
 

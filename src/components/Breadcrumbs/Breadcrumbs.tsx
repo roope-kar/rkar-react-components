@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BreadcrumbsProps } from 'src/components/Breadcrumbs/Breadcrumbs.d';
-import { GroupComponent } from 'src/types';
 import { Link } from 'src/components';
 import theme from 'src/theme';
+import { LinkProps } from 'src/components/Link/Link.d';
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +20,9 @@ Divider.defaultProps = {
   theme,
 };
 
-const Breadcrumbs: GroupComponent<BreadcrumbsProps> = ({ children }: BreadcrumbsProps) => (
+const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> & {
+  Item: React.FunctionComponent<LinkProps>
+} = ({ children }: BreadcrumbsProps) => (
   <Container>
     {React.Children.map(children, (node, index) => {
       return index !== 0 ? (

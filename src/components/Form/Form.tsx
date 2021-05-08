@@ -7,11 +7,15 @@ import type {
   FormInputProps,
   FormGroupProps,
 } from 'src/components/Form/Form.d';
-import type { GroupComponent } from 'src/types';
 
 const FormContainer = styled.form``;
 
-const Form: GroupComponent<FormProps> = (props) => {
+const Form: React.FunctionComponent<FormProps> & {
+  Field: React.FunctionComponent<FormFieldProps>,
+  Label: React.FunctionComponent<FormLabelProps>,
+  Input: React.FunctionComponent<FormInputProps>,
+  Group: React.FunctionComponent<FormGroupProps>
+} = (props) => {
   return <FormContainer {...props} />;
 };
 

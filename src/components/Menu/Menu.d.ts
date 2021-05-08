@@ -1,5 +1,5 @@
 import React from 'react';
-import { Intent } from "src/types";
+import { DefaultTheme, Intent } from "src/types";
 
 export type MenuProps = {
   children: React.ReactElement<MenuItemProps>
@@ -10,6 +10,7 @@ export type MenuProps = {
 
 export type MenuItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   intent: Intent;
+  theme?: DefaultTheme;
 };
 
 export type MenuGroupProps = {
