@@ -68,8 +68,8 @@ Close.defaultProps = {
 };
 
 const Dialog: React.FunctionComponent<DialogProps> & {
-  Body: React.FunctionComponent<DialogBodyProps>,
-  Footer: React.FunctionComponent<DialogFooterProps>
+  Body: React.FunctionComponent<DialogBodyProps>;
+  Footer: React.FunctionComponent<DialogFooterProps>;
 } = ({ children, title, onClose }: DialogProps) => {
   return (
     <Backdrop>

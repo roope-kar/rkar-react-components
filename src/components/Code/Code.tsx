@@ -28,7 +28,7 @@ const Keyword: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) =>
   <span className={'keyword'}>{children}</span>
 );
 
-const Code: React.FunctionComponent<CodeProps> = ({ children }) => {
+const Code: React.FunctionComponent<CodeProps> = ({ children }: CodeProps) => {
   return <Container>{children}</Container>;
 };
 

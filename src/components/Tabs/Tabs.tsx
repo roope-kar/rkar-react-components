@@ -59,7 +59,7 @@ Tab.defaultProps = {
 };
 
 const Tabs: React.FunctionComponent<TabsProps> & {
-  Tab: React.FunctionComponent<TabProps>
+  Tab: React.FunctionComponent<TabProps>;
 } = ({ children, className = '', activeTab, onSetActiveTab }: TabsProps) => {
   const activeTabNode = children.find((tabNode) => tabNode.props.title === activeTab);
   return (

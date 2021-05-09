@@ -1,5 +1,5 @@
 import React from "react";
 
-export type PopoverProps = {
+export type PopoverProps = React.PropsWithChildren<{
     content: React.ReactNode;
-};
+}>;

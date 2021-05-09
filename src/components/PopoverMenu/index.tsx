@@ -1,1 +1,1 @@
-export { default as PopoverMenu } from 'src/components/PopoverMenu/PopoverMenu';
+export { default as PopoverMenu } from 'src/components/PopoverMenu/PopoverMenu';

@@ -1,1 +1,1 @@
-export type LinkProps = React.PropsWithChildren<{}>;
+export type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {};

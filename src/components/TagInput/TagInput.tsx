@@ -40,7 +40,7 @@ Input.defaultProps = {
 };
 
 const TagInput: React.FunctionComponent<TagInputProps> & {
-  Tag: React.FunctionComponent<TagProps>
+  Tag: React.FunctionComponent<TagProps>;
 } = ({ children, maxLength = 32, ...inputProps }: TagInputProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const handleClick = React.useCallback(() => inputRef.current?.focus(), []);

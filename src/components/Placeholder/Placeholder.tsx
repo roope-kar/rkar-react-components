@@ -26,8 +26,8 @@ const getSize = (size: Size) => {
 const Container = styled.div<PlaceholderProps>``;
 
 const Placeholder: React.FunctionComponent<PlaceholderProps> & {
-  Block: React.FunctionComponent<PlaceholderProps>,
-  Circle: React.FunctionComponent<PlaceholderProps>
+  Block: React.FunctionComponent<PlaceholderProps>;
+  Circle: React.FunctionComponent<PlaceholderProps>;
 } = ({ children }: PlaceholderProps) => {
   return <Container>{children}</Container>;
 };

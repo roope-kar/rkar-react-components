@@ -55,7 +55,7 @@ SelectContainer.defaultProps = {
 };
 
 const SelectSearch: React.FunctionComponent<SelectSearchProps> & {
-  Option: React.FunctionComponent<SelectSearchOptionProps>
+  Option: React.FunctionComponent<SelectSearchOptionProps>;
 } = ({ children, ...inputProps }: SelectSearchProps) => {
   return (
     <Container>

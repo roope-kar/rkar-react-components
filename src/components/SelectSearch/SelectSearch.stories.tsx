@@ -13,9 +13,15 @@ export default {
 
 export const DefaultSelectSearch: React.FunctionComponent = () => (
   <SelectSearch onChange={() => null} placeholder={'Search by name ...'}>
-    <SelectSearch.Option value={1}>one</SelectSearch.Option>
-    <SelectSearch.Option value={2}>two</SelectSearch.Option>
-    <SelectSearch.Option value={3}>three</SelectSearch.Option>
+    <SelectSearch.Option onClick={() => null} value={1}>
+      one
+    </SelectSearch.Option>
+    <SelectSearch.Option onClick={() => null} value={2}>
+      two
+    </SelectSearch.Option>
+    <SelectSearch.Option onClick={() => null} value={3}>
+      three
+    </SelectSearch.Option>
   </SelectSearch>
 );
 
@@ -29,7 +35,7 @@ export const ControlledSelectSearch: React.FunctionComponent = () => {
       {options
         .filter((option: number) => option.toString().includes(searchTerm))
         .map((option: number) => (
-          <SelectSearch.Option key={option} value={option} onClick={handleClick}>
+          <SelectSearch.Option key={option} value={option} onClick={() => handleClick(option)}>
             Option: {option}
           </SelectSearch.Option>
         ))}

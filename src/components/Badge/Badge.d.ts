@@ -1,6 +1,6 @@
 import { DefaultTheme, Intent } from "src/types";
 
 export type BadgeProps = React.PropsWithChildren<{
-    intent: Intent;
+    intent?: Intent;
     theme?: DefaultTheme;
 }>;

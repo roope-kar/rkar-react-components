@@ -8,7 +8,7 @@ const Container = styled.div<AlertProps>`
   font-family: ${(props) => props.theme.font.primary};
   box-shadow: 1px 1px 1px ${(props) => props.theme.background.default};
   background: ${(props) => props.theme.background.default};
-  border-left: 8px solid ${(props) => props.theme.color[props.intent]};
+  border-left: 8px solid ${(props) => props.theme.color[props.intent || 'default']};
   color: ${(props) => props.theme.color.default};
 `;
 
@@ -33,9 +33,9 @@ Description.defaultProps = {
   theme,
 };
 
-const Alert: React.FunctionComponent<AlertProps> & { 
-  Title: React.FunctionComponent<AlertProps>, 
-  Description: React.FunctionComponent<AlertProps> 
+const Alert: React.FunctionComponent<AlertProps> & {
+  Title: React.FunctionComponent<AlertProps>;
+  Description: React.FunctionComponent<AlertProps>;
 } = (props: AlertProps) => {
   return <Container {...props} />;
 };

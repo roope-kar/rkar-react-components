@@ -11,10 +11,10 @@ import type {
 const FormContainer = styled.form``;
 
 const Form: React.FunctionComponent<FormProps> & {
-  Field: React.FunctionComponent<FormFieldProps>,
-  Label: React.FunctionComponent<FormLabelProps>,
-  Input: React.FunctionComponent<FormInputProps>,
-  Group: React.FunctionComponent<FormGroupProps>
+  Field: React.FunctionComponent<FormFieldProps>;
+  Label: React.FunctionComponent<FormLabelProps>;
+  Input: React.FunctionComponent<FormInputProps>;
+  Group: React.FunctionComponent<FormGroupProps>;
 } = (props) => {
   return <FormContainer {...props} />;
 };

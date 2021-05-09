@@ -17,9 +17,9 @@ MenuContainer.defaultProps = {
 };
 
 const Menu: React.FunctionComponent<MenuProps> & {
-  Group: React.FunctionComponent<MenuGroupProps>,
-  Item: React.FunctionComponent<MenuItemProps>,
-  Divider: React.FunctionComponent
+  Group: React.FunctionComponent<MenuGroupProps>;
+  Item: React.FunctionComponent<MenuItemProps>;
+  Divider: React.FunctionComponent;
 } = (props) => <MenuContainer {...props} />;
 
 const GroupContainer = styled.div``;
@@ -51,7 +51,7 @@ Menu.Item = styled.button<MenuItemProps>`
   border: 0;
   &:focus {
     outline: 0;
-    background: ${(props) => props.theme.background[props.intent]};
+    background: ${(props) => props.theme.background[props.intent || 'default']};
   }
 `;
 

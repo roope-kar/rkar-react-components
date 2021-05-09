@@ -27,7 +27,9 @@ export const SimpleTable: React.FunctionComponent = () => {
         <Table.SelectCol />
         <Table.Col>Name</Table.Col>
         <Table.Col>Age</Table.Col>
-        <Table.SortCol direction={'desc'}>Weight</Table.SortCol>
+        <Table.SortCol onClick={() => null} direction={'desc'}>
+          Weight
+        </Table.SortCol>
       </Table.Head>
       <Table.Body>
         {data.map((dot, index) => (

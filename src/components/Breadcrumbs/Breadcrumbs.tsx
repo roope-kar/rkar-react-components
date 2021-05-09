@@ -21,7 +21,7 @@ Divider.defaultProps = {
 };
 
 const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> & {
-  Item: React.FunctionComponent<LinkProps>
+  Item: React.FunctionComponent<LinkProps>;
 } = ({ children }: BreadcrumbsProps) => (
   <Container>
     {React.Children.map(children, (node, index) => {

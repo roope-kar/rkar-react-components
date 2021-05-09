@@ -1,1 +1,1 @@
-export { default as PopoverTooltip } from 'src/components/Popover/Popover';
+export { default as PopoverTooltip } from 'src/components/Popover/Popover';

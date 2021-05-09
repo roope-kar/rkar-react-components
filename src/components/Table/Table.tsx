@@ -57,12 +57,12 @@ TableContainer.defaultProps = {
 };
 
 const Table: React.FunctionComponent<TableProps> & {
-  Head: React.FunctionComponent<TableHeadProps>,
-  Body: React.FunctionComponent,
-  Row: React.FunctionComponent<TableRowProps>,
-  Col: React.FunctionComponent<TableColProps>,
-  SelectCol: React.FunctionComponent<TableSelectColProps>,
-  SortCol: React.FunctionComponent<TableSortColProps>
+  Head: React.FunctionComponent<TableHeadProps>;
+  Body: React.FunctionComponent;
+  Row: React.FunctionComponent<TableRowProps>;
+  Col: React.FunctionComponent<TableColProps>;
+  SelectCol: React.FunctionComponent<TableSelectColProps>;
+  SortCol: React.FunctionComponent<TableSortColProps>;
 } = ({ children }: TableProps) => {
   const context = { secret: 'test' };
   return (

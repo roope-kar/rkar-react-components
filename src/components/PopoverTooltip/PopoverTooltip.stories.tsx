@@ -10,10 +10,16 @@ export default {
   },
 } as Meta;
 
-export const SimpleTooltip: React.FunctionComponent = () => <PopoverMenu content={
-    <Menu>
+export const SimpleTooltip: React.FunctionComponent = () => (
+  <PopoverMenu
+    content={
+      <Menu>
         <Menu.Item>One</Menu.Item>
         <Menu.Item>Two</Menu.Item>
         <Menu.Item>Three</Menu.Item>
-    </Menu>
-}>Simple PopoverMenu</PopoverMenu>;
+      </Menu>
+    }
+  >
+    Simple PopoverMenu
+  </PopoverMenu>
+);

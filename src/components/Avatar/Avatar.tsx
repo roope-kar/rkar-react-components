@@ -27,7 +27,11 @@ const getSize = (size: Size) => {
   }
 };
 
-const Avatar: React.FunctionComponent<AvatarProps> = ({ src, size, appearance }: AvatarProps) => {
+const Avatar: React.FunctionComponent<AvatarProps> = ({
+  src,
+  size = 'medium',
+  appearance = 'primary',
+}: AvatarProps) => {
   const widthAndHeight = getSize(size);
   return (
     <Container appearance={appearance}>
@@ -39,6 +43,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({ src, size, appearance }:
 Avatar.defaultProps = {
   src: '',
   size: 'medium',
+  appearance: 'primary',
 };
 
 export default Avatar;
