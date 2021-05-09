@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import type { TooltipProps } from 'src/components/Tooltip/Tooltip.d';
 import theme from 'src/theme';
 
-const Container = styled.div.attrs({
-  role: 'dialog',
-})<TooltipProps>`
+const Container = styled.div`
   font-family: ${(props) => props.theme.font.primary};
   display: inline-block;
   line-height: 22px;
@@ -23,8 +21,8 @@ Container.defaultProps = {
   theme,
 };
 
-const Tooltip: React.FunctionComponent<TooltipProps> = ({ children }: TooltipProps) => {
-  return <Container>{children}</Container>;
-};
+const Tooltip: React.FunctionComponent<TooltipProps> = ({ children }: TooltipProps) => (
+  <Container>{children}</Container>
+);
 
 export default Tooltip;

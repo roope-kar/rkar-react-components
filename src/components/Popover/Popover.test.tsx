@@ -1,11 +1,11 @@
 import React from 'react';
-import { Tooltip } from 'src/components';
+import { Popover } from 'src/components';
 import { render, cleanup } from '@testing-library/react';
 
-describe('Button', () => {
+describe('Popover', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Tooltip>Test</Tooltip>);
+    render(<Popover content={'Popover!'}>Test</Popover>)
   });
 });

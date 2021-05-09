@@ -9,7 +9,7 @@ export type MenuProps = {
 };
 
 export type MenuItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  intent: Intent;
+  intent?: Intent;
   theme?: DefaultTheme;
 };
 

@@ -36,3 +36,6 @@ export { DynamicForm } from 'src/components/DynamicForm';
 export { ArrowIcon } from 'src/components/ArrowIcon';
 export { CloseIcon } from 'src/components/CloseIcon';
 export { Transition } from 'src/components/Transition';
+export { Popover } from 'src/components/Popover';
+export { PopoverTooltip } from 'src/components/PopoverTooltip';
+export { PopoverMenu } from 'src/components/PopoverMenu';
