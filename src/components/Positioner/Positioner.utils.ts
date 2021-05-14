@@ -8,3 +8,12 @@ export function clamp(x: number, min: number, max: number): number {
     return x;
   }
 }
+
+type Position = {
+  x: number;
+  y: number;
+}
+
+export function calcPosition(): Position {
+  return { x: 0, y: 0 };
+}

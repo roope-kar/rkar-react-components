@@ -1,25 +1,17 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { PopoverMenu, Menu } from 'src/components';
+import { PopoverTooltip, Button } from 'src/components';
 
 export default {
-  title: 'PopoverMenu',
-  component: PopoverMenu,
+  title: 'PopoverTooltip',
+  component: PopoverTooltip,
   parameters: {
-    jest: ['PopoverMenu.test.tsx'],
+    jest: ['PopoverTooltip.test.tsx'],
   },
 } as Meta;
 
-export const SimpleTooltip: React.FunctionComponent = () => (
-  <PopoverMenu
-    content={
-      <Menu>
-        <Menu.Item>One</Menu.Item>
-        <Menu.Item>Two</Menu.Item>
-        <Menu.Item>Three</Menu.Item>
-      </Menu>
-    }
-  >
-    Simple PopoverMenu
-  </PopoverMenu>
+export const SimplePopoverTooltip: React.FunctionComponent = () => (
+  <PopoverTooltip content={'Tooltip with some content'}>
+    <Button>Menu</Button>
+  </PopoverTooltip>
 );

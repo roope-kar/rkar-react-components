@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import type { PositionerProps } from 'src/components/Positioner/Positioner.d';
 import { clamp } from 'src/components/Positioner/Positioner.utils';
 
-const Trigger = styled.div.attrs({
-  tabIndex: 0,
-})``;
+const Trigger = styled.div``;
 
 const Positioner: React.FunctionComponent<PositionerProps> = ({ children, content }: PositionerProps) => {
   const [position, setPosition] = React.useState<{ x: number; y: number } | null>(null);
@@ -20,7 +18,7 @@ const Positioner: React.FunctionComponent<PositionerProps> = ({ children, conten
 
   return (
     <React.Fragment>
-      <Trigger onClick={onTriggerClick}>{children}</Trigger>
+      <Trigger tabIndex={0} onClick={onTriggerClick}>{children}</Trigger>
       {!!position ? content(position) : null}
     </React.Fragment>
   );
