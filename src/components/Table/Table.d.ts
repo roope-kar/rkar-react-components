@@ -1,28 +1,27 @@
 import React from 'react';
 import { Direction, Size } from "src/types";
 
-export type TableProps = React.PropsWithChildren<{}>;
-
-export type TableHeadProps = React.PropsWithChildren<{
-    height?: Size;
-    useSticky?: boolean;
+export type TableProps = React.PropsWithChildren<{
+    name: string,
+    description: string
 }>;
 
 export type TableRowProps = React.PropsWithChildren<{
     height?: Size;
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-    selected?: boolean;
 }>;
 
-export type TableColProps = React.PropsWithChildren<{
-    flexBasis?: number | 'auto';
-    flexGrow?: number;
-    flexShrink?: number;
+export type TableRowGroupProps = React.PropsWithChildren<{
+    children: React.ReactElement<TableRowProps> | React.ReactElement<TableRowProps>[];
 }>;
 
-export type TableSelectColProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type TableCellProps = React.PropsWithChildren<{
+    role: 'cell' | 'columnheader';
+}>;
 
-export type TableSortColProps = React.PropsWithChildren<{
+export type TableSelectCellProps = React.InputHTMLAttributes<HTMLInputElement>;
+
+export type TableSortCellProps = React.PropsWithChildren<{
     onClick: (event: React.MouseEvent<HTMLElement>) => void;
     direction: Direction;
 }>

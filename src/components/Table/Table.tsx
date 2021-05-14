@@ -4,20 +4,13 @@ import { Checkbox, ArrowIcon } from 'src/components';
 import type {
   TableProps,
   TableRowProps,
-  TableHeadProps,
-  TableColProps,
-  TableSelectColProps,
-  TableSortColProps,
+  TableRowGroupProps,
+  TableCellProps,
+  TableSelectCellProps,
+  TableSortCellProps,
 } from 'src/components/Table/Table.d';
 import styled from 'styled-components';
 import theme from 'src/theme';
-
-// Use container to share props in table
-const TableContext = React.createContext<{
-  secret: string;
-}>({
-  secret: 'test',
-});
 
 const getRowHeight = (height: Size): string => {
   switch (height) {
@@ -29,20 +22,6 @@ const getRowHeight = (height: Size): string => {
       return '56px';
   }
 };
-
-/**
- * TODO:
- *  - Initial Layout [OK]
- *  - Selectable Rows [OK]
- *  - Sticky Header [OK]
- *  - MultiSelect Actions
- *  - Sort column [OK]
- *  - Highlight Row [OK]
- *  - Pagination
- *  - Responsive: Collapse columns into 1 column
- *  - Responsive: Action content should be full screen
- *  - Row heights: Condensed: 40px, Regular: 48px, Relaxed: 56px [OK]
- */
 
 const TableContainer = styled.div`
   font-family: ${(props) => props.theme.font.primary};
@@ -56,51 +35,23 @@ TableContainer.defaultProps = {
   theme,
 };
 
+const TableDescription = styled.div``;
+
 const Table: React.FunctionComponent<TableProps> & {
-  Head: React.FunctionComponent<TableHeadProps>;
-  Body: React.FunctionComponent;
   Row: React.FunctionComponent<TableRowProps>;
-  Col: React.FunctionComponent<TableColProps>;
-  SelectCol: React.FunctionComponent<TableSelectColProps>;
-  SortCol: React.FunctionComponent<TableSortColProps>;
-} = ({ children }: TableProps) => {
-  const context = { secret: 'test' };
-  return (
-    <TableContext.Provider value={context}>
-      <TableContainer>{children}</TableContainer>
-    </TableContext.Provider>
-  );
-};
-
-const Head = styled.div<TableHeadProps>`
-  display: flex;
-  flex-flow: nowrap row;
-  height: ${(props) => getRowHeight(props.height || 'medium')};
-  position: ${(props) => (props.useSticky ? 'sticky' : 'static')};
-  top: ${(props) => (props.useSticky ? '0' : 'unset')};
-  border-bottom: 2px solid ${(props) => props.theme.background.default};
-`;
-
-Head.defaultProps = {
-  height: 'medium',
-  useSticky: false,
-  theme,
-};
-
-Table.Head = Head;
-
-const Body = styled.div``;
-
-Table.Body = Body;
+  RowGroup: React.FunctionComponent<TableRowGroupProps>;
+  Cell: React.FunctionComponent<TableCellProps>;
+  SelectCol: React.FunctionComponent<TableSelectCellProps>;
+  SortCol: React.FunctionComponent<TableSortCellProps>;
+} = ({ children, name, description }: TableProps) => (
+  <TableContainer role={"table"} aria-label={name} aria-describedby={`${name}-table-description`} aria-rowcount={-1}>
+    <TableDescription id={`${name}-table-description`}>{description}</TableDescription>
+    {children}
+  </TableContainer>
+);
 
 const RowContainer = styled.div<TableRowProps>`
-  display: flex;
-  flex-flow: nowrap row;
   height: ${(props) => getRowHeight(props.height || 'medium')};
-  border-bottom: 1px solid ${(props) => props.theme.background.default};
-  &:hover {
-    background: ${(props) => props.theme.background.default};
-  }
 `;
 
 RowContainer.defaultProps = {
@@ -110,45 +61,40 @@ RowContainer.defaultProps = {
 
 Table.Row = function TableRow({ height = 'medium', onClick, children }: TableRowProps) {
   return (
-    <RowContainer height={height} onClick={onClick}>
+    <RowContainer role={'row'} height={height} onClick={onClick}>
       {children}
     </RowContainer>
   );
 };
 
-const ColContainer = styled.div<TableColProps>`
-  display: flex;
-  flex-basis: ${({ flexBasis }) => flexBasis};
-  flex: ${({ flexGrow }) => flexGrow};
-  flex-shrink: ${({ flexShrink }) => flexShrink};
-  align-items: center;
-  padding: 0px 16px;
-`;
+const RowGroup = styled.div<TableRowGroupProps>``;
 
-ColContainer.defaultProps = {
-  flexBasis: 'auto',
-  flexGrow: 1,
-  flexShrink: 0,
+Table.RowGroup = function TableRowGroup({ children }: TableRowGroupProps) {
+  return <RowGroup role={'rowgroup'}>{children}</RowGroup>;
 };
 
-Table.Col = function TableCol(props: TableColProps) {
-  return <ColContainer {...props} />;
+const CellContainer = styled.div<TableCellProps>``;
+
+CellContainer.defaultProps = {};
+
+Table.Cell = function TableCol({ role = 'cell', ...props }: TableCellProps) {
+  return <CellContainer role={role} {...props} />;
 };
 
-Table.SelectCol = function TableSelectCol(props: TableSelectColProps) {
+Table.SelectCol = function TableSelectCol(props: TableSelectCellProps) {
   return (
-    <ColContainer flexGrow={0}>
+    <Table.Cell role={'columnheader'}>
       <Checkbox {...props} />
-    </ColContainer>
+    </Table.Cell>
   );
 };
 
-Table.SortCol = function TableSortCol({ children, direction, onClick }: TableSortColProps) {
+Table.SortCol = function TableSortCol({ children, direction }: TableSortCellProps) {
   return (
-    <ColContainer onClick={onClick}>
+    <Table.Cell role={'columnheader'}>
       {children}
       <ArrowIcon direction={direction} />
-    </ColContainer>
+    </Table.Cell>
   );
 };
 
