@@ -40,3 +40,4 @@ export { Transition } from 'src/components/Transition';
 export { Popover } from 'src/components/Popover';
 export { PopoverTooltip } from 'src/components/PopoverTooltip';
 export { PopoverMenu } from 'src/components/PopoverMenu';
+export { CheckIcon } from 'src/components/CheckIcon';
