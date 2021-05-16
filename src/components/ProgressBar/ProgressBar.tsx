@@ -39,7 +39,7 @@ const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({ value }: Progr
   return (
     <Container>
       <Label>{value}%</Label>
-      <Progress value={value} />
+      <Progress role={'progressbar'} aria-valuenow={value} aria-valuemin={0} aria-valuemax={100} aria-valuetext={value.toString()} value={value} />
     </Container>
   );
 };

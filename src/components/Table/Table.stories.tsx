@@ -22,25 +22,23 @@ const userData: UserData = [
 export const SimpleTable: React.FunctionComponent = () => {
   const [data] = React.useState<UserData>(userData);
   return (
-    <Table>
-      <Table.Head>
-        <Table.SelectCol />
-        <Table.Col>Name</Table.Col>
-        <Table.Col>Age</Table.Col>
-        <Table.SortCol onClick={() => null} direction={'desc'}>
+    <Table name={'Simple table'} description={'Simple table description'}>
+      <Table.RowGroup>
+        <Table.Cell>Name</Table.Cell>
+        <Table.Cell>Age</Table.Cell>
+        <Table.Cell>
           Weight
-        </Table.SortCol>
-      </Table.Head>
-      <Table.Body>
+        </Table.Cell>
+      </Table.RowGroup>
+      <Table.RowGroup>
         {data.map((dot, index) => (
-          <Table.Row key={index} onClick={() => null}>
-            <Table.SelectCol />
-            <Table.Col>{dot.name}</Table.Col>
-            <Table.Col>{dot.age}</Table.Col>
-            <Table.Col>{dot.weight}</Table.Col>
+          <Table.Row key={index}>
+            <Table.Cell>{dot.name}</Table.Cell>
+            <Table.Cell>{dot.age}</Table.Cell>
+            <Table.Cell>{dot.weight}</Table.Cell>
           </Table.Row>
         ))}
-      </Table.Body>
+      </Table.RowGroup>
     </Table>
   );
 };

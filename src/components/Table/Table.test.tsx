@@ -6,6 +6,12 @@ describe('Table', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    render(<Table />);
+    render(<Table name={'Test'} description={'Test Description'}>
+      <Table.RowGroup>
+        <Table.Row>
+          <Table.Cell>123</Table.Cell>
+        </Table.Row>
+      </Table.RowGroup>
+    </Table>);
   });
 });

@@ -1,13 +1,10 @@
 import React from 'react';
 import { Size } from 'src/types';
-import { Checkbox, ArrowIcon } from 'src/components';
 import type {
   TableProps,
   TableRowProps,
   TableRowGroupProps,
   TableCellProps,
-  TableSelectCellProps,
-  TableSortCellProps,
 } from 'src/components/Table/Table.d';
 import styled from 'styled-components';
 import theme from 'src/theme';
@@ -41,10 +38,8 @@ const Table: React.FunctionComponent<TableProps> & {
   Row: React.FunctionComponent<TableRowProps>;
   RowGroup: React.FunctionComponent<TableRowGroupProps>;
   Cell: React.FunctionComponent<TableCellProps>;
-  SelectCol: React.FunctionComponent<TableSelectCellProps>;
-  SortCol: React.FunctionComponent<TableSortCellProps>;
-} = ({ children, name, description }: TableProps) => (
-  <TableContainer role={"table"} aria-label={name} aria-describedby={`${name}-table-description`} aria-rowcount={-1}>
+} = ({ children, name, description, role = 'table' }: TableProps) => (
+  <TableContainer role={role} aria-label={name} aria-describedby={`${name}-table-description`} aria-rowcount={-1} aria-colcount={-1}>
     <TableDescription id={`${name}-table-description`}>{description}</TableDescription>
     {children}
   </TableContainer>
@@ -59,9 +54,9 @@ RowContainer.defaultProps = {
   theme,
 };
 
-Table.Row = function TableRow({ height = 'medium', onClick, children }: TableRowProps) {
+Table.Row = function TableRow({ height = 'medium', children }: TableRowProps) {
   return (
-    <RowContainer role={'row'} height={height} onClick={onClick}>
+    <RowContainer role={'row'} height={height}>
       {children}
     </RowContainer>
   );
@@ -75,27 +70,8 @@ Table.RowGroup = function TableRowGroup({ children }: TableRowGroupProps) {
 
 const CellContainer = styled.div<TableCellProps>``;
 
-CellContainer.defaultProps = {};
-
-Table.Cell = function TableCol({ role = 'cell', ...props }: TableCellProps) {
-  return <CellContainer role={role} {...props} />;
-};
-
-Table.SelectCol = function TableSelectCol(props: TableSelectCellProps) {
-  return (
-    <Table.Cell role={'columnheader'}>
-      <Checkbox {...props} />
-    </Table.Cell>
-  );
-};
-
-Table.SortCol = function TableSortCol({ children, direction }: TableSortCellProps) {
-  return (
-    <Table.Cell role={'columnheader'}>
-      {children}
-      <ArrowIcon direction={direction} />
-    </Table.Cell>
-  );
+Table.Cell = function TableCol({ role = 'cell', tabIndex = 0, children }: TableCellProps) {
+  return <CellContainer role={role} tabIndex={tabIndex}>{children}</CellContainer>;
 };
 
 export default Table;

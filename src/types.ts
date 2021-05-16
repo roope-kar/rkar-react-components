@@ -65,4 +65,4 @@ export type Appearance = 'primary' | 'secondary';
 /**
  * The sorting directions for most things
  */
-export type Direction = 'asc' | 'desc';
+export type Direction = 'ascending' | 'descending' | 'none';

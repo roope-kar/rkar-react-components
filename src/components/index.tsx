@@ -31,6 +31,7 @@ export { Placeholder } from 'src/components/Placeholder';
 export { TagInput } from 'src/components/TagInput';
 export { Toast } from 'src/components/Toast';
 export { Table } from 'src/components/Table';
+export { DataGrid } from 'src/components/DataGrid';
 export { DynamicTable } from 'src/components/DynamicTable';
 export { DynamicForm } from 'src/components/DynamicForm';
 export { ArrowIcon } from 'src/components/ArrowIcon';
