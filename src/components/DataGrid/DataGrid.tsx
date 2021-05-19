@@ -1,57 +1,103 @@
 import React from 'react';
+import type {
+    DataGridProps,
+    DataGridCaptionProps,
+    DataGridHeadProps,
+    DataGridHeadCellProps,
+    DataGridBodyProps,
+    DataGridRowProps,
+    DataGridCellProps,
+    DataGridSortCellProps,
+    DataGridSelectCellProps,
+} from 'src/components/DataGrid/DataGrid.d';
 import styled from 'styled-components';
-import { Table, ArrowIcon, TextInput } from 'src/components';
-import type { DataGridCellProps, DataGridProps, DataGridRowGroupProps, DataGridRowProps, DataGridSearchCellProps, DataGridSortCellProps } from 'src/components/DataGrid/DataGrid.d';
+import theme from 'src/theme';
+import { ArrowIcon } from 'src/components';
 
-// TODO:
-// Right Arrow: Moves focus one cell to the right. If focus is on the right-most cell in the row, focus does not move.
-// Left Arrow: Moves focus one cell to the left. If focus is on the left-most cell in the row, focus does not move.
-// Down Arrow: Moves focus one cell down. If focus is on the bottom cell in the column, focus does not move.
-// Up Arrow: Moves focus one cell Up. If focus is on the top cell in the column, focus does not move.
-// Page Down:  scrolling so the bottom row in the currently visible set of rows becomes the first visible row. If focus is in the last row, focus does not move.
-// Page Up: In example 3, moves focus up 5 rows, scrolling so the top row in the currently visible set of rows becomes the last visible row. If focus is in the first row of the grid, focus does not move.
-// Home: moves focus to the first cell in the row that contains focus.
-// End:	moves focus to the last cell in the row that contains focus.
-// Control + Home:	moves focus to the first cell in the first row.
-// Control + End:	moves focus to the last cell in the last row.
+const DataGridContainer = styled.table`
+  font-family: ${(props) => props.theme.font.primary};
+  color: ${(props) => props.theme.color.default};
+  background: ${(props) => props.theme.background.default};
+  overflow: hidden;
+  border-radius: 3px;
+`;
+
+DataGridContainer.defaultProps = {
+    theme,
+};
 
 const DataGrid: React.FunctionComponent<DataGridProps> & {
-    RowGroup: React.FunctionComponent<DataGridRowGroupProps>;
+    Caption: React.FunctionComponent<DataGridCaptionProps>;
+    Head: React.FunctionComponent<DataGridHeadProps>;
+    HeadCell: React.FunctionComponent<DataGridHeadCellProps>;
+    Body: React.FunctionComponent<DataGridBodyProps>;
     Row: React.FunctionComponent<DataGridRowProps>;
     Cell: React.FunctionComponent<DataGridCellProps>;
+    SelectCell: React.FunctionComponent<DataGridSelectCellProps>;
     SortCell: React.FunctionComponent<DataGridSortCellProps>;
-    SearchCell: React.FunctionComponent<DataGridSearchCellProps>;
-} = ({ name, description, children }: DataGridProps) => (
-    <Table role={'grid'} name={name} description={description} aria-rowcount={-1} aria-colcount={-1} aria-readonly aria-multiselectable={false}>{children}</Table>
+} = ({ children, ariaLabel }: DataGridProps) => (
+    <DataGridContainer role={'grid'} aria-label={ariaLabel}>{children}</DataGridContainer>
 );
 
-DataGrid.RowGroup = ({ children }: DataGridRowGroupProps) => (
-    <Table.RowGroup>{children}</Table.RowGroup>
-);
+const CaptionContainer = styled.caption<DataGridCaptionProps>`
+  text-align: left;
+`;
 
-DataGrid.Row = ({ children, index = -1 }: DataGridRowProps) => (
-    <Table.Row aria-rowindex={index}>{children}</Table.Row>
-);
+DataGrid.Caption = function DataGridCaption({ children }: DataGridCaptionProps) {
+    return (
+        <CaptionContainer>{children}</CaptionContainer>
+    );
+}
 
-DataGrid.Cell = ({ children, index = -1 }: DataGridCellProps) => (
-    <Table.Cell role={'gridcell'} tabIndex={-1} aria-colindex={index}>{children}</Table.Cell>
-);
+const HeadContainer = styled.thead<DataGridHeadProps>``;
 
-const SortCellTrigger = styled.span``;
+DataGrid.Head = function DataGridHead({ children }: DataGridHeadProps) {
+    return (
+        <HeadContainer>
+            <DataGrid.Row>{children}</DataGrid.Row>
+        </HeadContainer>
+    );
+}
+
+const HeadCellContainer = styled.th<DataGridHeadCellProps>``;
+
+DataGrid.HeadCell = function DataGridHeadCell({ children }: DataGridHeadCellProps) {
+    return <HeadCellContainer>{children}</HeadCellContainer>
+};
+
+const BodyContainer = styled.tbody<DataGridBodyProps>``;
+
+DataGrid.Body = function DataGridBody({ children }: DataGridBodyProps) {
+    return <BodyContainer>{children}</BodyContainer>
+};
+
+const RowContainer = styled.tr<DataGridRowProps>``;
+
+RowContainer.defaultProps = { theme };
+
+DataGrid.Row = function DataGridRow({ children }: DataGridRowProps) {
+    return <RowContainer>{children}</RowContainer>;
+};
+
+const CellContainer = styled.td<DataGridCellProps>``;
+
+DataGrid.Cell = function DataGridCol({ children }: DataGridCellProps) {
+    return <CellContainer role={'gridcell'}>{children}</CellContainer>;
+};
+
+DataGrid.SelectCell = ({ onClick }: DataGridSelectCellProps) => (
+    <td>
+        <input type={'checkbox'} onClick={onClick}></input>
+    </td>
+);
 
 DataGrid.SortCell = ({ children, direction, onClick }: DataGridSortCellProps) => (
-    <Table.Cell role={'columnheader'} aria-sort={direction}>
-        <SortCellTrigger role={'button'} tabIndex={-1} onClick={onClick}>
+    <th aria-sort={direction}>
+        <span role={'button'} tabIndex={-1} onClick={onClick}>
             {children}
             <ArrowIcon direction={direction} />
-        </SortCellTrigger>
-    </Table.Cell>
-);;
-
-DataGrid.SearchCell = ({ onChange }: DataGridSearchCellProps) => (
-    <Table.Cell role={'columnheader'}>
-        <TextInput onChange={onChange} />
-    </Table.Cell>
+        </span>
+    </th>
 );
 
 export default DataGrid;

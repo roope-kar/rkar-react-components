@@ -22,15 +22,14 @@ const userData: UserData = [
 export const SimpleTable: React.FunctionComponent = () => {
   const [data] = React.useState<UserData>(userData);
   return (
-    <Table name={'Simple table'} description={'Simple table description'}>
-      <Table.RowGroup>
-        <Table.Cell>Name</Table.Cell>
-        <Table.Cell>Age</Table.Cell>
-        <Table.Cell>
-          Weight
-        </Table.Cell>
-      </Table.RowGroup>
-      <Table.RowGroup>
+    <Table ariaLabel={'My Epic Table :)'}>
+      <Table.Caption>Sample description of the Table</Table.Caption>
+      <Table.Head>
+        <Table.HeadCell>Name</Table.HeadCell>
+        <Table.HeadCell>Age</Table.HeadCell>
+        <Table.HeadCell>Weight</Table.HeadCell>
+      </Table.Head>
+      <Table.Body>
         {data.map((dot, index) => (
           <Table.Row key={index}>
             <Table.Cell>{dot.name}</Table.Cell>
@@ -38,7 +37,7 @@ export const SimpleTable: React.FunctionComponent = () => {
             <Table.Cell>{dot.weight}</Table.Cell>
           </Table.Row>
         ))}
-      </Table.RowGroup>
+      </Table.Body>
     </Table>
   );
 };
